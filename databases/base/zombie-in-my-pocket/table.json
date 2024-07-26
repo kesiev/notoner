@@ -1,0 +1,1724 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Zombie in My Pocket",
+			"IT": "Zombie in My Pocket"
+		},
+		"author": {
+			"EN": "Jeremiah Lee"
+		},
+		"description": {
+			"EN": "You're searching for the secret of the evil temple where you can find the item to destroy the zombies rising from the dead.",
+			"IT": "Stai cercando il segreto del Tempio del Male, dove troverai l'oggetto per distruggere gli zombi che stanno tornando dalla morte."
+		},
+		"license": {
+			"EN": "BY-NC-SA 3.0"
+		},
+		"licenseUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://creativecommons.org/licenses/by-nc-sa/3.0/"
+			}
+		},
+		"players": {
+			"EN": "1"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/boardgame/33468/zombie-in-my-pocket"
+			}
+		},
+		"categories": [
+			"adventure"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": -158,
+				"y": 0,
+				"width": 148,
+				"height": 210,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 157,
+				"height": 133,
+				"frame": true,
+				"mode": -1,
+				"backgroundColor": {
+					"r": 25,
+					"g": 25,
+					"b": 25,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Dev Cards deck &amp; discard pile<br>(Shake to shuffle)"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				},
+				"onShakeMacro": {
+					"getElementsByTag": [
+						"card"
+					],
+					"onElements": {
+						"if": {
+							"isSelected": true
+						}
+					},
+					"forEach": {
+						"setSide": false,
+						"shuffleZIndex": true,
+						"shuffle": true,
+						"moveTo": {
+							"x": 10,
+							"y": 10,
+							"gapX": 0,
+							"gapY": 1
+						}
+					}
+				},
+				"messages": {
+					"shake": {
+						"title": {
+							"EN": "Shuffle",
+							"IT": "Mescola"
+						}
+					}
+				},
+				"onResetMacro": {
+					"getElementsByTag": [
+						"card"
+					],
+					"do": {
+						"onElements": {
+							"pickRandom": 2
+						},
+						"forEach": {
+							"setSide": false,
+							"moveToTop": true,
+							"moveTo": {
+								"x": 83.5,
+								"y": 10,
+								"gapY": 1
+							}
+						},
+						"onRestDo": {
+							"forEach": {
+								"setSide": false,
+								"shuffleZIndex": true,
+								"shuffle": true,
+								"moveTo": {
+									"x": 10,
+									"y": 10,
+									"gapX": 0,
+									"gapY": 1
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 2
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 3
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 4
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 5
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 6
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 7
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 8
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 63.5,
+				"height": 88,
+				"tags": [
+					"card"
+				],
+				"isFlippable": true,
+				"frame": {
+					"borderRadius": 2,
+					"borderSize": 0
+				},
+				"image": {
+					"borderRadius": 2,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "cards.png",
+						"meta": {
+							"sprite": {
+								"width": 497,
+								"height": 748,
+								"gapX": 20,
+								"frame": 9
+							}
+						}
+					}
+				},
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 0,
+				"y": 143,
+				"width": 70,
+				"height": 95,
+				"frame": true,
+				"mode": -1,
+				"backgroundColor": {
+					"r": 100,
+					"g": 100,
+					"b": 255,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Indoor Tiles deck"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				},
+				"messages": {
+					"shake": false
+				},
+				"onResetMacro": {
+					"getElementsByTag": [
+						"indoor-tile"
+					],
+					"forEach": {
+						"setSide": false,
+						"shuffleZIndex": true,
+						"shuffle": true,
+						"setRotation": 0,
+						"moveTo": {
+							"x": 10,
+							"y": 10,
+							"gapX": 0,
+							"gapY": 1
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 10
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 11
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 12
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 13
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 14
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 15
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"indoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 16
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 80,
+				"y": 143,
+				"width": 70,
+				"height": 95,
+				"frame": true,
+				"mode": -1,
+				"backgroundColor": {
+					"r": 100,
+					"g": 255,
+					"b": 100,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Outdoor Tiles deck"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				},
+				"messages": {
+					"shake": false
+				},
+				"onResetMacro": {
+					"getElementsByTag": [
+						"outdoor-tile"
+					],
+					"forEach": {
+						"setSide": false,
+						"shuffleZIndex": true,
+						"shuffle": true,
+						"setRotation": 0,
+						"moveTo": {
+							"x": 10,
+							"y": 10,
+							"gapX": 0,
+							"gapY": 1
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 2
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 3
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 4
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 5
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 6
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 8
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 90,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"outdoor-tile"
+				],
+				"isRotating": true,
+				"isFlippable": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 9
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"onDropMacro": {
+					"forEach": {
+						"setSide": true
+					}
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 160,
+				"y": 153,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"patio-tile"
+				],
+				"isRotating": true,
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 7
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 350,
+				"y": 150,
+				"width": 50,
+				"height": 50,
+				"tags": [
+					"tile",
+					"foyer-tile"
+				],
+				"frame": {
+					"borderSize": 0
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "tiles.png",
+						"meta": {
+							"sprite": {
+								"width": 422,
+								"height": 422,
+								"gapX": 20,
+								"frame": 17
+							}
+						}
+					}
+				},
+				"snapTo": {
+					"grid": {
+						"x": 0,
+						"y": 0,
+						"width": 50,
+						"height": 50
+					}
+				},
+				"onShakeMacro": false,
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-2",
+			"data": {
+				"x": 367,
+				"y": 167,
+				"isVariableZIndex": false,
+				"zIndexGroup": 2,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				},
+				"snapTo": {
+					"tags": [
+						"tile"
+					]
+				},
+				"mode": 2,
+				"isTransparent": true
+			}
+		}
+	]
+}

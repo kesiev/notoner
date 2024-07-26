@@ -1,0 +1,845 @@
+{
+	"entries": [
+		{
+			"path": "7-dice-wonders",
+			"meta": {
+				"title": {
+					"EN": "7 Dice Wonders",
+					"IT": "7 Dice Wonders"
+				},
+				"author": {
+					"EN": "Konrad Anft"
+				},
+				"description": {
+					"EN": "A print-and-play dice game based on \"7 Wonders\" by Antoine Bauza.",
+					"IT": "Un gioco di dadi print-and-play basato su \"7 Wonders\" di Antoine Bauza."
+				},
+				"players": {
+					"EN": "1-4"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/143085/7-dice-wonders"
+					}
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/filepage/93227/7-dice-wonders-ruleset-for-version-09"
+					}
+				},
+				"categories": [
+					"strategy"
+				]
+			}
+		},
+		{
+			"path": "cairn",
+			"meta": {
+				"title": {
+					"EN": "Cairn",
+					"IT": "Cairn"
+				},
+				"author": {
+					"EN": "Yochai Gal"
+				},
+				"license": {
+					"EN": "CC-BY-SA 4.0"
+				},
+				"licenseUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+					}
+				},
+				"description": {
+					"EN": "Adventure game about exploring a dark & mysterious Wood filled with strange folk, hidden treasure, and unspeakable monstrosities.",
+					"IT": "Un gioco d'avventura sull'esplorazione di un Bosco oscuro e misterioso pieno di gente strana, tesori nascosti e mostruosit&agrave; indicibili."
+				},
+				"manualUrl": {
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.cairnrpg.com/"
+					},
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://cairnrpg.com/"
+					}
+				},
+				"categories": [
+					"rpg"
+				]
+			}
+		},
+		{
+			"path": "chess",
+			"meta": {
+				"title": {
+					"EN": "Chess",
+					"IT": "Scacchi"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "The famous strategy game that takes place on a square board called a chessboard.",
+					"IT": "Il famoso gioco di strategia che si svolge su una tavola quadrata detta scacchiera."
+				},
+				"players": {
+					"EN": "2"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Chess"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Scacchi"
+					}
+				},
+				"categories": [
+					"strategy"
+				]
+			}
+		},
+		{
+			"path": "coin-conquest",
+			"meta": {
+				"title": {
+					"EN": "Coin Conquest",
+					"IT": "Coin Conquest"
+				},
+				"description": {
+					"EN": "An adaptation of Adam P. McIver's coin conquest game.",
+					"IT": "Un adattamento del gioco di conquista da giocare con delle monete di Adam P. McIver."
+				},
+				"players": {
+					"EN": "2"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/146130/coin-age"
+					}
+				},
+				"categories": [
+					"strategy"
+				]
+			}
+		},
+		{
+			"path": "conquer-the-kingdom",
+			"meta": {
+				"title": {
+					"EN": "Conquer the Kingdom",
+					"IT": "Conquer the Kingdom"
+				},
+				"author": {
+					"EN": "Sloan"
+				},
+				"description": {
+					"EN": "Roll 2 dice and attempt to fight or talk your way across a randomly generated map to the final battle for the glory of the kingdom!",
+					"IT": "Lancia 2 dadi e prova a combattere o parlare, attraversando una mappa generata casualmente fino a raggiungere la battaglia finale e conquistare la gloria del regno!"
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://sloank.itch.io/conquer-the-kingdom"
+					}
+				},
+				"categories": [
+					"adventure"
+				]
+			}
+		},
+		{
+			"path": "decathlon",
+			"meta": {
+				"title": {
+					"EN": "Reiner Knizia's Decathlon",
+					"IT": "Reiner Knizia's Decathlon"
+				},
+				"author": {
+					"EN": "Reiner Knizia"
+				},
+				"description": {
+					"EN": "A series of 10 short dice games with the loose theme of the events of an Olympic Decathlon.",
+					"IT": "Una serie di 10 brevi giochi di dadi vagamente ispirati agli eventi di un Decathlon Olimpico."
+				},
+				"players": {
+					"EN": "Any",
+					"IT": "Qualsiasi"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/6955/reiner-knizias-decathlon"
+					}
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://knizia.de/wp-content/uploads/reiner/pdfs/Knizia-Website-Decathlon.pdf"
+					}
+				},
+				"categories": [
+					"pushYourLuck"
+				]
+			}
+		},
+		{
+			"path": "escape-of-the-dead",
+			"meta": {
+				"title": {
+					"EN": "Escape of the Dead Minigame",
+					"IT": "Escape of the Dead Minigame"
+				},
+				"author": {
+					"EN": "Jason Sondoh"
+				},
+				"description": {
+					"EN": "You are a survivor of a zombie apocalypse and you're stuck in a house with a broken car and hordes of zombies are attacking in the lawn.",
+					"IT": "Sei un sopravvissuto a un'apocalisse di zombi e sei bloccato in una casa con un'auto rotta e orde di zombi stanno attaccando nel prato."
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/87632/escape-of-the-dead-minigame"
+					}
+				},
+				"categories": [
+					"pushYourLuck"
+				]
+			}
+		},
+		{
+			"path": "goldscrolls",
+			"meta": {
+				"title": {
+					"EN": "Goldscrolls",
+					"IT": "Goldscrolls"
+				},
+				"author": {
+					"EN": "KesieV"
+				},
+				"description": {
+					"EN": "A fast print-and-play roll-and-write deckbuilder for two players.",
+					"IT": "Un veloce deckbuilder print-and-play roll-and-write per due giocatori."
+				},
+				"players": {
+					"EN": "2"
+				},
+				"license": {
+					"EN": "MIT"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://www.kesiev.com/goldscrolls/"
+					}
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://www.kesiev.com/goldscrolls/"
+					}
+				},
+				"categories": [
+					"strategy"
+				],
+				"subtemplates": [
+					{
+						"id": "aphla",
+						"isDefault": true,
+						"meta": {
+							"title": {
+								"EN": "Character: Aphla",
+								"IT": "Personaggio: Aphla"
+							},
+							"description": {
+								"EN": "A wandering alchemist that learns new powers combining dice!",
+								"IT": "Un alchimista errante che apprende nuovi poteri combinando i dadi!"
+							}
+						}
+					},
+					{
+						"id": "tabe",
+						"meta": {
+							"title": {
+								"EN": "Character: Tabe",
+								"IT": "Personaggio: Tabe"
+							},
+							"description": {
+								"EN": "A merchant that buys new powers with gold!",
+								"IT": "Un mercante che compra nuovi poteri con l'oro!"
+							}
+						}
+					},
+					{
+						"id": "magma",
+						"meta": {
+							"title": {
+								"EN": "Character: Magma",
+								"IT": "Personaggio: Magma"
+							},
+							"description": {
+								"EN": "A miner that digs a mountain to gain new powers!",
+								"IT": "Un minatore che scava una montagna per acquisire nuovi poteri!"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"path": "jigsaw",
+			"meta": {
+				"title": {
+					"EN": "Jigsaw Puzzle",
+					"IT": "Puzzle"
+				},
+				"description": {
+					"EN": "Move and align the pieces to recompose the image.",
+					"IT": "Sposta e allinea i pezzi per ricomporre l'immagine."
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Jigsaw_puzzle"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Puzzle"
+					}
+				},
+				"categories": [
+					"puzzle"
+				]
+			}
+		},
+		{
+			"path": "klondike",
+			"meta": {
+				"title": {
+					"EN": "Klondike",
+					"IT": "Klondike"
+				},
+				"description": {
+					"EN": "A card game for one player and the best known and most popular version of the patience or solitaire family.",
+					"IT": "Un solitario fatto con le carte spesso chiamato semplicemente Solitario."
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Klondike_(solitaire)"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Klondike_(solitario)"
+					}
+				},
+				"categories": [
+					"puzzle"
+				]
+			}
+		},
+		{
+			"path": "maze",
+			"meta": {
+				"title": {
+					"EN": "Maze",
+					"IT": "Labirinto"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "The classic maze game. Cross it by drawing a line and find the exit.",
+					"IT": "Il classico gioco del labirinto. Attraversalo tracciando una riga e trova l'uscita."
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Maze"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Labirinto"
+					}
+				},
+				"categories": [
+					"racing",
+					"procgen"
+				],
+				"subtemplates": [
+					{
+						"id": "easy",
+						"isDefault": true,
+						"meta": {
+							"title": {
+								"EN": "Easy difficulty",
+								"IT": "Difficolt&agrave; facile"
+							},
+							"description": {
+								"EN": "The exit is around the corner...",
+								"IT": "L'uscita &egrave; dietro l'angolo..."
+							}
+						}
+					},
+					{
+						"id": "normal",
+						"meta": {
+							"title": {
+								"EN": "Medium difficulty",
+								"IT": "Difficolt&agrave; media"
+							},
+							"description": {
+								"EN": "Do not get lost!",
+								"IT": "Non perderti!"
+							}
+						}
+					},
+					{
+						"id": "hard",
+						"meta": {
+							"title": {
+								"EN": "Hard difficulty",
+								"IT": "Difficolt&agrave; difficile"
+							},
+							"description": {
+								"EN": "Finding the exit will be tough!",
+								"IT": "Trovare l'uscita sar&agrave; dura!"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"path": "poker-dice",
+			"meta": {
+				"title": {
+					"EN": "Poker Dice",
+					"IT": "Poker Dice"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "A dice adaptation of the classic Poker game.",
+					"IT": "Un adattamento con i dadi del classico gioco del Poker."
+				},
+				"players": {
+					"EN": "1-4"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/10502/poker-dice"
+					}
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Poker_dice"
+					}
+				},
+				"categories": [
+					"pushYourLuck"
+				]
+			}
+		},
+		{
+			"path": "pulse",
+			"meta": {
+				"title": {
+					"EN": "Pulse",
+					"IT": "Pulsazione"
+				},
+				"author": {
+					"EN": "Encho Chagas"
+				},
+				"players": {
+					"EN": "3-5"
+				},
+				"description": {
+					"EN": "A masterless role-playing game on investigations back in time.",
+					"IT": "Un gioco di ruolo senza master su indagini a ritroso nel tempo."
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://rpggeek.com/rpg/23464/pulse"
+					}
+				},
+				"categories": [
+					"rpg"
+				]
+			}
+		},
+		{
+			"path": "racetrack",
+			"meta": {
+				"title": {
+					"EN": "Racetrack",
+					"IT": "Formula 1"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "An abstract car racing simulation of unknown origins.",
+					"IT": "Una simulazione di corse automobilistiche astratta dalle origini sconosciute."
+				},
+				"players": {
+					"EN": "2-8"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/18481/racetrack"
+					}
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Racetrack_%28game%29"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Formula_1_(gioco)"
+					}
+				},
+				"categories": [
+					"racing"
+				]
+			}
+		},
+		{
+			"path": "reversi",
+			"meta": {
+				"title": {
+					"EN": "Reversi",
+					"IT": "Reversi"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "A strategy board game for two players that was invented in 1883.",
+					"IT": "Un gioco da tavolo di strategia per due giocatori inventato nel 1883."
+				},
+				"players": {
+					"EN": "2"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Reversi"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Othello_(gioco)"
+					}
+				},
+				"categories": [
+					"strategy"
+				]
+			}
+		},
+		{
+			"path": "royal-game-of-ur",
+			"meta": {
+				"title": {
+					"EN": "Royal Game of Ur",
+					"IT": "Gioco Reale di Ur"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "A two-player strategy race board game that was first played in ancient Mesopotamia during the early third millennium BC.",
+					"IT": "Un gioco da tavolo di corse strategico per due giocatori giocato per la prima volta nell'antica Mesopotamia all'inizio del III millennio a.C."
+				},
+				"players": {
+					"EN": "2"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Royal_Game_of_Ur"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Gioco_reale_di_Ur"
+					}
+				},
+				"categories": [
+					"strategy"
+				]
+			}
+		},
+		{
+			"path": "stampadia-chronicles",
+			"meta": {
+				"title": {
+					"EN": "Chronicles of Stampadia",
+					"IT": "Chronicles of Stampadia"
+				},
+				"author": {
+					"EN": "KesieV"
+				},
+				"description": {
+					"EN": "A daily print-and-play roguelike dungeon crawling adventure.",
+					"IT": "Un dungeon crawler roguelike print-and-play giornaliero."
+				},
+				"players": {
+					"EN": "1"
+				},
+				"license": {
+					"EN": "MIT"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://www.kesiev.com/stampadia/"
+					}
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://www.kesiev.com/stampadia/learn.html"
+					}
+				},
+				"categories": [
+					"adventure",
+					"procgen"
+				]
+			}
+		},
+		{
+			"path": "sudoku",
+			"meta": {
+				"title": {
+					"EN": "Sudoku",
+					"IT": "Sudoku"
+				},
+				"license": {
+					"EN": "Public domain",
+					"IT": "Pubblico dominio"
+				},
+				"description": {
+					"EN": "A famous logic game with numbers.",
+					"IT": "Un famoso gioco di logica con i numeri."
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://en.wikipedia.org/wiki/Sudoku"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://it.wikipedia.org/wiki/Sudoku"
+					}
+				},
+				"categories": [
+					"puzzle",
+					"procgen"
+				],
+				"subtemplates": [
+					{
+						"id": "easy",
+						"isDefault": true,
+						"meta": {
+							"title": {
+								"EN": "Easy sheet",
+								"IT": "Foglio facile"
+							},
+							"description": {
+								"EN": "Some warm-up puzzles.",
+								"IT": "Qualche puzzle di riscaldamento."
+							}
+						}
+					},
+					{
+						"id": "normal",
+						"meta": {
+							"title": {
+								"EN": "Medium sheet",
+								"IT": "Foglio medio"
+							},
+							"description": {
+								"EN": "Let's get serious!",
+								"IT": "Facciamo sul serio!"
+							}
+						}
+					},
+					{
+						"id": "hard",
+						"meta": {
+							"title": {
+								"EN": "Hard sheet",
+								"IT": "Foglio difficile"
+							},
+							"description": {
+								"EN": "Good luck!",
+								"IT": "Buona fortuna!"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"path": "system-splash",
+			"meta": {
+				"id": "system-splash",
+				"title": {
+					"EN": "Welcome to Notoner!",
+					"IT": "Benvenuti su Notoner!"
+				},
+				"description": {
+					"EN": "Welcome to Notoner!",
+					"IT": "Benvenuti su Notoner!"
+				},
+				"categories": [
+					"system"
+				]
+			}
+		},
+		{
+			"path": "word-blitz",
+			"meta": {
+				"title": {
+					"EN": "Word Blitz",
+					"IT": "Word Blitz"
+				},
+				"description": {
+					"EN": "Shake the game board and find as many words as you can within the time limit!",
+					"IT": "Scuoti il tabellone di gioco e trova pi&ugrave; parole che puoi entro il tempo limite!"
+				},
+				"players": {
+					"EN": "1"
+				},
+				"manualUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "manual-EN.pdf"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "manual-IT.pdf"
+					}
+				},
+				"categories": [
+					"words"
+				]
+			}
+		},
+		{
+			"path": "zombie-in-my-pocket",
+			"meta": {
+				"title": {
+					"EN": "Zombie in My Pocket",
+					"IT": "Zombie in My Pocket"
+				},
+				"author": {
+					"EN": "Jeremiah Lee"
+				},
+				"description": {
+					"EN": "You're searching for the secret of the evil temple where you can find the item to destroy the zombies rising from the dead.",
+					"IT": "Stai cercando il segreto del Tempio del Male, dove troverai l'oggetto per distruggere gli zombi che stanno tornando dalla morte."
+				},
+				"license": {
+					"EN": "BY-NC-SA 3.0"
+				},
+				"licenseUrl": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://creativecommons.org/licenses/by-nc-sa/3.0/"
+					}
+				},
+				"players": {
+					"EN": "1"
+				},
+				"url": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "https://boardgamegeek.com/boardgame/33468/zombie-in-my-pocket"
+					}
+				},
+				"categories": [
+					"adventure"
+				]
+			}
+		}
+	]
+}

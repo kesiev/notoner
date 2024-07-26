@@ -1,0 +1,1157 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Coin Conquest",
+			"IT": "Coin Conquest"
+		},
+		"description": {
+			"EN": "An adaptation of Adam P. McIver's coin conquest game.",
+			"IT": "Un adattamento del gioco di conquista da giocare con delle monete di Adam P. McIver."
+		},
+		"players": {
+			"EN": "2"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/boardgame/146130/coin-age"
+			}
+		},
+		"categories": [
+			"strategy"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 89,
+				"height": 99,
+				"frame": {
+					"borderRadius": 0
+				},
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.svg"
+					}
+				},
+				"isReadOnly": true
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 94,
+				"y": 103,
+				"width": 75,
+				"height": 50,
+				"frame": true,
+				"mode": 0,
+				"backgroundColor": {
+					"r": 100,
+					"g": 100,
+					"b": 255,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Tail Faction",
+					"IT": "Fazione Croce"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				},
+				"countValues": 2
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 94,
+				"y": -55,
+				"width": 75,
+				"height": 50,
+				"frame": true,
+				"mode": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Head Faction",
+					"IT": "Fazione Testa"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				},
+				"countValues": 1
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 147,
+				"y": 125,
+				"width": 20,
+				"height": 20,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 150,
+					"g": 150,
+					"b": 150,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 146,
+				"y": -50,
+				"width": 20,
+				"height": 20,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 150,
+					"g": 150,
+					"b": 150,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 140,
+				"y": 106,
+				"width": 16,
+				"height": 16,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 200,
+					"g": 200,
+					"b": 200,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 69,
+				"y": 119,
+				"width": 16,
+				"height": 16,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 200,
+					"g": 200,
+					"b": 200,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 150,
+				"y": -25,
+				"width": 16,
+				"height": 16,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 200,
+					"g": 200,
+					"b": 200,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 71,
+				"y": -36,
+				"width": 16,
+				"height": 16,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 200,
+					"g": 200,
+					"b": 200,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 48,
+				"y": 107,
+				"width": 12,
+				"height": 12,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 93,
+					"b": 40,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 47,
+				"y": 131,
+				"width": 12,
+				"height": 12,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 93,
+					"b": 40,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 108,
+				"y": 110,
+				"width": 12,
+				"height": 12,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 93,
+					"b": 40,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 100,
+				"y": -25,
+				"width": 12,
+				"height": 12,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 93,
+					"b": 40,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 49,
+				"y": -45,
+				"width": 12,
+				"height": 12,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 93,
+					"b": 40,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 48,
+				"y": -25,
+				"width": 12,
+				"height": 12,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 93,
+					"b": 40,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 101,
+				"y": 137,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 29,
+				"y": 114,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 20,
+				"y": 131,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 13,
+				"y": 118,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"side": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 13,
+				"y": -25,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 28,
+				"y": -40,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 26,
+				"y": -17,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 100,
+				"y": -47,
+				"width": 8,
+				"height": 8,
+				"value": 1,
+				"mode": 2,
+				"frame": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "coin.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"flipValue": 2,
+				"isFlippable": true,
+				"isVariableZIndex": false,
+				"isDragTopSurfaces": true
+			}
+		}
+	]
+}

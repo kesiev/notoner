@@ -1,0 +1,7 @@
+{
+    "name": "generator-packager",
+    "version": "1.0.0",
+    "dependencies": {
+        "terser": "^5.31.0"
+    }
+}

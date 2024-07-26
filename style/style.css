@@ -1,0 +1,459 @@
+HTML, BODY {
+    font-family: Notoner, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-overflow-scrolling: none;
+    -webkit-text-size-adjust: none;
+    overscroll-behavior-y: none;
+    touch-action:none;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.root {
+    background-color: #ccc;
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    overflow: hidden;
+    position: fixed;
+}
+
+@keyframes tutorialbox {
+    from {transform: translate(0,0) scale(0,1);}
+    50% {transform: translate(0,-15px) scale(0.5,1);}
+    to {transform: scale(1,1);}
+}
+
+@keyframes tutorialblink {
+    from { border-color: #f00; }
+    50% { border-color: #ff0; }
+    to { border-color: #f00 }
+}
+
+@keyframes notificationpopup {
+    from { transform:translate(100%,0) scale(1.5); }
+    to { transform:(0,0) scale(1); }
+}
+
+.dimmer {
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    z-index: 100;
+}
+
+.menu {
+    position: absolute;
+    border:5px solid #000;
+    left:10px;
+    top:10px;
+    bottom:10px;
+    right:10px;
+    max-width: 400px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px #000;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.contextMenu {
+    position: absolute;
+    border:5px solid #000;
+    border-radius: 3px;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0px 0px 2px #000;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.tutorial {
+    position: absolute;
+    z-index: 100;
+}
+
+.tutorial .box {
+    animation-name: tutorialbox, tutorialblink;
+    animation-duration: 0.2s, 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1, infinite;
+    padding:15px;
+    display: inline-block;
+    border:5px solid #f00;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px #000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tutorial .title {
+    line-height: 25px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tutorial .description {
+    margin:10px 0;
+    text-align: center;
+}
+
+.tutorial .next {
+    margin-top:15px;
+    color:#999;
+    text-align: center;
+    font-style: italic;
+}
+
+.tutorial.bottom {
+    bottom:20px;
+    left:20px;
+    right:20px;
+    text-align: center;
+}
+
+.tutorial.bottom .box {
+    max-width: 80%;
+}
+
+.tutorial.center {
+    bottom:20px;
+    left:20px;
+    right:20px;
+    top:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tutorial.center .box {
+    max-width: 60%;
+}
+
+.tutorial.topLeft {
+    left:10px;
+    top:65px;
+    text-align: left;
+}
+
+.tutorial.topLeft .box {
+    max-width: 60%;
+}
+
+.tutorial.topRight {
+    right:10px;
+    top:130px;
+    text-align: right;
+}
+
+.tutorial.topRight .box {
+    max-width: 60%;
+}
+
+.menuHeader {
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    height:40px;
+    background-color: #ccc;
+    border-bottom: 2px solid #000;
+    box-shadow: 0px 2px #ccc;
+    z-index: 10;
+}
+
+.menuBody {
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:40px;
+    bottom:0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+.menuHeader .title {
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    right:0px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menuHeader .button {
+    border: 2px solid #000;
+    border-radius: 25px;
+    width:25px;
+    height:25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.menuHeader .button.left {
+    position:absolute;
+    top:5px;
+    left:5px;
+    background-image: url('../images/icon-back.svg');
+}
+
+.menuHeader .button.right {
+    position:absolute;
+    top:5px;
+    right:5px;
+    background-image: url('../images/icon-close.svg');
+}
+
+.menuBody .row, .contextMenu .row {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding:15px 20px;
+}
+
+.row DIV, .row SPAN, .menuHeader .title {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.contextMenu .row  {
+    box-sizing: border-box;
+}
+
+.contextMenu .row .title {
+    white-space: nowrap;
+}
+
+.contextMenu .row.special {
+    font-weight: bold;
+}
+
+.contextMenu .row.macro {
+    font-style: italic;
+}
+
+.menuBody .row.interactive {
+    cursor: pointer;
+}
+
+.menuBody .separator {
+    padding:5px 10px;
+    font-size: 12px;
+    background-color: #999;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menuBody .row .title {
+    font-weight: bold;
+    margin-top:10px;
+}
+
+.menuBody .row .name {
+    margin-top:10px;
+}
+
+.menuBody .row .description, .contextMenu .row .description {
+    color:#999;
+    margin-top:5px;
+    font-size: 12px;
+}
+
+.menuBody .row .description .subdescription {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.menuBody .row .input {
+    width:100%;
+    margin-top:5px;
+}
+
+.menuBody .row .input INPUT {
+    border:1px solid #ccc;
+    padding:5px;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-touch-callout: default;
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+
+.menuBody .row .filename {
+    margin-left:5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.menuBody .row .radioSelector, .menuBody .row .checkboxSelector {
+    display: inline-block;
+    position: relative;
+    width:20px;
+    height:20px;
+    border:2px solid #000;
+    background-color: #fff;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.menuBody .row .radioSelector {
+    border-radius: 20px;
+}
+
+.menuBody .row .checkboxSelector {
+    border-radius: 3px;
+}
+
+.menuBody .row .radioSelector .tick, .menuBody .row .checkboxSelector .tick {
+    position: absolute;
+    left:4px;
+    top:4px;
+    right:4px;
+    bottom:4px;
+    background-color: #000;
+    display: none;
+}
+
+.menuBody .row .radioSelector .tick {
+    border-radius: 20px;
+}
+
+.menuBody .row .checkboxSelector .tick {
+    border-radius: 3px;
+}
+
+.menuBody .row.selected .tick {
+    display: block;
+}
+
+.menuBody .row .description .colorsample {
+    display: inline-block;
+    width:10px;
+    height:10px;
+    border-radius: 10px;
+    border:1px solid #999;
+}
+
+.menuBody .row UL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuBody .row *:first-child, .contextMenu .row *:first-child {
+    margin-top:0;
+}
+
+.menuBody .row *:last-child, .contextMenu .row *:last-child {
+    margin-bottom:0;
+}
+
+.contextMenu .row.icon .title, .menuBody .row.icon .title, .menuBody .row.icon .name, .menuBody .row.icon .description,  .contextMenu .row.icon .description, .menuBody .row.icon .input, .menuBody .row.icon .filename {
+    margin-left:25px;
+}
+
+.menuBody .row.arrow .title, .menuBody .row.arrow .name, .menuBody .row.arrow .description, .contextMenu .row.arrow .description, .menuBody .row.arrow .input, .menuBody .row.arrow .filename {
+    margin-right:25px;
+}
+
+.contextMenu .row.icon .icon, .menuBody .row.icon .icon {
+    position: absolute;
+    left:15px;
+    width:20px;
+    top:15px;
+    bottom:15px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menuBody .row.arrow .arrow {
+    position: absolute;
+    right:10px;
+    width:15px;
+    top:15px;
+    bottom:15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/icon-arrow.svg');
+}
+
+.menuBody .row.test.ok {
+    background-color: rgb(150, 255, 150);
+}
+
+.menuBody .row.test.ko {
+    background-color: rgb(255, 150, 150);
+}
+
+.notification {
+    animation-name: notificationpopup;
+    animation-duration: 0.5s;
+	margin-bottom: 5px;
+	padding: 15px;
+	border-left: 10px solid;
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0px 0px 2px #fff;
+}
+
+/* Themes */
+
+.row.theme {
+    background-blend-mode: lighten;
+}
+
+.theme.kitchen {
+	background-image: url('themes/kitchen.png');
+}
+
+.row.theme.kitchen {
+    background-size: 10%;
+}
+
+.theme.wood {
+	background-image: url('themes/wood.png');
+}
+
+.theme.cloth {
+	background-image: url('themes/cloth.png');
+}

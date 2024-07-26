@@ -1,0 +1,116 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Maze",
+			"IT": "Labirinto"
+		},
+		"license": {
+			"EN": "Public domain",
+			"IT": "Pubblico dominio"
+		},
+		"description": {
+			"EN": "The classic maze game. Cross it by drawing a line and find the exit.",
+			"IT": "Il classico gioco del labirinto. Attraversalo tracciando una riga e trova l'uscita."
+		},
+		"players": {
+			"EN": "1"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://en.wikipedia.org/wiki/Maze"
+			},
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://it.wikipedia.org/wiki/Labirinto"
+			}
+		},
+		"categories": [
+			"racing",
+			"procgen"
+		],
+		"subtemplates": [
+			{
+				"id": "easy",
+				"isDefault": true,
+				"meta": {
+					"title": {
+						"EN": "Easy difficulty",
+						"IT": "Difficolt&agrave; facile"
+					},
+					"description": {
+						"EN": "The exit is around the corner...",
+						"IT": "L'uscita &egrave; dietro l'angolo..."
+					}
+				}
+			},
+			{
+				"id": "normal",
+				"meta": {
+					"title": {
+						"EN": "Medium difficulty",
+						"IT": "Difficolt&agrave; media"
+					},
+					"description": {
+						"EN": "Do not get lost!",
+						"IT": "Non perderti!"
+					}
+				}
+			},
+			{
+				"id": "hard",
+				"meta": {
+					"title": {
+						"EN": "Hard difficulty",
+						"IT": "Difficolt&agrave; difficile"
+					},
+					"description": {
+						"EN": "Finding the exit will be tough!",
+						"IT": "Trovare l'uscita sar&agrave; dura!"
+					}
+				}
+			}
+		]
+	},
+	"generator": "generator.js",
+	"subtemplates": [
+		{
+			"id": "easy",
+			"settings": {
+				"mazeWidth": 17,
+				"mazeHeight": 11,
+				"renderX": 36,
+				"renderY": 21,
+				"renderCellSize": 20,
+				"timerX": 31,
+				"timerY": -12
+			}
+		},
+		{
+			"id": "normal",
+			"settings": {
+				"mazeWidth": 25,
+				"mazeHeight": 16,
+				"renderX": 30,
+				"renderY": 23,
+				"renderCellSize": 14,
+				"timerX": 22,
+				"timerY": -12
+			}
+		},
+		{
+			"id": "hard",
+			"settings": {
+				"mazeWidth": 34,
+				"mazeHeight": 22,
+				"renderX": 22,
+				"renderY": 21,
+				"renderCellSize": 11,
+				"timerX": 12.4,
+				"timerY": -12
+			}
+		}
+	]
+}

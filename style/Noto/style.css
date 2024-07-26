@@ -1,0 +1,65 @@
+/* Notoner default */
+
+@font-face {
+    font-family: 'Notoner';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Notoner'), url('NotoSans-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Notoner';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Notoner'), url('NotoSans[wdth,wght].woff') format('woff');
+}
+
+/* Base Noto font */
+
+@font-face {
+    font-family: 'Noto Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Noto Sans Regular'), url('NotoSans-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Noto Sans Regular'), url('NotoSans[wdth,wght].woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Noto Sans Italic'), url('NotoSans-Italic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Noto Sans Italic'), url('NotoSans-Italic[wdth,wght].woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Noto Sans Bold'), url('NotoSans-Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Noto Sans Bold Italic'), url('NotoSans-BoldItalic.woff') format('woff');
+}

@@ -1,0 +1,1430 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Reversi",
+			"IT": "Reversi"
+		},
+		"license": {
+			"EN": "Public domain",
+			"IT": "Pubblico dominio"
+		},
+		"description": {
+			"EN": "A strategy board game for two players that was invented in 1883.",
+			"IT": "Un gioco da tavolo di strategia per due giocatori inventato nel 1883."
+		},
+		"players": {
+			"EN": "2"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://en.wikipedia.org/wiki/Reversi"
+			},
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://it.wikipedia.org/wiki/Othello_(gioco)"
+			}
+		},
+		"categories": [
+			"strategy"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 210,
+				"height": 210,
+				"isReadOnly": true,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 86.5,
+				"y": 86.5,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"mode": 2,
+				"isTransparent": false,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 107.5,
+				"y": 86.5,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"mode": 2,
+				"isTransparent": false
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 107.5,
+				"y": 107.5,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"mode": 2,
+				"isTransparent": false,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 86.5,
+				"y": 107.5,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"mode": 2,
+				"isTransparent": false
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 0,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 20,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 40,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 60,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 80,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 100,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 120,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 140,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 160,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -20,
+				"y": 180,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 0,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 20,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 40,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 60,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 80,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 100,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 120,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 140,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 160,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -40,
+				"y": 180,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 0,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 20,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 40,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 60,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 80,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 100,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 120,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 140,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 160,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": -60,
+				"y": 180,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 0,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 20,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 40,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 60,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 80,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 100,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 120,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 140,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 160,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 215,
+				"y": 180,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 0,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 20,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 40,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 60,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 80,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 100,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 120,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 140,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 160,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 235,
+				"y": 180,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 0,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 20,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 40,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 60,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 80,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 100,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 120,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 140,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 160,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		},
+		{
+			"type": "token-2-flip",
+			"data": {
+				"x": 255,
+				"y": 180,
+				"backgroundColor": {
+					"r": 42,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				},
+				"flipBackgroundColor": {
+					"r": 213,
+					"g": 213,
+					"b": 213,
+					"a": 1
+				},
+				"isTransparent": false,
+				"mode": 2,
+				"side": true
+			}
+		}
+	]
+}

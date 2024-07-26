@@ -1,0 +1,98 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Sudoku",
+			"IT": "Sudoku"
+		},
+		"license": {
+			"EN": "Public domain",
+			"IT": "Pubblico dominio"
+		},
+		"description": {
+			"EN": "A famous logic game with numbers.",
+			"IT": "Un famoso gioco di logica con i numeri."
+		},
+		"players": {
+			"EN": "1"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://en.wikipedia.org/wiki/Sudoku"
+			},
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://it.wikipedia.org/wiki/Sudoku"
+			}
+		},
+		"categories": [
+			"puzzle",
+			"procgen"
+		],
+		"subtemplates": [
+			{
+				"id": "easy",
+				"isDefault": true,
+				"meta": {
+					"title": {
+						"EN": "Easy sheet",
+						"IT": "Foglio facile"
+					},
+					"description": {
+						"EN": "Some warm-up puzzles.",
+						"IT": "Qualche puzzle di riscaldamento."
+					}
+				}
+			},
+			{
+				"id": "normal",
+				"meta": {
+					"title": {
+						"EN": "Medium sheet",
+						"IT": "Foglio medio"
+					},
+					"description": {
+						"EN": "Let's get serious!",
+						"IT": "Facciamo sul serio!"
+					}
+				}
+			},
+			{
+				"id": "hard",
+				"meta": {
+					"title": {
+						"EN": "Hard sheet",
+						"IT": "Foglio difficile"
+					},
+					"description": {
+						"EN": "Good luck!",
+						"IT": "Buona fortuna!"
+					}
+				}
+			}
+		]
+	},
+	"generator": "generator.js",
+	"subtemplates": [
+		{
+			"id": "easy",
+			"settings": {
+				"difficulty": 0
+			}
+		},
+		{
+			"id": "normal",
+			"settings": {
+				"difficulty": 1
+			}
+		},
+		{
+			"id": "hard",
+			"settings": {
+				"difficulty": 2
+			}
+		}
+	]
+}

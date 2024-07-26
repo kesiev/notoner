@@ -1,0 +1,1314 @@
+{
+	"meta": {
+		"title": {
+			"EN": "7 Dice Wonders",
+			"IT": "7 Dice Wonders"
+		},
+		"author": {
+			"EN": "Konrad Anft"
+		},
+		"description": {
+			"EN": "A print-and-play dice game based on \"7 Wonders\" by Antoine Bauza.",
+			"IT": "Un gioco di dadi print-and-play basato su \"7 Wonders\" di Antoine Bauza."
+		},
+		"players": {
+			"EN": "1-4"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/boardgame/143085/7-dice-wonders"
+			}
+		},
+		"manualUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/filepage/93227/7-dice-wonders-ruleset-for-version-09"
+			}
+		},
+		"categories": [
+			"strategy"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 150,
+				"height": 105,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.png"
+					}
+				}
+			}
+		},
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 125,
+				"width": 150,
+				"height": 105,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.png"
+					}
+				}
+			}
+		},
+		{
+			"type": "sheet",
+			"data": {
+				"x": 170,
+				"y": 125,
+				"width": 150,
+				"height": 105,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "automa.png"
+					}
+				},
+				"isReadOnly": true,
+				"isDraggable": true
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 170,
+				"y": 0,
+				"width": 150,
+				"height": 105,
+				"frame": true,
+				"mode": -1,
+				"backgroundColor": {
+					"r": 100,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "7 Dice Wonder"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 180,
+				"y": 10,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 0,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 1,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 2,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 3,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 4,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 5,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 215,
+				"y": 10,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 6,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 7,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 8,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 9,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 10,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 11,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 250,
+				"y": 10,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 12,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 13,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 14,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 15,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 16,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 17,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 285,
+				"y": 10,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 18,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 19,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 20,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 21,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 22,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 23,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 180,
+				"y": 45,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 24,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 25,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 26,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 27,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 28,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 29,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 215,
+				"y": 45,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 30,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 31,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 32,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 33,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 34,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 35,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 250,
+				"y": 45,
+				"width": 25,
+				"height": 25,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 36,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 37,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 38,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 39,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 40,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 41,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 21,
+					"height": 21,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-resources.png",
+						"meta": {
+							"sprite": {
+								"width": 250,
+								"height": 250,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": -170,
+				"y": 0,
+				"width": 150,
+				"height": 105,
+				"frame": true,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 1,
+						"label": {
+							"EN": "Temple of Artemis (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 0,
+						"label": {
+							"EN": "Temple of Artemis (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 3,
+						"label": {
+							"EN": "Mausoleum of Halicarnassus (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 2,
+						"label": {
+							"EN": "Mausoleum of Halicarnassus (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 5,
+						"label": {
+							"EN": "Colossus of Rhodes (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 4,
+						"label": {
+							"EN": "Colossus of Rhodes (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 7,
+						"label": {
+							"EN": "Pyramids of Giza (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 6,
+						"label": {
+							"EN": "Pyramids of Giza (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 9,
+						"label": {
+							"EN": "Gardens of Babylon (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 8,
+						"label": {
+							"EN": "Gardens of Babylon (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 11,
+						"label": {
+							"EN": "Statue of Zeus (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 10,
+						"label": {
+							"EN": "Statue of Zeus (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 13,
+						"label": {
+							"EN": "Lighthouse of Alexandria (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 12,
+						"label": {
+							"EN": "Lighthouse of Alexandria (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "wonders.png",
+						"meta": {
+							"sprite": {
+								"width": 800,
+								"height": 560,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": -170,
+				"y": 125,
+				"width": 150,
+				"height": 105,
+				"frame": true,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 1,
+						"label": {
+							"EN": "Temple of Artemis (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 0,
+						"label": {
+							"EN": "Temple of Artemis (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 3,
+						"label": {
+							"EN": "Mausoleum of Halicarnassus (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 2,
+						"label": {
+							"EN": "Mausoleum of Halicarnassus (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 5,
+						"label": {
+							"EN": "Colossus of Rhodes (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 4,
+						"label": {
+							"EN": "Colossus of Rhodes (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 7,
+						"label": {
+							"EN": "Pyramids of Giza (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 6,
+						"label": {
+							"EN": "Pyramids of Giza (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 9,
+						"label": {
+							"EN": "Gardens of Babylon (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 8,
+						"label": {
+							"EN": "Gardens of Babylon (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 11,
+						"label": {
+							"EN": "Statue of Zeus (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 10,
+						"label": {
+							"EN": "Statue of Zeus (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 13,
+						"label": {
+							"EN": "Lighthouse of Alexandria (A)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 12,
+						"label": {
+							"EN": "Lighthouse of Alexandria (B)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "wonders.png",
+						"meta": {
+							"sprite": {
+								"width": 800,
+								"height": 560,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 184,
+				"y": 125,
+				"width": 30,
+				"height": 30,
+				"frame": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"frame": 0,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 1,
+						"label": {
+							"EN": "B"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 2,
+						"label": {
+							"EN": "C"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 3,
+						"label": {
+							"EN": "D"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 4,
+						"label": {
+							"EN": "E"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"frame": 5,
+						"label": {
+							"EN": "F"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"isRotating": true,
+				"facesImage": {
+					"x": 2,
+					"y": 2,
+					"width": 26,
+					"height": 26,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "dice-automa.png",
+						"meta": {
+							"sprite": {
+								"width": 300,
+								"height": 300,
+								"gapX": 20
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}

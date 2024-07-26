@@ -1,0 +1,41 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Chronicles of Stampadia",
+			"IT": "Chronicles of Stampadia"
+		},
+		"author": {
+			"EN": "KesieV"
+		},
+		"description": {
+			"EN": "A daily print-and-play roguelike dungeon crawling adventure.",
+			"IT": "Un dungeon crawler roguelike print-and-play giornaliero."
+		},
+		"players": {
+			"EN": "1"
+		},
+		"license": {
+			"EN": "MIT"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://www.kesiev.com/stampadia/"
+			}
+		},
+		"manualUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://www.kesiev.com/stampadia/learn.html"
+			}
+		},
+		"categories": [
+			"adventure",
+			"procgen"
+		]
+	},
+	"generator": "generator.js",
+	"data": []
+}

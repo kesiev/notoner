@@ -1,0 +1,253 @@
+<html>
+    <body onload="onl()"></body>
+<script>
+
+const
+    IMAGES =  [
+        "../../../databases/base/jigsaw/image.png"
+    ];
+
+let
+    assets = [];
+
+function process() {
+
+    let
+        table = {
+            meta: {
+                title: {
+                    EN: "Jigsaw Puzzle",
+                    IT: "Puzzle"
+                },
+                description: {
+                    EN: "Move and align the pieces to recompose the image.",
+                    IT: "Sposta e allinea i pezzi per ricomporre l'immagine."
+                },
+                players: {
+                    EN: "1"
+                },
+                url: {
+                    EN: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://en.wikipedia.org/wiki/Jigsaw_puzzle"
+                    },
+                    IT: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://it.wikipedia.org/wiki/Puzzle"
+                    }
+                },
+                categories: [
+                    "puzzle"
+                ]
+            },
+            data: []
+        };
+
+    let
+        area = document.createElement("textarea");
+
+    document.body.appendChild(area);
+
+    
+    // Prepare the preview
+
+    const
+        PREVIEW_WIDTH = 100,
+        PREVIEW_HEIGHT = PREVIEW_WIDTH*(assets[0].canvas.height/assets[0].canvas.width),
+        PREVIEW_SPACING = 10;
+
+    table.data.push({
+        type: "sheet",
+        data: {
+            x: -PREVIEW_WIDTH-PREVIEW_SPACING,
+            y: 0,
+            width: PREVIEW_WIDTH,
+            height: PREVIEW_HEIGHT,
+            frame:true,
+            isDraggable: true,
+            model: {
+                EN: {
+                    isResource: true,
+                    type: "url",
+                    url: "image.png"
+                }
+            },
+            isDragTopSurfaces:false,
+            isReadOnly: true
+        }
+    });
+    
+    // Prepare the tray
+
+    let
+        TRAY_WIDTH = 200,
+        TRAY_HEIGHT= 200,
+        TRAY_AREA_X = 10,
+        TRAY_AREA_Y = 10,
+        TRAY_AREA_WIDTH = TRAY_WIDTH-TRAY_AREA_X*2,
+        TRAY_AREA_HEIGHT = TRAY_HEIGHT-TRAY_AREA_Y-40;
+
+    table.data.push({
+        type: "tray-custom",
+        data: {
+            x: 0,
+            y: 0,
+            width: TRAY_WIDTH,
+            height: TRAY_HEIGHT,
+            frame: true,
+            mode: -1,
+            backgroundColor: {
+                r: 100,
+                g: 100,
+                b: 100,
+                a: 1
+            },
+            labelText: {
+                EN: "Shake this tray to collect and shuffle the pieces!",
+                IT: "Agita questo vassoio per raccogliere e mescolare i pezzi!"
+            },
+            label: {
+                right: 5,
+                bottom: 5,
+                x: 50,
+                textAlign: "right",
+                fontSize: 5,
+                lineHeight: 7
+            },
+            onShakeMacro:{
+                getElementsByTag:[
+                    "piece"
+                ],
+                forEach:{
+                    shuffleZIndex:true,
+                    spin:true,
+                    moveInto:{
+                        x:TRAY_AREA_X,
+                        y:TRAY_AREA_Y,
+                        width:TRAY_AREA_WIDTH,
+                        height:TRAY_AREA_HEIGHT
+                    }
+                }
+            },
+            onResetMacro:{
+                getElementsByTag:[
+                    "piece"
+                ],
+                forEach:{
+                    shuffleZIndex:true,
+                    spin:true,
+                    moveInto:{
+                        x:TRAY_AREA_X,
+                        y:TRAY_AREA_Y,
+                        width:TRAY_AREA_WIDTH,
+                        height:TRAY_AREA_HEIGHT
+                    }
+                }
+            }
+        }
+    });
+
+    // Prepare the clock
+
+    table.data.push({
+        type: "timer-clock",
+        data: {
+            x:TRAY_AREA_X,
+            y:TRAY_AREA_Y+TRAY_AREA_HEIGHT+5,
+            backgroundColor:{ r:255, g:0, b:0, a:1 }
+        }
+    });
+
+
+    // Prepare the pieces
+
+    let
+        PIECE_BORDER = 0.5,
+        PIECES_X = 10,
+        PIECES_Y = 10,
+        TABLE_PIECE_WIDTH = 20,
+        PIECE_WIDTH = Math.floor(assets[0].canvas.width/PIECES_X),
+        PIECE_HEIGHT = Math.floor(assets[0].canvas.height/PIECES_Y),
+        TABLE_PIECE_HEIGHT = TABLE_PIECE_WIDTH*(PIECE_HEIGHT/PIECE_WIDTH);
+
+    for (let y=0;y<PIECES_Y;y++)
+        for (let x=0;x<PIECES_X;x++)
+            table.data.push({
+                type: "token-custom",
+                data: {
+                    x: TRAY_AREA_X+Math.floor(Math.random()*(TRAY_AREA_WIDTH-TABLE_PIECE_WIDTH)),
+                    y: TRAY_AREA_Y+Math.floor(Math.random()*(TRAY_AREA_HEIGHT-TABLE_PIECE_HEIGHT)),
+                    width: TABLE_PIECE_WIDTH,
+                    height: TABLE_PIECE_HEIGHT,
+                    tags:[ "piece" ],
+                    snapTo:{ grid: { x:0, y:0, width:TABLE_PIECE_WIDTH/2, height:TABLE_PIECE_HEIGHT/2 } },
+                    isRotating:true,
+                    frame:{
+                        borderSize:PIECE_BORDER,
+                    },
+                    image: {
+                        x:PIECE_BORDER,
+                        y:PIECE_BORDER,
+                        width:TABLE_PIECE_WIDTH-PIECE_BORDER*2,
+                        height:TABLE_PIECE_HEIGHT-PIECE_BORDER*2,
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "image.png",
+                            meta: {
+                                crop: {
+                                    width: PIECE_WIDTH,
+                                    height: PIECE_HEIGHT,
+                                    x:PIECE_WIDTH*x,
+                                    y:PIECE_HEIGHT*y
+                                }
+                            }
+                        }
+                    },
+                    mode: 0
+                }
+            });
+
+    // Prepare table data
+
+    area.innerText = JSON.stringify(table);
+    
+}
+
+function onl() {
+
+    let
+        loaded = 0;
+
+    IMAGES.forEach(image=>{
+        let
+            img = document.createElement("img"),
+            asset = {
+                url:image,
+                canvas:document.createElement("canvas"),
+            };
+
+        assets.push(asset);
+
+        img.onload=()=>{
+            asset.ctx = asset.canvas.getContext("2d");
+            asset.canvas.width = img.width;
+            asset.canvas.height = img.height;
+            asset.ctx.drawImage(img,0,0);
+            document.body.removeChild(img);
+            loaded++;
+            if (loaded == IMAGES.length)
+                process();
+        }
+
+        img.src = image;
+        document.body.appendChild(img);
+        
+    });
+
+}
+
+</script>
+</html>

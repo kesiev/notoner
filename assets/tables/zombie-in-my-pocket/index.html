@@ -1,0 +1,584 @@
+<html>
+    <body onload="onl()"></body>
+<script>
+
+const
+    IMAGES =  [
+        "original/cards.png",
+        "original/tiles.png",
+        "original/card-back.png",
+        "original/outdoor-back.png",
+        "original/indoor-back.png"
+    ];
+
+let
+    assets = [];
+
+function process() {
+
+    let
+        table = {
+            meta: {
+                title: {
+                    EN: "Zombie in My Pocket",
+                    IT: "Zombie in My Pocket"
+                },
+                author: {
+                    EN: "Jeremiah Lee"
+                },
+                description: {
+                    EN: "You're searching for the secret of the evil temple where you can find the item to destroy the zombies rising from the dead.",
+                    IT: "Stai cercando il segreto del Tempio del Male, dove troverai l'oggetto per distruggere gli zombi che stanno tornando dalla morte."
+                },
+                license:{
+                    EN:"BY-NC-SA 3.0"
+                },
+                licenseUrl:{
+                    EN:{
+                        isResource: true,
+                        type: "url",
+                        url: "https://creativecommons.org/licenses/by-nc-sa/3.0/"
+                    }
+                },
+                players: {
+                    EN: "1"
+                },
+                url: {
+                    EN: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://boardgamegeek.com/boardgame/33468/zombie-in-my-pocket"
+                    }
+                },
+                categories: [
+                    "adventure"
+                ]
+            },
+            data: []
+        };
+
+    let
+        area = document.createElement("textarea");
+
+    document.body.appendChild(area);
+
+    // Prepare sheet
+
+    table.data.push({
+        type:"sheet",
+        data:{
+            x: -158,
+            y: 0,
+            width: 148,
+            height: 210,
+            frame:true,
+            model:{
+                EN:{
+                    isResource:true,
+                    type:"url",
+                    url:"sheet-1-EN.svg"
+                }
+            }
+        }
+    });
+
+    // Prepare trays
+
+    const
+        TABLE_TRAY_MARGIN = 10,
+        TABLE_TRAY_LABELSPACE = 25,
+        CARD_X = 137,
+        CARD_Y = 55,
+        CARD_WIDTH = 497,
+        CARD_HEIGHT = 748,
+        CARD_SPACING_X = 6,
+        CARD_SPACING_Y = 6,
+        TABLE_CARD_SPACING_X = 20,
+        TABLE_CARD_WIDTH = 63.5,
+        TABLE_CARD_HEIGHT = 88,
+        CARDS_COLUMNS = 3,
+        CARDS_ROWS = 3,
+        CARDS_TABLE_DELTA = 5,
+        TABLE_CARDS_GAPY = 1,
+        TABLE_TRAY_HEIGHT = TABLE_CARD_HEIGHT+(TABLE_TRAY_MARGIN*2)+TABLE_TRAY_LABELSPACE,
+        TABLE_TRAY_DISTANCE = 10;
+
+    table.data.push({
+        type:"tray-custom",
+        data:{
+            x: 0,
+            y: 0,
+            width: TABLE_CARD_WIDTH*2+TABLE_TRAY_MARGIN*3,
+            height: TABLE_TRAY_HEIGHT,
+            frame: true,
+            mode: -1,
+            backgroundColor: {
+                r: 25,
+                g: 25,
+                b: 25,
+                a: 1
+            },
+            labelText: {
+                EN: "Dev Cards deck &amp; discard pile<br>(Shake to shuffle)"
+            },
+            label: {
+                right: 5,
+                bottom: 5,
+                x: 5,
+                textAlign: "center",
+                fontSize: 5,
+                lineHeight: 7
+            },
+            onShakeMacro:{
+                getElementsByTag:[ "card" ],
+                onElements: {
+                    if:{ isSelected:true }
+                },
+                forEach:{
+                    setSide:false,
+                    shuffleZIndex:true,
+                    shuffle:true,
+                    moveTo:{
+                        x:TABLE_TRAY_MARGIN,
+                        y:TABLE_TRAY_MARGIN,
+                        gapX:0,
+                        gapY:TABLE_CARDS_GAPY
+                    }                    
+                }
+            },
+            messages:{
+                shake:{
+                    title:{
+                        EN:"Shuffle",
+                        IT:"Mescola"
+                    }
+                }
+            },
+            onResetMacro:{
+                getElementsByTag:[ "card" ],
+                do:{
+                    onElements: {
+                        pickRandom: 2
+                    },
+                    forEach:{
+                        setSide:false,
+                        moveToTop:true,
+                        moveTo: {
+                            x: TABLE_CARD_WIDTH+TABLE_TRAY_MARGIN*2,
+                            y: TABLE_TRAY_MARGIN,
+                            gapY:TABLE_CARDS_GAPY
+                        }                                
+                    },
+                    onRestDo:{
+                        forEach:{
+                            setSide:false,
+                            shuffleZIndex:true,
+                            shuffle:true,
+                            moveTo:{
+                                x:TABLE_TRAY_MARGIN,
+                                y:TABLE_TRAY_MARGIN,
+                                gapX:0,
+                                gapY:TABLE_CARDS_GAPY
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Prepare cards
+
+    let
+        cards = document.createElement("canvas"),
+        cctx = cards.getContext("2d"),
+        cardX = 0;
+
+    cards.style.border = "1px solid #f00";
+    cards.style.margin = "5px";
+
+    cards.width = ((CARD_WIDTH+TABLE_CARD_SPACING_X)*(CARDS_COLUMNS*CARDS_ROWS+1))-TABLE_CARD_SPACING_X;
+    cards.height = CARD_HEIGHT;
+    document.body.appendChild(cards);
+
+    cctx.drawImage(
+        assets[2].canvas,0,0,CARD_WIDTH, CARD_HEIGHT
+    );
+    
+    for (let y=0;y<CARDS_ROWS;y++)
+        for (let x=0;x<CARDS_COLUMNS;x++) {
+            let
+                id = 1+x+(y*CARDS_ROWS);
+            cardX = CARDS_TABLE_DELTA*(id-1);
+            cctx.drawImage(
+                assets[0].canvas,
+                CARD_X+(CARD_WIDTH+CARD_SPACING_X)*x, CARD_Y+(CARD_HEIGHT+CARD_SPACING_Y)*y,
+                CARD_WIDTH, CARD_HEIGHT,
+                id*(CARD_WIDTH+TABLE_CARD_SPACING_X), 0,
+                CARD_WIDTH, CARD_HEIGHT
+            );
+            table.data.push({
+                type: "token-custom",
+                data: {
+                    x: TABLE_TRAY_MARGIN,
+                    y: TABLE_TRAY_MARGIN,
+                    width: TABLE_CARD_WIDTH,
+                    height: TABLE_CARD_HEIGHT,
+                    tags:[ "card" ],
+                    isFlippable:true,
+                    frame:{
+                        borderRadius:2,
+                        borderSize:0
+                    },
+                    image:{
+                        borderRadius:2,
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "cards.png",
+                            meta: {
+                                sprite: {
+                                    width: CARD_WIDTH,
+                                    height: CARD_HEIGHT,
+                                    gapX:TABLE_CARD_SPACING_X,
+                                    frame:0
+                                }
+                            }
+                        }
+                    },
+                    flipImage: {
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "cards.png",
+                            meta: {
+                                sprite: {
+                                    width: CARD_WIDTH,
+                                    height: CARD_HEIGHT,
+                                    gapX:TABLE_CARD_SPACING_X,
+                                    frame:id
+                                }
+                            }
+                        }
+                    },
+                    onDropMacro:{
+                        forEach: { setSide:true }
+                    },
+                    onShakeMacro:false,
+                    mode: 0
+                }
+            });
+        }
+
+    
+    // Prepare tiles
+
+    const
+        TILE_X = 63,
+        TILE_Y = 317,
+        TILE_WIDTH = 422,
+        TILE_HEIGHT = 422,
+        TILE_SPACING_X = 5,
+        TILE_SPACING_Y = 5,
+        TABLE_TILE_HEIGHT = Math.ceil(TABLE_CARD_HEIGHT/CARD_HEIGHT*TILE_HEIGHT),
+        TABLE_TILE_WIDTH = TABLE_TILE_HEIGHT,
+        TABLE_TILE_SPACING_X = 20,
+        TILE_COLUMNS = 4,
+        TILE_ROWS = 4,
+        TABLE_TILE_TRAY_HEIGHT= TABLE_TILE_HEIGHT+(TABLE_TRAY_MARGIN*2)+TABLE_TRAY_LABELSPACE,
+        TABLE_TILE_GAPY = 1;
+
+    let
+        tiles = document.createElement("canvas"),
+        tctx = tiles.getContext("2d");
+
+    tiles.style.border = "1px solid #f00";
+    tiles.style.margin = "5px";
+
+    tiles.width = ((TILE_WIDTH+TABLE_TILE_SPACING_X)*(TILE_COLUMNS*TILE_ROWS+2))-TABLE_TILE_SPACING_X;
+    tiles.height = TILE_HEIGHT;
+    document.body.appendChild(tiles);
+
+    tctx.drawImage(
+        assets[3].canvas,0,0,TILE_WIDTH, TILE_HEIGHT
+    );
+
+    tctx.drawImage(
+        assets[4].canvas,TILE_WIDTH+TABLE_TILE_SPACING_X,0,TILE_WIDTH, TILE_HEIGHT
+    );
+    
+    for (let y=0;y<TILE_ROWS;y++)
+        for (let x=0;x<TILE_COLUMNS;x++) {
+            let
+                id = 2+x+(y*TILE_ROWS);
+            tctx.drawImage(
+                assets[1].canvas,
+                TILE_X+(TILE_WIDTH+TILE_SPACING_X)*x, TILE_Y+(TILE_HEIGHT+TILE_SPACING_Y)*y,
+                TILE_WIDTH, TILE_HEIGHT,
+                id*(TILE_WIDTH+TABLE_TILE_SPACING_X), 0,
+                TILE_WIDTH, TILE_HEIGHT
+            );
+        }
+
+    // Prepare tile sets
+
+    let
+        trayX,
+        trayY;
+    [
+        { label:"Indoor Tiles deck", back:1, shuffleTags:[ "indoor-tile" ], tags:[ "tile", "indoor-tile" ], front:[  10, 11, 12, 13, 14, 15, 16], backgroundColor: { r: 100, g: 100, b: 255, a: 1 }},
+        { label:"Outdoor Tiles deck", back:0, shuffleTags:[ "outdoor-tile" ], tags:[ "tile", "outdoor-tile" ], front: [ 2, 3, 4, 5, 6, 8, 9 ], backgroundColor: { r: 100, g: 255, b: 100, a: 1 } },
+    ].forEach((set,setId)=>{
+        trayX = setId*(TABLE_TILE_WIDTH+TABLE_TRAY_MARGIN*3);
+        trayY = TABLE_TRAY_HEIGHT+TABLE_TRAY_DISTANCE;
+        table.data.push({
+            type:"tray-custom",
+            data:{
+                x: trayX,
+                y: trayY,
+                width: TABLE_TILE_WIDTH+TABLE_TRAY_MARGIN*2,
+                height: TABLE_TILE_TRAY_HEIGHT,
+                frame: true,
+                mode: -1,
+                backgroundColor: set.backgroundColor,
+                labelText: {
+                    EN: set.label
+                },
+                label: {
+                    right: 5,
+                    bottom: 5,
+                    x: 5,
+                    textAlign: "center",
+                    fontSize: 5,
+                    lineHeight: 7
+                },
+                messages:{
+                    shake:false
+                },
+                onResetMacro:{
+                    getElementsByTag:set.shuffleTags,
+                    forEach:{
+                        setSide:false,
+                        shuffleZIndex:true,
+                        shuffle:true,
+                        setRotation:0,
+                        moveTo:{
+                            x:TABLE_TRAY_MARGIN,
+                            y:TABLE_TRAY_MARGIN,
+                            gapX:0,
+                            gapY:TABLE_TILE_GAPY
+                        }
+                    }
+                }
+            }
+        });
+        set.front.forEach((front,id)=>{
+            table.data.push({
+                type: "token-custom",
+                data: {
+                    x: trayX+TABLE_TRAY_MARGIN,
+                    y: trayY+TABLE_TRAY_MARGIN,
+                    width: TABLE_TILE_WIDTH,
+                    height: TABLE_TILE_HEIGHT,
+                    tags:set.tags,
+                    isRotating:true,
+                    isFlippable:true,
+                    frame:{
+                        borderSize:0
+                    },
+                    image:{
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "tiles.png",
+                            meta: {
+                                sprite: {
+                                    width: TILE_WIDTH,
+                                    height: TILE_HEIGHT,
+                                    gapX:TABLE_TILE_SPACING_X,
+                                    frame:set.back
+                                }
+                            }
+                        }
+                    },
+                    flipImage: {
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "tiles.png",
+                            meta: {
+                                sprite: {
+                                    width: TILE_WIDTH,
+                                    height: TILE_HEIGHT,
+                                    gapX:TABLE_TILE_SPACING_X,
+                                    frame:front
+                                }
+                            }
+                        }
+                    },
+                    snapTo:{
+                        grid:{
+                            x:0,
+                            y:0,
+                            width:TABLE_TILE_WIDTH,
+                            height:TABLE_TILE_HEIGHT
+                        }
+                    },
+                    onShakeMacro:false,
+                    onDropMacro:{
+                        forEach: { setSide:true }
+                    },
+                    mode: 0
+                }
+            });
+        
+        })
+    })
+
+    // Prepare patio tile
+
+    table.data.push({
+        type: "token-custom",
+        data: {
+            x: trayX+TABLE_TILE_WIDTH+TABLE_TRAY_MARGIN*3,
+            y: trayY+TABLE_TRAY_MARGIN,
+            width: TABLE_TILE_WIDTH,
+            height: TABLE_TILE_HEIGHT,
+            tags:[ "tile", "patio-tile" ],
+            isRotating:true,
+            frame:{
+                borderSize:0
+            },
+            image:{
+                image: {
+                    isResource: true,
+                    type: "url",
+                    url: "tiles.png",
+                    meta: {
+                        sprite: {
+                            width: TILE_WIDTH,
+                            height: TILE_HEIGHT,
+                            gapX:TABLE_TILE_SPACING_X,
+                            frame:7
+                        }
+                    }
+                }
+            },
+            snapTo:{
+                grid:{
+                    x:0,
+                    y:0,
+                    width:TABLE_TILE_WIDTH,
+                    height:TABLE_TILE_HEIGHT
+                }
+            },
+            onShakeMacro:false,
+            mode: 0
+        }
+    });
+
+    // Prepare foyer tile
+
+    table.data.push({
+        type: "token-custom",
+        data: {
+            x: TABLE_TILE_WIDTH * 7,
+            y: TABLE_TILE_WIDTH * 3,
+            width: TABLE_TILE_WIDTH,
+            height: TABLE_TILE_HEIGHT,
+            tags:[ "tile", "foyer-tile" ],
+            frame:{
+                borderSize:0
+            },
+            image:{
+                image: {
+                    isResource: true,
+                    type: "url",
+                    url: "tiles.png",
+                    meta: {
+                        sprite: {
+                            width: TILE_WIDTH,
+                            height: TILE_HEIGHT,
+                            gapX:TABLE_TILE_SPACING_X,
+                            frame:17
+                        }
+                    }
+                }
+            },
+            snapTo:{
+                grid:{
+                    x:0,
+                    y:0,
+                    width:TABLE_TILE_WIDTH,
+                    height:TABLE_TILE_HEIGHT
+                }
+            },
+            onShakeMacro:false,
+            mode: 0
+        }
+    });
+
+    // Prepare player token
+
+    table.data.push({
+        type: "token-2",
+        data: {
+            x: TABLE_TILE_WIDTH * 7+17,
+            y: TABLE_TILE_WIDTH * 3+17,
+            isVariableZIndex: false,
+            zIndexGroup:2,
+            backgroundColor: {
+                r: 255,
+                g: 100,
+                b: 100,
+                a: 1
+            },
+            snapTo:{
+                tags:[ "tile" ]
+            },
+            mode: 2,
+            isTransparent: true
+        }
+    });
+
+    // Prepare table data
+
+    area.innerText = JSON.stringify(table);
+    
+}
+
+function onl() {
+
+    let
+        loaded = 0;
+
+    IMAGES.forEach(image=>{
+        let
+            img = document.createElement("img"),
+            asset = {
+                url:image,
+                canvas:document.createElement("canvas"),
+            };
+
+        assets.push(asset);
+
+        img.onload=()=>{
+            asset.ctx = asset.canvas.getContext("2d");
+            asset.canvas.width = img.width;
+            asset.canvas.height = img.height;
+            asset.ctx.drawImage(img,0,0);
+            document.body.removeChild(img);
+            loaded++;
+            if (loaded == IMAGES.length)
+                process();
+        }
+
+        img.src = image;
+        document.body.appendChild(img);
+        
+    });
+
+}
+
+</script>
+</html>

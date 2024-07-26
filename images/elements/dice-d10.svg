@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="65mm"
+   height="65mm"
+   viewBox="0 0 65 65"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="dice-d10.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.1619135"
+     inkscape:cx="227.57617"
+     inkscape:cy="106.61851"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer5" />
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2033-0"
+       x="-0.051709754"
+       y="-0.051709754"
+       width="1.1034195"
+       height="1.1034195">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.3682965"
+         id="feGaussianBlur2035-6" />
+    </filter>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="dice"
+     style="display:inline;stroke-width:0.170621"
+     transform="matrix(2.4204297,0,0,2.4214443,-40.357917,-45.861849)">
+    <circle
+       style="display:inline;opacity:0.281437;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:9.19811;stroke-linecap:square;stroke-linejoin:bevel;paint-order:stroke fill markers;filter:url(#filter2033-0)"
+       id="path873-1"
+       cx="32.5"
+       cy="32.5"
+       r="31.753309"
+       transform="matrix(0.37937062,0,0,0.34021506,17.771687,21.304625)" />
+    <g
+       id="g1237"
+       transform="translate(1.6822009,0.08885377)"
+       style="display:inline;opacity:1;stroke-width:0.413063">
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.65225;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         d="m 28.454248,20.376912 -12.116003,9.056407 -0.305959,5.874425 12.483152,8.872831 12.299575,-8.934021 -0.18357,-5.874427 z"
+         id="path1619" />
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.413063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         d="m 28.454246,20.376912 -7.710181,15.175601 7.710183,3.671517 7.710185,-3.73271 -7.710187,-15.114408"
+         id="path1687" />
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:#ff2ad4;fill-opacity:1;stroke:#000000;stroke-width:0.413063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         d="m 16.032286,35.307744 4.711779,0.244769"
+         id="path1755" />
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:#ff2ad4;fill-opacity:1;stroke:#000000;stroke-width:0.413063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         d="m 36.164433,35.49132 4.65058,-0.244766"
+         id="path1823" />
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:#ff2ad4;fill-opacity:1;stroke:#000000;stroke-width:0.413063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         d="M 28.515436,44.180575 28.454246,39.22403"
+         id="path1858" />
+    </g>
+  </g>
+</svg>

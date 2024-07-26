@@ -1,0 +1,270 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Conquer the Kingdom",
+			"IT": "Conquer the Kingdom"
+		},
+		"author": {
+			"EN": "Sloan"
+		},
+		"description": {
+			"EN": "Roll 2 dice and attempt to fight or talk your way across a randomly generated map to the final battle for the glory of the kingdom!",
+			"IT": "Lancia 2 dadi e prova a combattere o parlare, attraversando una mappa generata casualmente fino a raggiungere la battaglia finale e conquistare la gloria del regno!"
+		},
+		"players": {
+			"EN": "1"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://sloank.itch.io/conquer-the-kingdom"
+			}
+		},
+		"categories": [
+			"adventure"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 279,
+				"height": 216,
+				"frame": true,
+				"isReadOnly": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "sheet",
+			"data": {
+				"x": 289,
+				"y": 0,
+				"width": 216,
+				"height": 279,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-2-EN.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "token-2",
+			"data": {
+				"x": 390,
+				"y": 228,
+				"isVariableZIndex": false,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				},
+				"mode": 2,
+				"isTransparent": true
+			}
+		},
+		{
+			"type": "stamp-custom",
+			"data": {
+				"x": 420,
+				"y": 228,
+				"isVariableZIndex": false,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"width": 20,
+				"height": 20,
+				"frame": true,
+				"stamps": [
+					{
+						"title": {
+							"EN": "1-4. (Blank)"
+						},
+						"frame": 2
+					},
+					{
+						"title": {
+							"EN": "5-6. Mountain"
+						},
+						"frame": 0
+					},
+					{
+						"title": {
+							"EN": "Swamp"
+						},
+						"frame": 1
+					},
+					{
+						"title": {
+							"EN": "2. Dragon lair"
+						},
+						"frame": 3
+					},
+					{
+						"title": {
+							"EN": "3. Deep mines"
+						},
+						"frame": 4
+					},
+					{
+						"title": {
+							"EN": "4. Magic pond"
+						},
+						"frame": 5
+					},
+					{
+						"title": {
+							"EN": "5. Ancient ruins"
+						},
+						"frame": 6
+					},
+					{
+						"title": {
+							"EN": "6. Roadside inn"
+						},
+						"frame": 7
+					},
+					{
+						"title": {
+							"EN": "7. Forest"
+						},
+						"frame": 8
+					},
+					{
+						"title": {
+							"EN": "8. Village"
+						},
+						"frame": 9
+					},
+					{
+						"title": {
+							"EN": "9. Bandit camp"
+						},
+						"frame": 10
+					},
+					{
+						"title": {
+							"EN": "10. Town"
+						},
+						"frame": 11
+					},
+					{
+						"title": {
+							"EN": "11. Fortress"
+						},
+						"frame": 12
+					},
+					{
+						"title": {
+							"EN": "12. Wizard tower"
+						},
+						"frame": 13
+					},
+					{
+						"title": {
+							"EN": "(Destroy)"
+						},
+						"frame": 14
+					}
+				],
+				"stampsImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "stamps.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "tray",
+			"data": {
+				"x": 204,
+				"y": 224,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"mode": 0
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 212,
+				"y": 240,
+				"backgroundColor": {
+					"r": 100,
+					"g": 255,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 256,
+				"y": 240,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 172,
+				"y": 232,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 172,
+				"y": 252,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,80 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Racetrack",
+			"IT": "Formula 1"
+		},
+		"license": {
+			"EN": "Public domain",
+			"IT": "Pubblico dominio"
+		},
+		"description": {
+			"EN": "An abstract car racing simulation of unknown origins.",
+			"IT": "Una simulazione di corse automobilistiche astratta dalle origini sconosciute."
+		},
+		"players": {
+			"EN": "2-8"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/boardgame/18481/racetrack"
+			}
+		},
+		"manualUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://en.wikipedia.org/wiki/Racetrack_%28game%29"
+			},
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://it.wikipedia.org/wiki/Formula_1_(gioco)"
+			}
+		},
+		"categories": [
+			"racing"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 210,
+				"height": 297,
+				"frame": true,
+				"pattern": {
+					"type": 2,
+					"width": 5
+				},
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "line-ruler",
+			"data": {
+				"x": 90,
+				"y": 245,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"previewTool": {
+					"border": true
+				}
+			}
+		}
+	]
+}

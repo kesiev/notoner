@@ -1,0 +1,187 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Reiner Knizia's Decathlon",
+			"IT": "Reiner Knizia's Decathlon"
+		},
+		"author": {
+			"EN": "Reiner Knizia"
+		},
+		"description": {
+			"EN": "A series of 10 short dice games with the loose theme of the events of an Olympic Decathlon.",
+			"IT": "Una serie di 10 brevi giochi di dadi vagamente ispirati agli eventi di un Decathlon Olimpico."
+		},
+		"players": {
+			"EN": "Any",
+			"IT": "Qualsiasi"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/boardgame/6955/reiner-knizias-decathlon"
+			}
+		},
+		"manualUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://knizia.de/wp-content/uploads/reiner/pdfs/Knizia-Website-Decathlon.pdf"
+			}
+		},
+		"categories": [
+			"pushYourLuck"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 216,
+				"height": 139,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "tray",
+			"data": {
+				"x": 235,
+				"y": 70,
+				"mode": 1,
+				"backgroundColor": {
+					"r": 255,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "tray",
+			"data": {
+				"x": 235,
+				"y": 8,
+				"mode": 1,
+				"backgroundColor": {
+					"r": 20,
+					"g": 20,
+					"b": 20,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 224,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 242,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 260,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 278,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 224,
+				"y": 25,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 224,
+				"y": 50,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 242,
+				"y": 50,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 260,
+				"y": 50,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		}
+	]
+}

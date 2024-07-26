@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="65mm"
+   height="65mm"
+   viewBox="0 0 65 65"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="dice-d6-pips-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.1619135"
+     inkscape:cx="227.57617"
+     inkscape:cy="106.15596"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer6" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="dice"
+     style="display:inline">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:8;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect1012"
+       width="50.911686"
+       height="50.911686"
+       x="7.044157"
+       y="7.044157" />
+    <circle
+       style="display:inline;fill:#000000;stroke:none;stroke-width:1"
+       id="path55-9-3-48"
+       cx="18.59189"
+       cy="18.800949"
+       r="4.1657777" />
+    <circle
+       style="display:inline;fill:#000000;stroke:none;stroke-width:1"
+       id="path55-6-0-5-2"
+       cx="18.59189"
+       cy="46.199051"
+       r="4.1657777" />
+    <circle
+       style="display:inline;fill:#000000;stroke:none;stroke-width:1"
+       id="path55-3-3-6-2-90"
+       cx="32.500008"
+       cy="32.500004"
+       r="4.1657777" />
+    <circle
+       style="display:inline;fill:#000000;stroke:none;stroke-width:1"
+       id="path55-2-7-7-5"
+       cx="46.408108"
+       cy="18.800949"
+       r="4.1657777" />
+    <circle
+       style="display:inline;fill:#000000;stroke:none;stroke-width:1"
+       id="path55-6-1-2-6-9"
+       cx="46.408108"
+       cy="46.199051"
+       r="4.1657777" />
+  </g>
+</svg>

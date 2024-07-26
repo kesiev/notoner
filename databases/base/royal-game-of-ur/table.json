@@ -1,0 +1,752 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Royal Game of Ur",
+			"IT": "Gioco Reale di Ur"
+		},
+		"license": {
+			"EN": "Public domain",
+			"IT": "Pubblico dominio"
+		},
+		"description": {
+			"EN": "A two-player strategy race board game that was first played in ancient Mesopotamia during the early third millennium BC.",
+			"IT": "Un gioco da tavolo di corse strategico per due giocatori giocato per la prima volta nell'antica Mesopotamia all'inizio del III millennio a.C."
+		},
+		"players": {
+			"EN": "2"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://en.wikipedia.org/wiki/Royal_Game_of_Ur"
+			},
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://it.wikipedia.org/wiki/Gioco_reale_di_Ur"
+			}
+		},
+		"categories": [
+			"strategy"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 297,
+				"height": 210,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-IT.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "tray",
+			"data": {
+				"x": 219,
+				"y": -24,
+				"mode": 0,
+				"backgroundColor": {
+					"r": 20,
+					"g": 20,
+					"b": 20,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 224,
+				"y": -23,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"isRotating": true,
+				"faces": [
+					{
+						"value": 1,
+						"frame": 2,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					},
+					{
+						"value": 0,
+						"frame": 4,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2
+							}
+						}
+					}
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 3
+							}
+						}
+					}
+				},
+				"width": 20,
+				"height": 20
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 259,
+				"y": -24,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"isRotating": true,
+				"faces": [
+					{
+						"value": 1,
+						"frame": 2,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					},
+					{
+						"value": 0,
+						"frame": 4,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2
+							}
+						}
+					}
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 3
+							}
+						}
+					}
+				},
+				"width": 20,
+				"height": 20
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 233,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"isRotating": true,
+				"faces": [
+					{
+						"value": 1,
+						"frame": 2,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					},
+					{
+						"value": 0,
+						"frame": 4,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2
+							}
+						}
+					}
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 3
+							}
+						}
+					}
+				},
+				"width": 20,
+				"height": 20
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 269,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"isRotating": true,
+				"faces": [
+					{
+						"value": 1,
+						"frame": 2,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					},
+					{
+						"value": 0,
+						"frame": 4,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-d4.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2
+							}
+						}
+					}
+				},
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 3
+							}
+						}
+					}
+				},
+				"width": 20,
+				"height": 20
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 110,
+				"y": 101,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 88,
+				"y": 100,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 87,
+				"y": 120,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 106,
+				"y": 121,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 126,
+				"y": 112,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 85,
+				"y": 42,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 1
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 86,
+				"y": 23,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 1
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 125,
+				"y": 32,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 1
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 106,
+				"y": 41,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 1
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 106,
+				"y": 22,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 1
+			}
+		}
+	]
+}

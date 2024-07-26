@@ -1,0 +1,132 @@
+{
+	"meta": {
+		"id": "system-splash",
+		"title": {
+			"EN": "Welcome to Notoner!",
+			"IT": "Benvenuti su Notoner!"
+		},
+		"description": {
+			"EN": "Welcome to Notoner!",
+			"IT": "Benvenuti su Notoner!"
+		},
+		"categories": [
+			"system"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 297,
+				"height": 210,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-IT.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "tray",
+			"data": {
+				"x": 215,
+				"y": 147,
+				"mode": 0,
+				"backgroundColor": {
+					"r": 20,
+					"g": 20,
+					"b": 20,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d20",
+			"data": {
+				"x": 149,
+				"y": 168,
+				"backgroundColor": {
+					"r": 255,
+					"g": 127,
+					"b": 42,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 130,
+				"y": 175,
+				"backgroundColor": {
+					"r": 0,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d12",
+			"data": {
+				"x": 135,
+				"y": 151,
+				"backgroundColor": {
+					"r": 255,
+					"g": 42,
+					"b": 42,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d10",
+			"data": {
+				"x": 265,
+				"y": 163,
+				"backgroundColor": {
+					"r": 255,
+					"g": 42,
+					"b": 212,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d8",
+			"data": {
+				"x": 219,
+				"y": 151,
+				"backgroundColor": {
+					"r": 170,
+					"g": 135,
+					"b": 222,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6",
+			"data": {
+				"x": 229,
+				"y": 175,
+				"backgroundColor": {
+					"r": 0,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		}
+	]
+}

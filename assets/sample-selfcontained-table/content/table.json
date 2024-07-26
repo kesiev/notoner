@@ -1,0 +1,231 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Sample ZIP table",
+			"IT": "Tavolo ZIP di esempio"
+		},
+		"description": {
+			"EN": "A sample ZIP table with custom resources.",
+			"IT": "Un esempio di tavolo ZIP contenente risorse personalizzate."
+		}
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 210,
+				"height": 297,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "svg",
+						"file": "sheet-1.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 300,
+				"width": 420,
+				"height": 297,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "canvas",
+						"file": "sheet-2.png"
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"x": 220,
+				"y": 0,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"frame": true,
+				"isRotating": true,
+				"faces": [
+					{
+						"value": 9,
+						"frame": 0,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"value": 10,
+						"frame": 1,
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"value": 11,
+						"frame": 2,
+						"label": {
+							"EN": "J"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"value": 12,
+						"frame": 3,
+						"label": {
+							"EN": "Q"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"value": 13,
+						"frame": 4,
+						"label": {
+							"EN": "K"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					},
+					{
+						"value": 14,
+						"frame": 5,
+						"label": {
+							"EN": "A"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/elements/dice-default.svg"
+						}
+					}
+				],
+				"facesImage": {
+					"image": {
+						"isResource": true,
+						"type": "svg",
+						"file": "dice-poker.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2
+							}
+						}
+					}
+				},
+				"width": 20,
+				"height": 20
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 106,
+				"y": 121,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "svg",
+						"file": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "svg",
+						"file": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 126,
+				"y": 121,
+				"width": 20,
+				"height": 20,
+				"isFlippable": true,
+				"image": {
+					"image": {
+						"isResource": true,
+						"type": "svg",
+						"file": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 0
+							}
+						}
+					}
+				},
+				"flipImage": {
+					"image": {
+						"isResource": true,
+						"type": "svg",
+						"file": "sprites.svg",
+						"meta": {
+							"sprite": {
+								"width": 20,
+								"height": 20,
+								"gapX": 2,
+								"frame": 1
+							}
+						}
+					}
+				},
+				"mode": 2,
+				"side": 0
+			}
+		}
+	]
+}

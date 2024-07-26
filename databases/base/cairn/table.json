@@ -1,0 +1,338 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Cairn",
+			"IT": "Cairn"
+		},
+		"author": {
+			"EN": "Yochai Gal"
+		},
+		"license": {
+			"EN": "CC-BY-SA 4.0"
+		},
+		"licenseUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+			}
+		},
+		"description": {
+			"EN": "Adventure game about exploring a dark & mysterious Wood filled with strange folk, hidden treasure, and unspeakable monstrosities.",
+			"IT": "Un gioco d'avventura sull'esplorazione di un Bosco oscuro e misterioso pieno di gente strana, tesori nascosti e mostruosit&agrave; indicibili."
+		},
+		"manualUrl": {
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://it.cairnrpg.com/"
+			},
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://cairnrpg.com/"
+			}
+		},
+		"categories": [
+			"rpg"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 198,
+				"height": 306,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg"
+					},
+					"IT": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-IT.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "tray",
+			"data": {
+				"x": 210,
+				"y": 210,
+				"mode": 0,
+				"backgroundColor": {
+					"r": 20,
+					"g": 20,
+					"b": 20,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d4",
+			"data": {
+				"x": 210,
+				"y": 0,
+				"backgroundColor": {
+					"r": 95,
+					"g": 211,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d4",
+			"data": {
+				"x": 230,
+				"y": 0,
+				"backgroundColor": {
+					"r": 95,
+					"g": 211,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d4",
+			"data": {
+				"x": 250,
+				"y": 0,
+				"backgroundColor": {
+					"r": 95,
+					"g": 211,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6",
+			"data": {
+				"x": 210,
+				"y": 30,
+				"backgroundColor": {
+					"r": 95,
+					"g": 95,
+					"b": 211,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6",
+			"data": {
+				"x": 230,
+				"y": 30,
+				"backgroundColor": {
+					"r": 95,
+					"g": 95,
+					"b": 211,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6",
+			"data": {
+				"x": 250,
+				"y": 30,
+				"backgroundColor": {
+					"r": 95,
+					"g": 95,
+					"b": 211,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d8",
+			"data": {
+				"x": 210,
+				"y": 60,
+				"backgroundColor": {
+					"r": 211,
+					"g": 95,
+					"b": 211,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d8",
+			"data": {
+				"x": 230,
+				"y": 60,
+				"backgroundColor": {
+					"r": 211,
+					"g": 95,
+					"b": 211,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d8",
+			"data": {
+				"x": 250,
+				"y": 60,
+				"backgroundColor": {
+					"r": 211,
+					"g": 95,
+					"b": 211,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d10",
+			"data": {
+				"x": 210,
+				"y": 90,
+				"backgroundColor": {
+					"r": 255,
+					"g": 42,
+					"b": 212,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d10",
+			"data": {
+				"x": 230,
+				"y": 90,
+				"backgroundColor": {
+					"r": 255,
+					"g": 42,
+					"b": 212,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d10",
+			"data": {
+				"x": 250,
+				"y": 90,
+				"backgroundColor": {
+					"r": 255,
+					"g": 42,
+					"b": 212,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d12",
+			"data": {
+				"x": 210,
+				"y": 120,
+				"backgroundColor": {
+					"r": 211,
+					"g": 95,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d12",
+			"data": {
+				"x": 230,
+				"y": 120,
+				"backgroundColor": {
+					"r": 211,
+					"g": 95,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d12",
+			"data": {
+				"x": 250,
+				"y": 120,
+				"backgroundColor": {
+					"r": 211,
+					"g": 95,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d20",
+			"data": {
+				"x": 210,
+				"y": 150,
+				"backgroundColor": {
+					"r": 255,
+					"g": 127,
+					"b": 42,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d20",
+			"data": {
+				"x": 230,
+				"y": 150,
+				"backgroundColor": {
+					"r": 255,
+					"g": 127,
+					"b": 42,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d20",
+			"data": {
+				"x": 250,
+				"y": 150,
+				"backgroundColor": {
+					"r": 255,
+					"g": 127,
+					"b": 42,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d100",
+			"data": {
+				"x": 210,
+				"y": 180,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d10-ten",
+			"data": {
+				"x": 235,
+				"y": 180,
+				"backgroundColor": {
+					"r": 255,
+					"g": 2,
+					"b": 52,
+					"a": 1
+				}
+			}
+		}
+	]
+}

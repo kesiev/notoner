@@ -1,0 +1,464 @@
+<html>
+    <body onload="onl()"></body>
+<script>
+
+const
+    IMAGES =  [
+        "original/7dw-p1.png",
+        "original/7dw-p2.png",
+        "original/7dw-p3.png"
+    ];
+
+let
+    assets = [];
+
+function process() {
+
+    let
+        table = {
+            meta: {
+                title: {
+                    EN: "7 Dice Wonders",
+                    IT: "7 Dice Wonders"
+                },
+                author: {
+                    EN: "Konrad Anft"
+                },
+                description: {
+                    EN: "A print-and-play dice game based on \"7 Wonders\" by Antoine Bauza.",
+                    IT: "Un gioco di dadi print-and-play basato su \"7 Wonders\" di Antoine Bauza."
+                },
+                players: {
+                    EN: "1-4"
+                },
+                url: {
+                    EN: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://boardgamegeek.com/boardgame/143085/7-dice-wonders"
+                    }
+                },
+                manualUrl: {
+                    EN: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://boardgamegeek.com/filepage/93227/7-dice-wonders-ruleset-for-version-09"
+                    }
+                },
+                categories: [
+                    "strategy"
+                ]
+            },
+            data: []
+        };
+
+    let
+        area = document.createElement("textarea");
+
+    document.body.appendChild(area);
+
+    // Prepare sheet
+
+    const
+        SHEET_TABLE_WIDTH = 150,
+        SHEET_TABLE_HEIGHT = SHEET_TABLE_WIDTH*0.7,
+        SHEET_TABLE_SPACING = 20,
+        SHEET_WIDTH = 1500,
+        SHEET_HEIGHT = SHEET_WIDTH*0.7;
+
+    let
+        sheet = document.createElement("canvas"),
+        sctx = sheet.getContext("2d");
+
+    sheet.style.border = "1px solid #f00";
+    sheet.style.margin = "5px";
+
+    sheet.width = SHEET_WIDTH;
+    sheet.height = SHEET_HEIGHT;
+    document.body.appendChild(sheet);
+
+    sctx.drawImage(assets[2].canvas,4,4,1740,1220,0,0,SHEET_WIDTH,SHEET_HEIGHT);
+
+    table.data.push({
+        type:"sheet",
+        data:{
+            x:0,
+            y:0,
+            width:SHEET_TABLE_WIDTH,
+            height:SHEET_TABLE_HEIGHT,
+            frame:true,
+            model:{EN:{
+                isResource:true,
+                type:"url",
+                url:"sheet-1.png"
+            }}
+        }
+    },{
+        type:"sheet",
+        data:{
+            x:0,
+            y:SHEET_TABLE_HEIGHT+SHEET_TABLE_SPACING,
+            width:SHEET_TABLE_WIDTH,
+            height:SHEET_TABLE_HEIGHT,
+            frame:true,
+            model:{EN:{
+                isResource:true,
+                type:"url",
+                url:"sheet-1.png"
+            }}
+        }
+    });
+
+    // Prepare automa card
+
+    const
+        AUTOCARD_TABLE_WIDTH = 150,
+        AUTOCARD_TABLE_HEIGHT = AUTOCARD_TABLE_WIDTH*0.7,
+        AUTOCARD_WIDTH = 800,
+        AUTOCARD_HEIGHT = AUTOCARD_WIDTH*0.7;
+
+    let
+        autocard = document.createElement("canvas"),
+        actx = autocard.getContext("2d");
+
+    autocard.style.border = "1px solid #f00";
+    autocard.style.margin = "5px";
+
+    autocard.width = AUTOCARD_WIDTH;
+    autocard.height = AUTOCARD_HEIGHT;
+    document.body.appendChild(autocard);
+
+    actx.translate(0,AUTOCARD_HEIGHT);
+    actx.rotate(-Math.PI/2);
+    actx.drawImage(assets[1].canvas,3901,364,1228,1747,0,0,AUTOCARD_HEIGHT,AUTOCARD_WIDTH);
+
+    table.data.push({
+        type:"sheet",
+        data:{
+            x:SHEET_TABLE_WIDTH+SHEET_TABLE_SPACING,
+            y:SHEET_TABLE_HEIGHT+SHEET_TABLE_SPACING,
+            width:AUTOCARD_TABLE_WIDTH,
+            height:AUTOCARD_TABLE_HEIGHT,
+            frame:true,
+            model:{EN:{
+                isResource:true,
+                type:"url",
+                url:"automa.png"
+            }},
+            isReadOnly:true,
+            isDraggable:true
+        }
+    });
+
+    // Prepare tray
+
+    table.data.push({
+        type: "tray-custom",
+        data: {
+            x: SHEET_TABLE_WIDTH+SHEET_TABLE_SPACING,
+            y: 0,
+            width: SHEET_TABLE_WIDTH,
+            height: SHEET_TABLE_HEIGHT,
+            frame: true,
+            mode: -1,
+            backgroundColor: {
+                r: 100,
+                g: 100,
+                b: 100,
+                a: 1
+            },
+            labelText: {
+                EN: "7 Dice Wonder"
+            },
+            label: {
+                right: 5,
+                bottom: 5,
+                x: 5,
+                textAlign: "center",
+                fontSize: 5,
+                lineHeight: 7
+            }
+        }
+    });
+
+    // Prepare dice
+
+    const
+        DICE_LABELS = [ "A", "B", "C", "D", "E", "F" ],
+        DICE_TABLE_SIZE = 25,
+        DICE_TABLE_SPACING = 10,
+        DICE_TABLE_INNERSPACING = 2,
+        DICE_SIZE = 250,
+        DICE_SPACING = 20,
+        DICE_ROWS = [
+            { y:520, x:641 }, 
+            { y:904, x:637 }, 
+            { y:1288, x:636 }, 
+            { y:1680, x:636 }, 
+            { y:2068, x:631 }, 
+            { y:2458, x:631 }, 
+            { y:2837, x:629 }
+        ];
+
+    let
+        dice = document.createElement("canvas"),
+        dctx = dice.getContext("2d");
+
+    dice.style.border = "1px solid #f00";
+    dice.style.margin = "5px";
+
+    dice.width = ((DICE_SIZE+DICE_SPACING)*6*DICE_ROWS.length)-DICE_SPACING;
+    dice.height = DICE_SIZE;
+    document.body.appendChild(dice);
+
+    for (let i=0;i<DICE_ROWS.length;i++) {
+
+        let
+            faces = [];
+
+        for (let j=0;j<6;j++) {
+            let
+                frame = (6*i+j);
+
+            dctx.drawImage(assets[0].canvas,DICE_ROWS[i].x+(j*357),DICE_ROWS[i].y,353,353,frame*(DICE_SIZE+DICE_SPACING),0,DICE_SIZE,DICE_SIZE);
+            faces.push({
+                frame:frame,
+                label:{ EN:DICE_LABELS[j] },
+                icon:{
+                    isResource: true,
+                    type: "url",
+                    url: "/images/elements/dice-default.svg"
+                }
+            });
+
+        }
+
+        table.data.push({
+            type:"dice-custom",
+            data:{
+                x:10+(SHEET_TABLE_WIDTH+SHEET_TABLE_SPACING)+((DICE_TABLE_SIZE+DICE_TABLE_SPACING)*(i%4)),
+                y:10+Math.floor(i/4)*(DICE_TABLE_SIZE+DICE_TABLE_SPACING),
+                width:DICE_TABLE_SIZE,
+                height:DICE_TABLE_SIZE,
+                frame:true,
+                backgroundColor: { r: 255, g: 255, b: 255, a: 1 },
+                faces:faces,
+                isRotating:true,
+                facesImage:{
+                    x:DICE_TABLE_INNERSPACING,
+                    y:DICE_TABLE_INNERSPACING,
+                    width:DICE_TABLE_SIZE-(DICE_TABLE_INNERSPACING*2),
+                    height:DICE_TABLE_SIZE-(DICE_TABLE_INNERSPACING*2),
+                    image: {
+						isResource: true,
+						type: "url",
+						url: "dice-resources.png",
+						meta: {
+							sprite: {
+								width: DICE_SIZE,
+								height: DICE_SIZE,
+								gapX: DICE_SPACING
+							}
+						}
+					}
+                }
+            }
+        });
+    }
+
+    // Prepare cards
+
+    const
+        TABLE_CARD_WIDTH = 150,
+        TABLE_CARD_HEIGHT =  TABLE_CARD_WIDTH*0.7,
+        CARD_WIDTH = 800,
+        CARD_HEIGHT = CARD_WIDTH*0.7,
+        CARD_SPACING = 20,
+        CARDS = [
+            { label:"Temple of Artemis", sides: [ { x:3163, y: 922 }, { x:2102, y: 351} ] },
+            { label:"Mausoleum of Halicarnassus", sides: [ { x:4917, y: 919 }, { x:353, y: 351} ] },
+            { label:"Colossus of Rhodes", sides: [ { x:3165, y: 2155 }, { x:2102, y:1582} ] },
+            { label:"Pyramids of Giza", sides: [ { x:4919, y: 2155 }, { x:354, y: 1581} ] },
+            { label:"Gardens of Babylon", sides: [ { x:1413, y: 3385 }, { x:3860, y: 2816} ] },
+            { label:"Statue of Zeus", sides: [ { x:3168, y: 3387 }, { x:2105, y: 2814} ] },
+            { label:"Lighthouse of Alexandria",sides: [ { x:4920, y: 3387 }, { x:359, y: 2817} ] }
+        ];
+
+    let
+        cards = document.createElement("canvas"),
+        cctx = cards.getContext("2d"),
+        cardfaces = [];
+
+    cards.style.border = "1px solid #f00";
+    cards.style.margin = "5px";
+
+    cards.width = ((CARD_WIDTH+CARD_SPACING)*2*CARDS.length)-CARD_SPACING;
+    cards.height = CARD_HEIGHT;
+    document.body.appendChild(cards);
+
+    for (let i=0;i<CARDS.length;i++) {
+
+        let
+            frame = 2*i;
+
+        for (let j=0;j<2;j++)
+            cctx.drawImage(assets[j].canvas,CARDS[i].sides[j].x,CARDS[i].sides[j].y,1742,1220,(frame+j)*(CARD_WIDTH+CARD_SPACING),0,CARD_WIDTH,CARD_HEIGHT);
+
+        cardfaces.push({
+            frame:frame+1,
+            label:{ EN:CARDS[i].label+" (A)" },
+            icon:{
+                isResource: true,
+                type: "url",
+                url: "/images/elements/dice-default.svg"
+            }
+        });
+
+        cardfaces.push({
+            frame:frame,
+            label:{ EN:CARDS[i].label+" (B)" },
+            icon:{
+                isResource: true,
+                type: "url",
+                url: "/images/elements/dice-default.svg"
+            }
+        });
+
+    }
+
+    for (let i=0;i<2;i++)
+        table.data.push({
+            type:"dice-custom",
+            data:{
+                x:-TABLE_CARD_WIDTH-SHEET_TABLE_SPACING,
+                y:i*(TABLE_CARD_HEIGHT+SHEET_TABLE_SPACING),
+                width:TABLE_CARD_WIDTH,
+                height:TABLE_CARD_HEIGHT,
+                frame:true,
+                backgroundColor: { r: 0, g: 0, b: 0, a: 1 },
+                faces:cardfaces,
+                facesImage:{
+                    image: {
+                        isResource: true,
+                        type: "url",
+                        url: "wonders.png",
+                        meta: {
+                            sprite: {
+                                width: CARD_WIDTH,
+                                height: CARD_HEIGHT,
+                                gapX: CARD_SPACING
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    // Prepare automa dice
+
+    const
+        AUTODICE_LABELS = [ "A", "B", "C", "D", "E", "F" ],
+        AUTODICE_TABLE_SIZE = 30,
+        AUTODICE_TABLE_SPACING = 10,
+        AUTODICE_TABLE_INNERSPACING = 2,
+        AUTODICE_SIZE = 300,
+        AUTODICE_SPACING = 20;
+
+    let
+        autodice = document.createElement("canvas"),
+        adctx = autodice.getContext("2d"),
+        autofaces = [];
+
+    autodice.style.border = "1px solid #f00";
+    autodice.style.margin = "5px";
+
+    autodice.width = ((AUTODICE_SIZE+AUTODICE_SPACING)*6)-DICE_SPACING;
+    autodice.height = AUTODICE_SIZE;
+    document.body.appendChild(autodice);
+
+    for (let j=0;j<6;j++) {
+        adctx.drawImage(assets[1].canvas,2352+(j*359)+(j == 4 ? 1 : 0),4103,349,349,j*(AUTODICE_SIZE+AUTODICE_SPACING),0,AUTODICE_SIZE,AUTODICE_SIZE);
+        autofaces.push({
+                frame:j,
+                label:{ EN:DICE_LABELS[j] },
+                icon:{
+                    isResource: true,
+                    type: "url",
+                    url: "/images/elements/dice-default.svg"
+                }
+            });
+    }
+
+    table.data.push({
+        type:"dice-custom",
+        data:{
+            x:SHEET_TABLE_WIDTH+SHEET_TABLE_SPACING+14,
+            y:SHEET_TABLE_HEIGHT+SHEET_TABLE_SPACING,
+            width:AUTODICE_TABLE_SIZE,
+            height:AUTODICE_TABLE_SIZE,
+            frame:true,
+            backgroundColor: { r: 255, g: 255, b: 255, a: 1 },
+            faces:autofaces,
+            isRotating:true,
+            facesImage:{
+                x:AUTODICE_TABLE_INNERSPACING,
+                y:AUTODICE_TABLE_INNERSPACING,
+                width:AUTODICE_TABLE_SIZE-(AUTODICE_TABLE_INNERSPACING*2),
+                height:AUTODICE_TABLE_SIZE-(AUTODICE_TABLE_INNERSPACING*2),
+                image: {
+                    isResource: true,
+                    type: "url",
+                    url: "dice-automa.png",
+                    meta: {
+                        sprite: {
+                            width: AUTODICE_SIZE,
+                            height: AUTODICE_SIZE,
+                            gapX: AUTODICE_SPACING
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Prepare table data
+
+    area.innerText = JSON.stringify(table);
+    
+}
+
+function onl() {
+
+    let
+        loaded = 0;
+
+    IMAGES.forEach(image=>{
+        let
+            img = document.createElement("img"),
+            asset = {
+                url:image,
+                canvas:document.createElement("canvas"),
+            };
+
+        assets.push(asset);
+
+        img.onload=()=>{
+            asset.ctx = asset.canvas.getContext("2d");
+            asset.canvas.width = img.width;
+            asset.canvas.height = img.height;
+            asset.ctx.drawImage(img,0,0);
+            document.body.removeChild(img);
+            loaded++;
+            if (loaded == IMAGES.length)
+                process();
+        }
+
+        img.src = image;
+        document.body.appendChild(img);
+        
+    });
+
+}
+
+</script>
+</html>

@@ -1,0 +1,121 @@
+# Table templates base set
+
+These table templates feature most of the Notoner key features. They should be _simple enough_ to help you learn how they work to create [your table templates](../custom/).
+
+ - **[Cairn](cairn/)** - [table.json](cairn/table.json)
+   - Advanced licensing metadata
+   - SVG multi-language printed sheet
+   - Default dice
+   - Tray
+ - **[Poker Dice](poker-dice/)** - [table.json](poker-dice/table.json)
+   - SVG multi-language printed sheet
+   - Custom dice
+   - Tray
+ - **[Royal Game of Ur](royal-game-of-ur/)** - [table.json](royal-game-of-ur/table.json)
+   - SVG multi-language printed sheet
+   - Custom dice
+   - Custom double-sided tokens
+ - **[Reversi](reversi/)** - [table.json](reversi/table.json)
+   - SVG read-only printed sheets
+   - Default double-sided tokens
+ - **[Chess](chess/)** - [table.json](chess/table.json)
+   - SVG read-only printed sheets
+   - Custom tokens with grid snapping
+ - **[Sudoku](sudoku/)** - [table.json](sudoku/table.json)
+   - JavaScript-generated table
+     - Raster printed sheet
+     - Sub-templates with different difficulties
+ - **[Chronicles of Stampadia](stampadia-chronicles/)** - [table.json](stampadia-chronicles/table.json)
+   - Advanced JavaScript-generated table
+     - Raster printed sheet, generated from SVG via [Canvg](https://github.com/canvg/canvg)
+     - Dynamically placed tokens
+     - Default dice
+     - Default tray
+     - Default calculator
+ - **[Maze](maze/)** - [table.json](maze/table.json)
+   - JavaScript-generated table
+     - SVG printed sheet
+     - Simple clock
+     - Sub-templates with different layouts
+ - **[Reiner Knizia's Decathlon](decathlon/)** - [table.json](decathlon/table.json)
+   - Sum/Subtract tray
+ - **[Racetrack](racetrack/)** - [table.json](racetrack/table.json)
+   - SVG printed sheet with pattern overlay (squared paper)
+   - Default ruler
+ - **[Word Blitz](word-blitz/)** - [table.json](word-blitz/table.json)
+   - Manual files inside the template directory
+   - Simple objects composition:
+     - Elements with tags
+     - Multi-language and locked custom dice
+     - Custom tray with fixed text and elements shuffling using tags
+     - Custom countdown
+   - Blank sheet with overlay (ruled paper)
+ - **[Coin Conquest](coin-conquest/)** - [table.json](coin-conquest/table.json)
+   - SVG read-only printed sheet
+   - Custom double-sided tokens with fixed z-index
+   - Custom element-counting tray
+ - **[Coin Conquest](coin-conquest/)** - [table.json](coin-conquest/table.json)
+   - SVG read-only printed sheet
+   - Custom double-sided tokens with fixed z-index
+   - Custom element-counting tray
+ - **[Escape of The Dead Minigame](escape-of-the-dead/)** - [table.json](escape-of-the-dead/table.json)
+   - SVG read-only printed sheet
+   - Custom tokens created by _cutting_ the original page SVG
+   - Default dice with higher zIndexGroup, keeping it always over the tokens
+ - **[7 Dice Wonders](7-dice-wonders/)** - [table.json](7-dice-wonders/table.json)
+   - Custom dice with raster faces
+   - Raster printed sheet
+   - Raster drag-drop read-only sheet simulating a card
+   - Custom dice simulating a deck of cards to pick one card
+ - **[Jigsaw](jigsaw/)** - [table.json](jigsaw/table.json)
+   - Custom tray with fixed text and elements shuffling macro
+   - Custom tokens with clipped image and grid snapping
+   - Raster read-only draggable sheet
+   - Default clock
+ - **[Pulse](pulse/)** - [table.json](pulse/table.json)
+   - Custom catapult with locked target point
+   - Default dice with tool selection macro
+   - Custom compass targeting a single sheet
+   - SVG printed sheet with multiple sizes
+   - Blank sheet with overlay (squared paper)
+   - Default stamp
+ - **[Conquer the Kingdom](conquer-the-kingdom/)** - [table.json](conquer-the-kingdom/table.json)
+   - SVG printed sheet
+   - Default tray
+   - Default dice
+   - Custom stamp with SVG images, no shake, and no rotation
+ - **[Zombie in My Pocket](zombie-in-my-pocket/)** - [table.json](zombie-in-my-pocket/table.json)
+   - SVG printed sheet
+   - Custom tray
+     - Shuffling and discarding at startup macro
+     - Deck-shuffling macro
+     - Custom shake option
+   - Custom double-sided tokens used as tiles with grid snapping
+     - Auto-flipping macro
+   - Custom double-sided tokens used as cards
+   - Default token
+ - **[Goldscrolls](goldscrolls/)** - [table.json](goldscrolls/table.json)
+   - Sub-templates with different characters
+     - SVG printed sheet that can be changed by selecting a sub-template
+     - Custom tokens created by _cutting_ the original page SVG
+     - Default dice
+     - Default tray
+ - **[Klondike](klondike/)** - [table.json](klondike/table.json)
+   - Custom double-sided tokens used as cards
+     - Macro menu option to collect it when it is doable
+     - Macro on click to automatically collect it, flip it to the discard pile, or just flip it
+     - Macro on drop to flip it when dropped on the discard pile area
+     - Macro on drop and click to flip the next face-down card of a row
+   - Custom tray used as deck/discard pile manager
+     - Not draggable but can trigger discard pile flipping from the menu
+   - Custom tray used as card spaces
+     - Noninteractive area
+   - Custom used as default table camera
+     - Invisible
+     - Noninteractive area
+ - **[(System splash)](system-splash/)** - [table.json](system-splash/table.json)
+   - Table template with ID
+   - SVG multi-language printed sheet
+   - Default dice
+
+You can find a JSON descriptor quick reference, scripts, and _neat tricks_ to learn [here](../../assets/).

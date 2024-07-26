@@ -1,0 +1,269 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Pulse",
+			"IT": "Pulsazione"
+		},
+		"author": {
+			"EN": "Encho Chagas"
+		},
+		"players": {
+			"EN": "3-5"
+		},
+		"description": {
+			"EN": "A masterless role-playing game on investigations back in time.",
+			"IT": "Un gioco di ruolo senza master su indagini a ritroso nel tempo."
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://rpggeek.com/rpg/23464/pulse"
+			}
+		},
+		"categories": [
+			"rpg"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"tags": [
+					"circles"
+				],
+				"x": 0,
+				"y": 0,
+				"width": 297,
+				"height": 420,
+				"frame": true,
+				"modelOpacity": 0.1,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "sheet",
+			"data": {
+				"x": -217,
+				"y": 0,
+				"width": 210,
+				"height": 50,
+				"frame": true,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-2.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "sheet-blank-portrait",
+			"data": {
+				"x": -217,
+				"y": 55,
+				"pattern": {
+					"type": 2,
+					"width": 5
+				}
+			}
+		},
+		{
+			"type": "catapult-custom",
+			"data": {
+				"x": 310,
+				"y": 320,
+				"width": 75,
+				"height": 100,
+				"frame": true,
+				"guideLine": true,
+				"backgroundColor": {
+					"r": 25,
+					"g": 25,
+					"b": 25,
+					"a": 1
+				},
+				"center": {
+					"x": 10,
+					"y": 25
+				},
+				"lastPoint": {
+					"x": 285,
+					"y": 345
+				},
+				"isTargetLocked": true,
+				"launchTags": [
+					"type:dice"
+				],
+				"launchOnTags": [
+					"type:sheet"
+				],
+				"onShakeLaunch": true,
+				"onLaunchShake": true
+			}
+		},
+		{
+			"type": "line-custom",
+			"data": {
+				"x": 356,
+				"y": 280,
+				"width": 30,
+				"height": 30,
+				"guideCircle": true,
+				"draw": {
+					"circle": true
+				},
+				"frame": true,
+				"distance": {
+					"max": 80,
+					"step": 7
+				},
+				"backgroundColor": {
+					"r": 25,
+					"g": 25,
+					"b": 25,
+					"a": 1
+				},
+				"drawOnClick": true,
+				"onDrawExpand": true,
+				"onShakeShuffle": true,
+				"drawOnTags": [
+					"circles"
+				],
+				"previewTool": {
+					"border": true
+				}
+			}
+		},
+		{
+			"type": "stamp-small",
+			"data": {
+				"x": 363,
+				"y": 250,
+				"colorize": true,
+				"selectedStamp": 10,
+				"backgroundColor": {
+					"r": 25,
+					"g": 25,
+					"b": 25,
+					"a": 1
+				},
+				"previewTool": {
+					"border": true
+				}
+			}
+		},
+		{
+			"type": "dice-d4",
+			"data": {
+				"x": 320,
+				"y": 290,
+				"onSelectMacro": {
+					"execute": {
+						"setTool": {
+							"id": "pencil",
+							"option": "red"
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 95,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6",
+			"data": {
+				"x": 320,
+				"y": 260,
+				"onSelectMacro": {
+					"execute": {
+						"setTool": {
+							"id": "pencil",
+							"option": "green"
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 95,
+					"g": 255,
+					"b": 95,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d8",
+			"data": {
+				"x": 320,
+				"y": 230,
+				"onSelectMacro": {
+					"execute": {
+						"setTool": {
+							"id": "pencil",
+							"option": "blue"
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 95,
+					"g": 95,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d10",
+			"data": {
+				"x": 320,
+				"y": 200,
+				"onSelectMacro": {
+					"execute": {
+						"setTool": {
+							"id": "pencil",
+							"option": "purple"
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 95,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d12",
+			"data": {
+				"x": 320,
+				"y": 170,
+				"onSelectMacro": {
+					"execute": {
+						"setTool": {
+							"id": "pencil",
+							"option": "cyan"
+						}
+					}
+				},
+				"backgroundColor": {
+					"r": 95,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		}
+	]
+}

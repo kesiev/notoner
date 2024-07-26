@@ -1,0 +1,1620 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Word Blitz",
+			"IT": "Word Blitz"
+		},
+		"description": {
+			"EN": "Shake the game board and find as many words as you can within the time limit!",
+			"IT": "Scuoti il tabellone di gioco e trova pi&ugrave; parole che puoi entro il tempo limite!"
+		},
+		"players": {
+			"EN": "1"
+		},
+		"manualUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "manual-EN.pdf"
+			},
+			"IT": {
+				"isResource": true,
+				"type": "url",
+				"url": "manual-IT.pdf"
+			}
+		},
+		"categories": [
+			"words"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 110,
+				"height": 170,
+				"frame": true,
+				"pattern": {
+					"type": 1,
+					"height": 7
+				}
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 120,
+				"y": 0,
+				"width": 140,
+				"height": 170,
+				"labelText": {
+					"EN": "Shake me to start!<br>Drag the clock out of this area to play with no time limit.",
+					"IT": "Scuotimi per iniziare!<br>Trascina l'orologio fuori da quest'area per giocare senza limiti di tempo."
+				},
+				"mode": -1,
+				"frame": true,
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"width": 70,
+					"textAlign": "right",
+					"fontSize": 5,
+					"lineHeight": 6.5
+				},
+				"backgroundColor": {
+					"r": 20,
+					"g": 20,
+					"b": 20,
+					"a": 1
+				},
+				"onShakeMacro": {
+					"getElementsByTag": [
+						"word-dice"
+					],
+					"forEach": {
+						"shufflePosition": true
+					}
+				}
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 130,
+				"y": 10,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"faces": [
+					{
+						"label": {
+							"EN": "Q",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "B",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "Z",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "J",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "X",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "K",
+							"IT": "T"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 155,
+				"y": 10,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "T",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "U",
+							"IT": "F"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "R"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 180,
+				"y": 10,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "O",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "V",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "W",
+							"IT": "F"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "H"
+						}
+					},
+					{
+						"label": {
+							"EN": "G",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "S"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 205,
+				"y": 10,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "A",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "P"
+						}
+					},
+					{
+						"label": {
+							"EN": "F",
+							"IT": "S"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "T"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "U"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 230,
+				"y": 10,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "A",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "U",
+							"IT": "F"
+						}
+					},
+					{
+						"label": {
+							"EN": "M",
+							"IT": "G"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "P"
+						}
+					},
+					{
+						"label": {
+							"EN": "G",
+							"IT": "R"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 130,
+				"y": 35,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "H",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "H",
+							"IT": "B"
+						}
+					},
+					{
+						"label": {
+							"EN": "L",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "D",
+							"IT": "R"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "T"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 155,
+				"y": 35,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "N",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "H",
+							"IT": "D"
+						}
+					},
+					{
+						"label": {
+							"EN": "D",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "H",
+							"IT": "V"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "Z"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 180,
+				"y": 35,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "L",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "H",
+							"IT": "G"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "T"
+						}
+					},
+					{
+						"label": {
+							"EN": "D",
+							"IT": "V"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 205,
+				"y": 35,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "A",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "F",
+							"IT": "B"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "O"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 230,
+				"y": 35,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "Y",
+							"IT": "B"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "F",
+							"IT": "F"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "O"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 130,
+				"y": 60,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "T",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "B"
+						}
+					},
+					{
+						"label": {
+							"EN": "L",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "P",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "C",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "Q"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 155,
+				"y": 60,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "S",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "R"
+						}
+					},
+					{
+						"label": {
+							"EN": "U",
+							"IT": "S"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 180,
+				"y": 60,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "R",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "G"
+						}
+					},
+					{
+						"label": {
+							"EN": "Y",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "P",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "H",
+							"IT": "U"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 205,
+				"y": 60,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "D",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "B"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "F"
+						}
+					},
+					{
+						"label": {
+							"EN": "D",
+							"IT": "Q"
+						}
+					},
+					{
+						"label": {
+							"EN": "L",
+							"IT": "S"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "Z"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 230,
+				"y": 60,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "C",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "C",
+							"IT": "D"
+						}
+					},
+					{
+						"label": {
+							"EN": "W",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "O"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 130,
+				"y": 85,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "T",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "D"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "M",
+							"IT": "P"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 155,
+				"y": 85,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "S",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "C",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "T"
+						}
+					},
+					{
+						"label": {
+							"EN": "P",
+							"IT": "U"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 180,
+				"y": 85,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "E",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "H"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "D",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "R"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "S"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 205,
+				"y": 85,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "M",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "G"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "P"
+						}
+					},
+					{
+						"label": {
+							"EN": "G",
+							"IT": "T"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 230,
+				"y": 85,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "U",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "O",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "W",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "N",
+							"IT": "R"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 130,
+				"y": 110,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "A",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "R"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "S"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 155,
+				"y": 110,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "Y",
+							"IT": "D"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "F",
+							"IT": "N"
+						}
+					},
+					{
+						"label": {
+							"EN": "P",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "S",
+							"IT": "S"
+						}
+					},
+					{
+						"label": {
+							"EN": "R",
+							"IT": "T"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 180,
+				"y": 110,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "E",
+							"IT": "E"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "L"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "M",
+							"IT": "R"
+						}
+					},
+					{
+						"label": {
+							"EN": "A",
+							"IT": "U"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 205,
+				"y": 110,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "I",
+							"IT": "A"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "C"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "G"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "P"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "S"
+						}
+					},
+					{
+						"label": {
+							"EN": "E",
+							"IT": "V"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "dice-custom",
+			"data": {
+				"tags": [
+					"word-dice"
+				],
+				"x": 230,
+				"y": 110,
+				"frame": true,
+				"facesLabel": true,
+				"isRotating": true,
+				"backgroundColor": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				},
+				"faces": [
+					{
+						"label": {
+							"EN": "E",
+							"IT": "D"
+						}
+					},
+					{
+						"label": {
+							"EN": "T",
+							"IT": "I"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "M"
+						}
+					},
+					{
+						"label": {
+							"EN": "L",
+							"IT": "O"
+						}
+					},
+					{
+						"label": {
+							"EN": "I",
+							"IT": "T"
+						}
+					},
+					{
+						"label": {
+							"EN": "C",
+							"IT": "V"
+						}
+					}
+				],
+				"width": 20,
+				"height": 20,
+				"isDraggable": false
+			}
+		},
+		{
+			"type": "timer-custom",
+			"data": {
+				"x": 130,
+				"y": 135,
+				"width": 50,
+				"height": 30,
+				"timeLeft": 180,
+				"frame": true,
+				"icon": false,
+				"label": {
+					"fontSize": 12,
+					"boxShadow": false,
+					"borderSize": 0,
+					"backgroundColor": {
+						"r": 0,
+						"g": 0,
+						"b": 0,
+						"a": 0
+					}
+				},
+				"backgroundColor": {
+					"r": 255,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"messages": {
+					"timeUp": {
+						"title": {
+							"EN": "Game over!",
+							"IT": "Fine gioco!"
+						}
+					}
+				}
+			}
+		}
+	]
+}

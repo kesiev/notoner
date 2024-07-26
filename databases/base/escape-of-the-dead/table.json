@@ -1,0 +1,534 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Escape of the Dead Minigame",
+			"IT": "Escape of the Dead Minigame"
+		},
+		"author": {
+			"EN": "Jason Sondoh"
+		},
+		"description": {
+			"EN": "You are a survivor of a zombie apocalypse and you're stuck in a house with a broken car and hordes of zombies are attacking in the lawn.",
+			"IT": "Sei un sopravvissuto a un'apocalisse di zombi e sei bloccato in una casa con un'auto rotta e orde di zombi stanno attaccando nel prato."
+		},
+		"players": {
+			"EN": "1"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://boardgamegeek.com/boardgame/87632/escape-of-the-dead-minigame"
+			}
+		},
+		"categories": [
+			"pushYourLuck"
+		]
+	},
+	"data": [
+		{
+			"type": "sheet",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 279.39,
+				"height": 215.89,
+				"frame": true,
+				"isReadOnly": true,
+				"modelOpacity": 0.7,
+				"model": {
+					"EN": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg"
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 42,
+				"y": 23,
+				"width": 22,
+				"height": 22,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 20,
+					"height": 20,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 141,
+								"y": 177,
+								"width": 21,
+								"height": 21
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 163,
+				"y": 177,
+				"width": 22,
+				"height": 22,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 20,
+					"height": 20,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 163,
+								"y": 177,
+								"width": 21,
+								"height": 21
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 185,
+				"y": 177,
+				"width": 22,
+				"height": 22,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 20,
+					"height": 20,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 185,
+								"y": 177,
+								"width": 21,
+								"height": 21
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 207,
+				"y": 177,
+				"width": 22,
+				"height": 22,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 20,
+					"height": 20,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 207,
+								"y": 177,
+								"width": 21,
+								"height": 21
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 229,
+				"y": 177,
+				"width": 22,
+				"height": 22,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 20,
+					"height": 20,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 230,
+								"y": 177,
+								"width": 21,
+								"height": 21
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 251,
+				"y": 177,
+				"width": 22,
+				"height": 22,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 20,
+					"height": 20,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 252,
+								"y": 177,
+								"width": 21,
+								"height": 21
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 118.3,
+				"y": 128.4,
+				"width": 11,
+				"height": 11,
+				"frame": {
+					"borderColor": {
+						"r": 0,
+						"g": 255,
+						"b": 0,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 9,
+					"height": 9,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 140.58,
+								"y": 200.64,
+								"width": 11,
+								"height": 11
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 5.6,
+				"y": 189.3,
+				"width": 11,
+				"height": 11,
+				"frame": {
+					"borderColor": {
+						"r": 0,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 9,
+					"height": 9,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 151.9,
+								"y": 200.64,
+								"width": 11,
+								"height": 11
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 5.6,
+				"y": 57.7,
+				"width": 11,
+				"height": 11,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 0,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 9,
+					"height": 9,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-1-EN.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 279.39,
+								"imageHeight": 215.89,
+								"x": 163.2,
+								"y": 200.64,
+								"width": 11,
+								"height": 11
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": -79,
+				"y": 0,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 60,
+					"g": 0,
+					"b": 0,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Lawn"
+				},
+				"width": 75,
+				"height": 50,
+				"frame": true,
+				"mode": -1,
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				}
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": -79,
+				"y": 80,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 0,
+					"g": 60,
+					"b": 0,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Barricade"
+				},
+				"width": 75,
+				"height": 50,
+				"frame": true,
+				"mode": -1,
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				}
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": -79,
+				"y": 150,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 60,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Garage"
+				},
+				"width": 75,
+				"height": 50,
+				"frame": true,
+				"mode": -1,
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": -69,
+				"y": 2,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": -49,
+				"y": 2,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": -29,
+				"y": 2,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": -49,
+				"y": 20,
+				"zIndexGroup": 10,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		}
+	]
+}

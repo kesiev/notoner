@@ -1,0 +1,463 @@
+<html>
+    <body onload="onl()"></body>
+<script>
+
+const
+    IMAGES =  [];
+
+let
+    assets = [];
+
+function process() {
+
+    let
+        table = {
+            meta: {
+                title: {
+                    EN: "Klondike",
+                    IT: "Klondike"
+                },
+                description: {
+                    EN: "A card game for one player and the best known and most popular version of the patience or solitaire family.",
+                    IT: "Un solitario fatto con le carte spesso chiamato semplicemente Solitario."
+                },
+                license: {
+					EN: "Public domain",
+					IT: "Pubblico dominio"
+				},
+                players: {
+                    EN: "1"
+                },
+                url: {
+                    EN: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://en.wikipedia.org/wiki/Klondike_(solitaire)"
+                    },
+                    IT: {
+                        isResource: true,
+                        type: "url",
+                        url: "https://it.wikipedia.org/wiki/Klondike_(solitario)"
+                    }
+                },
+                categories: [
+                    "puzzle"
+                ]
+            },
+            data: []
+        };
+
+    let
+        area = document.createElement("textarea");
+
+    document.body.appendChild(area);
+
+    
+    const
+        CARD_X=30,
+        CARD_Y=30,
+        CARD_COLS=13,
+        CARD_ROWS=4,
+        CARD_WIDTH=360,
+        CARD_HEIGHT=540,
+        TABLE_CARD_SPACING=10,
+        TABLE_CARD_WIDTH=58,
+        TABLE_CARD_HEIGHT=88,
+        TABLE_COLUMN_DISTANCE=25,
+        TABLE_TRAY_LABELSPACE = 20,
+        TABLE_CARD_GAP = 24,
+        TABLE_TRAY_HEIGHT = TABLE_CARD_HEIGHT+(TABLE_CARD_GAP*2)+TABLE_TRAY_LABELSPACE,
+        TABLE_TOWERS_X=TABLE_COLUMN_DISTANCE,
+        TABLE_TOWERS_Y=TABLE_CARD_GAP*7,
+        TOWERS_COUNT = 7,
+        TABLE_CARDS_GAPY = 0.25,
+        COLUMNS_ORDER=[3,2,1,0];
+
+    // Prepare reset macro
+
+    let
+        columnsX=[],
+        onResetMacro = {
+            getElementsByTag:[ "card" ],
+            do:[]
+        };
+
+    let
+        ox = TABLE_TOWERS_X,
+        oy,
+        root = onResetMacro.do;
+    for (let t=0;t<TOWERS_COUNT;t++) {
+        let
+            action = {};
+        oy = TABLE_TOWERS_Y;
+        
+        if (t) {
+            onResetMacro.do.push({
+                getRest:true,
+                onElements:{ pickRandom:t },
+                forEach:{
+                    setSide:true,
+                    moveToTop:true,
+                    moveTo: {
+                        x: ox,
+                        y: oy,
+                        gapY:TABLE_CARD_GAP
+                    }      
+                }
+            });
+            oy+=TABLE_CARD_GAP*t;
+        }
+        onResetMacro.do.push({
+            getRest:true,
+            onElements:{ pickRandom:1 },
+            forEach:{
+                setSide:false,
+                moveToTop:true,
+                moveTo: {
+                    x: ox,
+                    y: oy
+                }        
+            }
+        });
+        ox+=TABLE_COLUMN_DISTANCE+TABLE_CARD_WIDTH
+    }
+
+    onResetMacro.do.push({
+        getRest:true,
+        forEach:{
+            setSide:true,
+            shuffleZIndex:true,
+            shuffle:true,
+            moveTo:{
+                x: TABLE_COLUMN_DISTANCE,
+                y: TABLE_CARD_GAP,
+                gapY:TABLE_CARDS_GAPY
+            }
+        }
+    });
+
+    // Prepare play area
+
+    table.data.push({
+            type:"tray-custom",
+            data:{
+                x: 0,
+                y: 0,
+                width: TOWERS_COUNT*(TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE),
+                height: TABLE_TOWERS_Y+(TABLE_CARD_SPACING*28)+TABLE_CARD_HEIGHT,
+                frame: false,
+                mode: -1,
+                isDraggable:false,
+                backgroundColor:{ r:0, g:0, b:0, a:0 },
+                icon:false,
+                messages:{
+                    shake:false
+                }
+            }
+        });
+
+    // Prepare trays
+
+    table.data.push({
+        type:"tray-custom",
+        data:{
+            tags:[ "deck" ],
+            x: 0,
+            y: 0,
+            width: TABLE_CARD_WIDTH*2+TABLE_COLUMN_DISTANCE*3,
+            height: TABLE_TRAY_HEIGHT,
+            frame: true,
+            mode: -1,
+            isDraggable:false,
+            backgroundColor: {
+                r: 25,
+                g: 25,
+                b: 25,
+                a: 1
+            },
+            labelText: {
+                EN: "Draw and discard pile<br>(Hold to flip the discard pile)",
+                IT: "Mazzo di pesca e scarti<br>(Tieni premuto girare la pila degli scarti)"
+            },
+            label: {
+                right: 5,
+                bottom: 5,
+                x: 5,
+                textAlign: "center",
+                fontSize: 7,
+                lineHeight: 9
+            },
+            onShakeMacro:{
+                getElementsByTag:[ "card" ],
+                onElements:{ if:{ isSelected:true} },
+                forEach:{
+                    setSide:true,
+                    invertZIndex:true,
+                    moveTo:{
+                        x:TABLE_COLUMN_DISTANCE,
+                        y:TABLE_CARD_GAP,
+                        gapY:TABLE_CARDS_GAPY
+                    }                    
+                }
+            },
+            onResetMacro:onResetMacro,
+            messages:{
+                shake:{
+                    title:{
+                        EN:"Flip the discard pile",
+                        IT:"Gira la pila degli scarti"
+                    },
+                    icon: {
+                        isResource: true,
+                        type: "url",
+                        url: "/images/icon-flip.svg"
+                    }
+                }
+            }
+        }
+    });
+
+    for (let i=0;i<4;i++) {
+        columnsX[i]=TABLE_COLUMN_DISTANCE+(TOWERS_COUNT-i-1)*(TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE);
+        table.data.push({
+            type:"tray-custom",
+            data:{
+                x: columnsX[i],
+                y: TABLE_CARD_GAP,
+                width: TABLE_CARD_WIDTH,
+                height: TABLE_CARD_HEIGHT,
+                frame: {
+                    borderColor:{ r:0, g:0, b:0, a:1 },
+                    backgroundColor:{ r:0, g:0, b:0, a:0.25 },
+                    borderStyle:"dashed",
+                    borderSize:2,
+                    boxShadow:false
+                },
+                mode: -1,
+                isDraggable:false,
+                backgroundColor:{ r:0, g:0, b:0, a:0 },
+                icon:false,
+                messages:{
+                    shake:false
+                },
+                image: {
+                    image: {
+                        isResource: true,
+                        type: "url",
+                        url: "docks.svg",
+                        meta: {
+                            crop: {
+                                imageWidth: 1530,
+                                imageHeight: 540,
+                                width: CARD_WIDTH,
+                                height: CARD_HEIGHT,
+                                x: i*(CARD_WIDTH+CARD_X),
+                                y: 0
+                            }
+                        }
+                    }
+                },
+            }
+        });
+    }
+
+    // Prepare cards
+
+    let
+        autoflipMacro = {
+            getElementsByTag:[ "card" ],
+            onElements:{
+                if:[
+                    {
+                        value:{ get: [ "element", "side" ] },
+                        isValued:true
+                    },{
+                        value:{ get:["element","y"] },
+                        isGreaterEqualThan:TABLE_TOWERS_Y
+                    },{
+                        isNotCoveredBy:{ get:[ "elementsByTag", "card"] }
+                    }
+                ]
+            },
+            forEach:{
+                setSide:false
+            }
+        };
+
+    for (let y=0;y<CARD_ROWS;y++)
+        for (let x=0;x<CARD_COLS;x++) {
+            let
+                collectX = columnsX[y],
+                collectY = TABLE_CARD_GAP,
+                previousCard = x == 0 ? 0 : "card-"+(x-1)+"-"+y,
+                collectCondition = previousCard ? [
+                    {
+                        value:{ get: [ "element", "side" ] },
+                        isNotValued:true
+                    },{
+                        value:{ get: [ "elementByTag", previousCard, "x" ] },
+                        isEqualTo:collectX
+                    },{
+                        value:{ get: [ "elementByTag", previousCard, "y" ] },
+                        isEqualTo:collectY
+                    },{
+                        isNotCoveredBy:{ get:[ "elementsByTag", "card"] }
+                    }
+                ] : [
+                    {
+                        value:{ get: [ "element", "side" ] },
+                        isNotValued:true
+                    },{
+                        isNotCoveredBy:{ get:[ "elementsByTag", "card"] }
+                    }
+                ],
+                collectAction = {
+                    moveToTop:true,
+                    setSide:false,
+                    moveToTable:{
+                        x:collectX,
+                        y:collectY
+                    }
+                };
+
+            table.data.push({
+                type: "token-custom",
+                data: {
+                    x: TABLE_COLUMN_DISTANCE,
+                    y: TABLE_CARD_GAP,
+                    width: TABLE_CARD_WIDTH,
+                    height: TABLE_CARD_HEIGHT,
+                    tags: [
+                        "card", "card-"+x+"-"+y 
+                    ],
+                    isFlippable:true,
+                    frame: {
+                        borderRadius: 2,
+                        borderSize: 0
+                    },
+                    image: {
+                        borderRadius: 2,
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/elements/deck-poker-cards-front.svg",
+                            meta: {
+                                crop: {
+                                    imageWidth: 5490,
+                                    imageHeight: 2310,
+                                    width: CARD_WIDTH,
+                                    height: CARD_HEIGHT,
+                                    x: CARD_X+(CARD_X+CARD_WIDTH)*x,
+                                    y: CARD_Y+(CARD_Y+CARD_HEIGHT)*y
+                                }
+                            }
+                        }
+                    },
+                    flipImage: {
+                        borderRadius: 2,
+                        image: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/elements/deck-poker-cards-back.svg",
+                            meta: {
+                                crop: {
+                                    imageWidth: 3090,
+                                    imageHeight: 540,
+                                    width: CARD_WIDTH,
+                                    height: CARD_HEIGHT,
+                                    x: CARD_WIDTH+CARD_X,
+                                    y: 0
+                                }
+                            }
+                        }
+                    },
+                    snapTo: {
+                        grid:{
+                            x: TABLE_COLUMN_DISTANCE,
+                            y: TABLE_CARD_GAP,
+                            width: TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE,
+                            height: TABLE_CARD_GAP
+                        }
+                    },
+                    onClickMacro: [
+                        {
+                            if:[
+                                {
+                                    value:{ get: [ "element", "side" ] },
+                                    isValued:true
+                                },{
+                                    isCollidingWith:{ get: [ "elementByTag", "deck" ] }
+                                }
+                            ],
+                            forEach: {
+                                flip: true,
+                                moveToTop:true,
+                                moveToTable:{
+                                    x:TABLE_COLUMN_DISTANCE*2+TABLE_CARD_WIDTH,
+                                    y:TABLE_CARD_GAP
+                                }
+                            },
+                            break:true
+                        },
+                        {
+                            if:collectCondition,
+                            forEach:collectAction,
+                            do:autoflipMacro,
+                            break:true
+                        },
+                        {
+                            forEach:{
+                                flip:true
+                            }
+                        }
+                    ],
+                    onDropMacro:[
+                        {
+                            if:{
+                                isCollidingWith:{ get: [ "elementByTag", "deck" ] }
+                            },
+                            forEach:{
+                                setSide:false
+                            },
+                            break:true
+                        },autoflipMacro
+                    ],
+                    onMenuMacros:[
+                        {
+                            if:collectCondition,
+                            title:{
+                                EN:"Collect",
+                                IT:"Raccogli"
+                            },
+                            icon: {
+                                isResource: true,
+                                type: "url",
+                                url: "/images/icon-macro.svg"
+                            },
+                            macro:{
+                                forEach:collectAction,
+                                do:autoflipMacro
+                            }
+                        }
+                    ],
+                    isDragTopSurfaces:true,
+                    onShakeMacro: false,
+                    mode: 0
+                }
+            });
+        }
+
+    // Prepare table data
+
+    area.innerText = JSON.stringify(table);
+    
+}
+
+function onl() {
+
+    process();
+
+}
+
+</script>
+</html>

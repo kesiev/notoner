@@ -1,0 +1,535 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Goldscrolls",
+			"IT": "Goldscrolls"
+		},
+		"author": {
+			"EN": "KesieV"
+		},
+		"description": {
+			"EN": "A fast print-and-play roll-and-write deckbuilder for two players.",
+			"IT": "Un veloce deckbuilder print-and-play roll-and-write per due giocatori."
+		},
+		"players": {
+			"EN": "2"
+		},
+		"license": {
+			"EN": "MIT"
+		},
+		"url": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://www.kesiev.com/goldscrolls/"
+			}
+		},
+		"manualUrl": {
+			"EN": {
+				"isResource": true,
+				"type": "url",
+				"url": "https://www.kesiev.com/goldscrolls/"
+			}
+		},
+		"categories": [
+			"strategy"
+		],
+		"subtemplates": [
+			{
+				"id": "aphla",
+				"isDefault": true,
+				"meta": {
+					"title": {
+						"EN": "Character: Aphla",
+						"IT": "Personaggio: Aphla"
+					},
+					"description": {
+						"EN": "A wandering alchemist that learns new powers combining dice!",
+						"IT": "Un alchimista errante che apprende nuovi poteri combinando i dadi!"
+					}
+				}
+			},
+			{
+				"id": "tabe",
+				"meta": {
+					"title": {
+						"EN": "Character: Tabe",
+						"IT": "Personaggio: Tabe"
+					},
+					"description": {
+						"EN": "A merchant that buys new powers with gold!",
+						"IT": "Un mercante che compra nuovi poteri con l'oro!"
+					}
+				}
+			},
+			{
+				"id": "magma",
+				"meta": {
+					"title": {
+						"EN": "Character: Magma",
+						"IT": "Personaggio: Magma"
+					},
+					"description": {
+						"EN": "A miner that digs a mountain to gain new powers!",
+						"IT": "Un minatore che scava una montagna per acquisire nuovi poteri!"
+					}
+				}
+			}
+		]
+	},
+	"subtemplates": [
+		{
+			"id": "aphla",
+			"data": [
+				{
+					"type": "sheet",
+					"zIndex": -1,
+					"data": {
+						"x": 0,
+						"y": 0,
+						"width": 297,
+						"height": 210,
+						"frame": true,
+						"model": {
+							"EN": {
+								"isResource": true,
+								"type": "url",
+								"url": "sheet-aphla.svg"
+							}
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "tabe",
+			"data": [
+				{
+					"type": "sheet",
+					"zIndex": -1,
+					"data": {
+						"x": 0,
+						"y": 0,
+						"width": 297,
+						"height": 210,
+						"frame": true,
+						"model": {
+							"EN": {
+								"isResource": true,
+								"type": "url",
+								"url": "sheet-tabe.svg"
+							}
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "magma",
+			"data": [
+				{
+					"type": "sheet",
+					"zIndex": -1,
+					"data": {
+						"x": 0,
+						"y": 0,
+						"width": 297,
+						"height": 210,
+						"frame": true,
+						"model": {
+							"EN": {
+								"isResource": true,
+								"type": "url",
+								"url": "sheet-magma.svg"
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+	"data": [
+		{
+			"type": "tray",
+			"data": {
+				"x": 307,
+				"y": 0,
+				"mode": 0,
+				"backgroundColor": {
+					"r": 20,
+					"g": 20,
+					"b": 20,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 317,
+				"y": 10,
+				"backgroundColor": {
+					"r": 255,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "dice-d6-pips",
+			"data": {
+				"x": 357,
+				"y": 25,
+				"backgroundColor": {
+					"r": 100,
+					"g": 100,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 5.7,
+				"y": 166,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 167.7,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 35.7,
+				"y": 166,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 167.7,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 65.6,
+				"y": 166,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 167.7,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 95.6,
+				"y": 166,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 167.7,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 125.5,
+				"y": 166,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 167.7,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 170,
+				"y": 3,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 0,
+						"b": 0,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 122.6,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 1,
+				"y": 3,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 0,
+						"g": 0,
+						"b": 255,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 131.5,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 156,
+				"y": 27.2,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 0,
+						"g": 255,
+						"b": 0,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 140.5,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 170,
+				"y": 65,
+				"width": 10.5,
+				"height": 10.5,
+				"frame": {
+					"borderColor": {
+						"r": 255,
+						"g": 255,
+						"b": 0,
+						"a": 1
+					}
+				},
+				"image": {
+					"x": 1,
+					"y": 1,
+					"width": 8.5,
+					"height": 8.5,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "sheet-aphla.svg",
+						"meta": {
+							"crop": {
+								"imageWidth": 297,
+								"imageHeight": 210,
+								"x": 281.8,
+								"y": 149.6,
+								"width": 8.5,
+								"height": 8.5
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}
