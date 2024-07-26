@@ -2,7 +2,7 @@
 
 ## Table database builder
 
-Notoner includes a [base set of table templates](../databases/base/) to peek inside and play with. If you want to add your templates, you can put them [into the custom set](../databases/custom/) or put them [into the extra set](../databases/extra/) if they are coming from someone else - but it's up to you how to manage these sets. Each set contains an [index file](../databases/base/index.json) collecting all table template metadata. To keep it up-to-date, you can run [this script](databases/build.js): it builds all set indexes and prettifies their table JSONs. To do that, go to the script directory and launch it with `node build.js`.
+Notoner includes a [base set of table templates](../databases/base/) to peek inside and play with. If you want to add your templates, you can put them [into the custom set](../databases/custom/) or put them [into the extra set](../databases/extras/) if they are coming from someone else - but it's up to you how to manage these sets. Each set contains an [index file](../databases/base/index.json) collecting all table template metadata. To keep it up-to-date, you can run [this script](databases/build.js): it builds all set indexes and prettifies their table JSONs. To do that, go to the script directory and launch it with `node build.js`.
 
 ## Table assets
 
