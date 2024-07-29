@@ -20,6 +20,8 @@ let Token=function(settings) {
         height,
         rotation = settings.rotation || 0,
         baseColor = settings.backgroundColor || { r:255, g:255, b:255, a:1 },
+        isContentRotation = !!settings.contentRotations,
+        sidesCount = isContentRotation ? settings.contentRotations.length : 4,
         token = new Surface(
             "token",
             settings.tags,
@@ -86,7 +88,7 @@ let Token=function(settings) {
     }
 
     function spin() {
-        setRotation(Math.floor(Math.random()*4));
+        setRotation(Math.floor(Math.random()*sidesCount));
         token.broadcastEvent(EVENT_TOKENTOSSED);
     }
  
@@ -99,49 +101,56 @@ let Token=function(settings) {
 
         if (reset || (torotation != currentRotation)) {
 
-            let
-                cx = token.x+(token.width/2),
-                cy = token.y+(token.height/2),
-                cw,ch;
+            if (isContentRotation) {
 
-            if (currentRotation % 2) {
-                cw = token.height;
-                ch = token.width;
+                token.content.style.transform="rotate("+settings.contentRotations[torotation].angle+"rad)";
+
             } else {
-                cw = token.width;
-                ch = token.height;
-            }
 
-            token.content.style.transformOrigin=(cw*Global.SCALE/2)+"px "+(ch*Global.SCALE/2)+"px";
-
-            if (torotation % 2) {
                 let
-                    tilt = (cw-ch)/2*Global.SCALE;
-                if (!reset) {
-                    token.setPosition(cx-(ch/2),cy-(cw/2));
-                    token.setWidth(ch);
-                    token.setHeight(cw);
+                    cx = token.x+(token.width/2),
+                    cy = token.y+(token.height/2),
+                    cw,ch;
+
+                if (currentRotation % 2) {
+                    cw = token.height;
+                    ch = token.width;
+                } else {
+                    cw = token.width;
+                    ch = token.height;
                 }
-                if (torotation == 1)
-                    token.content.style.transform="rotate(90deg) translate("+tilt+"px,"+tilt+"px)";
-                else
-                    token.content.style.transform="rotate(270deg) translate("+(-tilt)+"px,"+(-tilt)+"px)";
-            } else {
-                if (!reset) {
-                    token.setPosition(cx-(cw/2),cy-(ch/2));
-                    token.setWidth(cw);
-                    token.setHeight(ch);
+
+                token.content.style.transformOrigin=(cw*Global.SCALE/2)+"px "+(ch*Global.SCALE/2)+"px";
+
+                if (torotation % 2) {
+                    let
+                        tilt = (cw-ch)/2*Global.SCALE;
+                    if (!reset) {
+                        token.setPosition(cx-(ch/2),cy-(cw/2));
+                        token.setWidth(ch);
+                        token.setHeight(cw);
+                    }
+                    if (torotation == 1)
+                        token.content.style.transform="rotate(90deg) translate("+tilt+"px,"+tilt+"px)";
+                    else
+                        token.content.style.transform="rotate(270deg) translate("+(-tilt)+"px,"+(-tilt)+"px)";
+                } else {
+                    if (!reset) {
+                        token.setPosition(cx-(cw/2),cy-(ch/2));
+                        token.setWidth(cw);
+                        token.setHeight(ch);
+                    }
+                    if (torotation == 0)
+                        token.content.style.transform="";
+                    else
+                        token.content.style.transform="rotate(180deg)";
                 }
-                if (torotation == 0)
-                    token.content.style.transform="";
-                else
-                    token.content.style.transform="rotate(180deg)";
+
             }
 
             token.rotation = torotation;
 
         }
-
     }
 
     // --- Prepare element
@@ -191,8 +200,8 @@ let Token=function(settings) {
 
     if (settings.image)
         image = Stencil.newSprite(token.content,{
-            x:0,
-            y:0,
+            x:(settings.image.x === undefined) && (settings.image.width !== undefined) ? (width - settings.image.width)/2 : 0,
+            y:(settings.image.y === undefined) && (settings.image.height !== undefined) ? (height - settings.image.height)/2 : 0,
             width:width,
             height:height,
             baseColor:baseColor
@@ -271,6 +280,7 @@ let Token=function(settings) {
     token.messages = settings.messages;
     token.isFlippable = settings.isFlippable;
     token.isCut = settings.isCut;
+    token.contentRotations = settings.contentRotations;
 
     // --- Element properties (setters)
  
@@ -300,34 +310,45 @@ let Token=function(settings) {
                     action:ACTION_SPIN
                 });
             if (settings.isRotating) {
-                if (token.hasMessage("rotateStraight"))
-                    options.push({
-                        title:token.getMessage("rotateStraight","title"),
-                        icon:token.getMessage("rotateStraight","icon"),
-                        action:ACTION_SETROTATION,
-                        rotation:0
-                    });
-                if (token.hasMessage("rotateUpsideDown"))
-                    options.push({
-                        title:token.getMessage("rotateUpsideDown","title"),
-                        icon:token.getMessage("rotateUpsideDown","icon"),
-                        action:ACTION_SETROTATION,
-                        rotation:2
-                    });
-                if (token.hasMessage("rotateRight"))
-                    options.push({
-                        title:token.getMessage("rotateRight","title"),
-                        icon:token.getMessage("rotateRight","icon"),
-                        action:ACTION_SETROTATION,
-                        rotation:1
-                    });
-                if (token.hasMessage("rotateLeft"))
-                    options.push({
-                        title:token.getMessage("rotateLeft","title"),
-                        icon:token.getMessage("rotateLeft","icon"),
-                        action:ACTION_SETROTATION,
-                        rotation:3
-                    });
+                if (isContentRotation) {
+                    settings.contentRotations.forEach((rotation,id)=>{
+                        options.push({
+                            title:rotation.label,
+                            icon:rotation.icon,
+                            action:ACTION_SETROTATION,
+                            rotation:id
+                        });
+                    })
+                } else {
+                    if (token.hasMessage("rotateStraight"))
+                        options.push({
+                            title:token.getMessage("rotateStraight","title"),
+                            icon:token.getMessage("rotateStraight","icon"),
+                            action:ACTION_SETROTATION,
+                            rotation:0
+                        });
+                    if (token.hasMessage("rotateUpsideDown"))
+                        options.push({
+                            title:token.getMessage("rotateUpsideDown","title"),
+                            icon:token.getMessage("rotateUpsideDown","icon"),
+                            action:ACTION_SETROTATION,
+                            rotation:2
+                        });
+                    if (token.hasMessage("rotateRight"))
+                        options.push({
+                            title:token.getMessage("rotateRight","title"),
+                            icon:token.getMessage("rotateRight","icon"),
+                            action:ACTION_SETROTATION,
+                            rotation:1
+                        });
+                    if (token.hasMessage("rotateLeft"))
+                        options.push({
+                            title:token.getMessage("rotateLeft","title"),
+                            icon:token.getMessage("rotateLeft","icon"),
+                            action:ACTION_SETROTATION,
+                            rotation:3
+                        });
+                }
                 if (token.isCut) {
                     if ((token.image.image !== false) && (token.flipImage.image !== false))
                         options.push({
@@ -428,11 +449,11 @@ let Token=function(settings) {
             let
                 rotation = token.rotation+direction;
 
-            if (rotation > 3)
+            if (rotation >= sidesCount)
                 rotation = 0;
 
             if (rotation < 0)
-                rotation = 3;
+                rotation = sidesCount-1;
 
             setRotation(rotation);
             token.startAnimation("rotate");

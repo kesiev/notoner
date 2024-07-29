@@ -1024,8 +1024,11 @@ LANGUAGE = {
                         EN:"Squares",
                         IT:"Quadretti"
                     },{
-                        EN:"Hexagons",
-                        IT:"Esagoni"
+                        EN:"Vertical hexagons",
+                        IT:"Esagoni verticali"
+                    },{
+                        EN:"Horizontal hexagons",
+                        IT:"Esagoni orizzontali"
                     }
                 ],
                 patternColor:{

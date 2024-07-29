@@ -563,7 +563,8 @@ RESOURCES={
                         rotation:data.rotation,
                         isFlippable:data.isFlippable,
                         isSpinnable:data.isSpinnable,
-                        isCut:data.isCut
+                        isCut:data.isCut,
+                        contentRotations:data.contentRotations
                     })),
                     default:{
                         x:data.x,
@@ -595,7 +596,8 @@ RESOURCES={
                     rotation:surface.rotation,
                     isFlippable:surface.isFlippable,
                     isSpinnable:surface.isSpinnable,
-                    isCut:surface.isCut
+                    isCut:surface.isCut,
+                    contentRotations:surface.contentRotations
                 })
             },
             onReset:(surface,data)=>{
@@ -686,6 +688,9 @@ RESOURCES={
                                     },{
                                         title:LANGUAGE.elements.blankSheet.options.patternModes[3],
                                         value:3
+                                    },{
+                                        title:LANGUAGE.elements.blankSheet.options.patternModes[4],
+                                        value:4
                                     }
                                 ]
                             }
