@@ -109,7 +109,7 @@ These table templates feature most of the Notoner key features. They should be _
    - Custom used as default table camera
      - Invisible
      - Noninteractive area
- - **[Hexagonal Puzzle](hexagon-puzzle/)** - [table.json](hexagon-puzzle/table.json)
+ - **[Hexagon Puzzle](hexagon-puzzle/)** - [table.json](hexagon-puzzle/table.json)
    - Custom tray with fixed text and elements shuffling macro
    - Custom hexagonal tokens with rotations and grid snapping
  - **[(System splash)](system-splash/)** - [table.json](system-splash/table.json)
