@@ -277,6 +277,11 @@
                     "EN":"`[` {{attributeType.string}} `,` {{attributeType.string}} `,` ... `]`"
                 }
             },
+            "array(measure)":{
+                "title":{
+                    "EN":"`[` {{attributeType.measure}} `,` {{attributeType.measure}} `,` ... `]`"
+                }
+            },
             "array(areaOption)":{
                 "title":{
                     "EN":"`[` {{attributeType.areaOption}} `,` {{attributeType.areaOption}} `,` ... `]`"
@@ -1483,6 +1488,20 @@
                                 "EN":"Grid cell height.",
                                 "IT":"Altezza delle celle della griglia."
                             }
+                        },{
+                            "name":"tiltColumns",
+                            "type":"array(measure)",
+                            "title":{
+                                "EN":"Columns offset of the matching row. It allows the alignment of some non-rectangular shapes such as hexagons.",
+                                "IT":"Scostamento delle colonne in base alla riga corrispondente. Permette di allineare alcune figure non rettangolari come gli esagoni."
+                            }
+                        },{
+                            "name":"tiltRows",
+                            "type":"array(measure)",
+                            "title":{
+                                "EN":"Rows offset of the matching column. It allows the alignment of some non-rectangular shapes such as hexagons.",
+                                "IT":"Scostamento delle righe in base alla colonna corrispondente. Permette di allineare alcune figure non rettangolari come gli esagoni."
+                            }
                         }
                     ]
                 }
@@ -2277,10 +2296,43 @@
                 },
                 "rotation":{
                     "title":{
-                        "EN":"Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left)",
-                        "IT":"Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra)"
+                        "EN":"Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left. See the `rotation` attribute for exceptions.)",
+                        "IT":"Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra. Vedi l'attributo `rotation` per eccezioni.)"
                     },
                     "type":"integer"
+                },
+                "contentRotations":{
+                    "title":{
+                        "EN":"Sets the available rotations. If specified, the element will not change size when rotated and the `rotation` attribute will refer to the element in this list.",
+                        "IT":"Stabilisce le rotazioni possibili. Se specificato, l'elemento non cambierà dimensione quando verrà ruotato e l'attributo `rotation` si riferirà all'elemento di questa lista."
+                    },
+                    "section":{
+                        "isArray":true,
+                        "attributes":[
+                            {
+                                "name":"label",
+                                "type":"text",
+                                "title":{
+                                    "EN":"Rotation label text.",
+                                    "IT":"Etichetta testuale della rotazione."
+                                }
+                            },{
+                                "name":"icon",
+                                "type":"resource",
+                                "title":{
+                                    "EN":"Icon to show in the selection menu.",
+                                    "IT":"Icona da mostrare nel menù."
+                                }
+                            },{
+                                "name":"angle",
+                                "type":"angle",
+                                "title":{
+                                    "EN":"Rotation angle.",
+                                    "IT":"Angolo della rotazione."
+                                }
+                            }
+                        ]
+                    }
                 },
                 "isRotating":{
                     "title":{
@@ -2492,8 +2544,8 @@
                                 "name":"type",
                                 "type":"integer",
                                 "title":{
-                                    "EN":"Pattern design type. (`1` for lines, `2` for squares, `3` for hexagons)",
-                                    "IT":"Disegno da usare per il pattern. (`1` per righe, `2` per quadretti, `3` per esagoni)"
+                                    "EN":"Pattern design type. (`1` for lines, `2` for squares, `3` for vertical hexagons, `4` for horizontal hexagons)",
+                                    "IT":"Disegno da usare per il pattern. (`1` per righe, `2` per quadretti, `3` per esagoni verticali, `4` per esagoni orizzontali)"
                                 }
                             },
                             {
@@ -3508,6 +3560,7 @@
                         "IT":"Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato."
                     },
                     "section":{
+                        "isArray":true,
                         "attributes":[
                             {
                                 "name":"tags",

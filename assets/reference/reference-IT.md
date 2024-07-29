@@ -167,8 +167,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -214,8 +214,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -267,8 +267,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -315,8 +315,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -375,8 +375,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 icon | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Immagine](#struttura-immagine) | Icona da mostrare sull'elemento. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
@@ -425,8 +425,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 icon | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Immagine](#struttura-immagine) | Icona da mostrare sull'elemento. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
@@ -497,8 +497,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -544,8 +544,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -609,8 +609,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -661,8 +661,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -727,8 +727,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -778,8 +778,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -834,8 +834,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -850,7 +850,7 @@ icon | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Immagine
 pattern |  | Pattern da stampare sul foglio. |
 &nbsp;&nbsp;&nbsp;pattern.width | `float` (in mm) | Larghezza. |
 &nbsp;&nbsp;&nbsp;pattern.height | `float` (in mm) | Altezza. |
-&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Disegno da usare per il pattern. (`1` per righe, `2` per quadretti, `3` per esagoni) |
+&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Disegno da usare per il pattern. (`1` per righe, `2` per quadretti, `3` per esagoni verticali, `4` per esagoni orizzontali) |
 &nbsp;&nbsp;&nbsp;pattern.topMargin | `float` (in mm) | Margine superiore dal quale partire a disegnare il pattern. |
 &nbsp;&nbsp;&nbsp;pattern.bottomMargin | `float` (in mm) | Margine inferiore dal quale partire a disegnare il pattern. |
 &nbsp;&nbsp;&nbsp;pattern.rightMargin | `float` (in mm) | Margine destro dal quale partire a disegnare il pattern. |
@@ -884,8 +884,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -907,7 +907,7 @@ isReadOnly | `boolean` | Se `TRUE`, l'elemento può essere modificato dall'utent
 pattern |  | Pattern da stampare sul foglio. |
 &nbsp;&nbsp;&nbsp;pattern.width | `float` (in mm) | Larghezza. |
 &nbsp;&nbsp;&nbsp;pattern.height | `float` (in mm) | Altezza. |
-&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Disegno da usare per il pattern. (`1` per righe, `2` per quadretti, `3` per esagoni) |
+&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Disegno da usare per il pattern. (`1` per righe, `2` per quadretti, `3` per esagoni verticali, `4` per esagoni orizzontali) |
 &nbsp;&nbsp;&nbsp;pattern.topMargin | `float` (in mm) | Margine superiore dal quale partire a disegnare il pattern. |
 &nbsp;&nbsp;&nbsp;pattern.bottomMargin | `float` (in mm) | Margine inferiore dal quale partire a disegnare il pattern. |
 &nbsp;&nbsp;&nbsp;pattern.rightMargin | `float` (in mm) | Margine destro dal quale partire a disegnare il pattern. |
@@ -947,8 +947,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -998,8 +998,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1059,8 +1059,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1112,8 +1112,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1166,8 +1166,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1221,15 +1221,15 @@ Un segnalino che può usato per indicare una posizione sul tavolo.
 
 Nome | Tipo | Descrizione |
 --- | --- | --- | 
-rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra) |
+rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra. Vedi l'attributo `rotation` per eccezioni.) |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1274,15 +1274,15 @@ Un segnalino che può usato per indicare una posizione sul tavolo. Può essere g
 Nome | Tipo | Descrizione |
 --- | --- | --- | 
 side | `boolean` | Lato sul quale è girato il segnalino. (`FALSE` per fronte, `TRUE` per retro) |
-rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra) |
+rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra. Vedi l'attributo `rotation` per eccezioni.) |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1337,15 +1337,15 @@ Un segnalino a forma di omino che può essere tenuto in piedi o sdraiato.
 Nome | Tipo | Descrizione |
 --- | --- | --- | 
 side | `boolean` | Lato sul quale è girato il segnalino. (`FALSE` per fronte, `TRUE` per retro) |
-rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra) |
+rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra. Vedi l'attributo `rotation` per eccezioni.) |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1393,15 +1393,15 @@ Un segnalino che può usato per indicare una posizione sul tavolo. Può essere g
 Nome | Tipo | Descrizione |
 --- | --- | --- | 
 side | `boolean` | Lato sul quale è girato il segnalino. (`FALSE` per fronte, `TRUE` per retro) |
-rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra) |
+rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per dritto, `1` per destra, `2` per sottosopra, `3` per sinistra. Vedi l'attributo `rotation` per eccezioni.) |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1439,6 +1439,10 @@ isRotating | `boolean` | Se `TRUE`, il segnalino più essere ruotato. |
 isFlippable | `boolean` | Se `TRUE`, l'elemento può essere girato sull'altro lato. |
 isSpinnable | `boolean` | Se `TRUE`, l'elemento può essere ruotato casualmente verso una direzione. |
 isCut | `boolean` | Se `TRUE`, il segnalino è un ritaglio generato da un elemento forbice. |
+contentRotations |  | Stabilisce le rotazioni possibili. Se specificato, l'elemento non cambierà dimensione quando verrà ruotato e l'attributo `rotation` si riferirà all'elemento di questa lista. |
+&nbsp;&nbsp;&nbsp;contentRotations[].label | [Testo](#struttura-testo) | Etichetta testuale della rotazione. |
+&nbsp;&nbsp;&nbsp;contentRotations[].icon | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canvas) o [Risorsa SVG](#struttura-svg) | Icona da mostrare nel menù. |
+&nbsp;&nbsp;&nbsp;contentRotations[].angle | `float` (in radianti) | Angolo della rotazione. |
 
 ### Vassoio standard
 
@@ -1466,8 +1470,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1510,8 +1514,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1558,8 +1562,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può es
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
 doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
 onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
 onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
@@ -1639,6 +1643,8 @@ x | `float` | Posizione orizzontale dell'origine della griglia. |
 y | `float` | Posizione verticale dell'origine della griglia. |
 width | `float` | Larghezza delle celle della griglia. |
 height | `float` | Altezza delle celle della griglia. |
+tiltColumns | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Scostamento delle colonne in base alla riga corrispondente. Permette di allineare alcune figure non rettangolari come gli esagoni. |
+tiltRows | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Scostamento delle righe in base alla colonna corrispondente. Permette di allineare alcune figure non rettangolari come gli esagoni. |
 
 ### Struttura macro
 

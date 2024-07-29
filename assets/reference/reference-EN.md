@@ -167,8 +167,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -214,8 +214,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -267,8 +267,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -315,8 +315,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -375,8 +375,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 icon | `FALSE` to hide it, `TRUE` to use default values, or [Image](#image-structure) | Element icon. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
@@ -425,8 +425,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 icon | `FALSE` to hide it, `TRUE` to use default values, or [Image](#image-structure) | Element icon. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
@@ -497,8 +497,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -544,8 +544,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -609,8 +609,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -661,8 +661,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -727,8 +727,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -778,8 +778,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -834,8 +834,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -850,7 +850,7 @@ icon | `FALSE` to hide it, `TRUE` to use default values, or [Image](#image-struc
 pattern |  | Pattern to print on the sheet. |
 &nbsp;&nbsp;&nbsp;pattern.width | `float` (in mm) | Width. |
 &nbsp;&nbsp;&nbsp;pattern.height | `float` (in mm) | Height. |
-&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Pattern design type. (`1` for lines, `2` for squares, `3` for hexagons) |
+&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Pattern design type. (`1` for lines, `2` for squares, `3` for vertical hexagons, `4` for horizontal hexagons) |
 &nbsp;&nbsp;&nbsp;pattern.topMargin | `float` (in mm) | Upper margin from which to start drawing the pattern. |
 &nbsp;&nbsp;&nbsp;pattern.bottomMargin | `float` (in mm) | Lower margin from which to start drawing the pattern. |
 &nbsp;&nbsp;&nbsp;pattern.rightMargin | `float` (in mm) | Right margin from which to start drawing the pattern. |
@@ -884,8 +884,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -907,7 +907,7 @@ isReadOnly | `boolean` | If `TRUE`, the element can be modified by the user. |
 pattern |  | Pattern to print on the sheet. |
 &nbsp;&nbsp;&nbsp;pattern.width | `float` (in mm) | Width. |
 &nbsp;&nbsp;&nbsp;pattern.height | `float` (in mm) | Height. |
-&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Pattern design type. (`1` for lines, `2` for squares, `3` for hexagons) |
+&nbsp;&nbsp;&nbsp;pattern.type | `integer` | Pattern design type. (`1` for lines, `2` for squares, `3` for vertical hexagons, `4` for horizontal hexagons) |
 &nbsp;&nbsp;&nbsp;pattern.topMargin | `float` (in mm) | Upper margin from which to start drawing the pattern. |
 &nbsp;&nbsp;&nbsp;pattern.bottomMargin | `float` (in mm) | Lower margin from which to start drawing the pattern. |
 &nbsp;&nbsp;&nbsp;pattern.rightMargin | `float` (in mm) | Right margin from which to start drawing the pattern. |
@@ -947,8 +947,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -998,8 +998,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1059,8 +1059,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1112,8 +1112,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1166,8 +1166,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1221,15 +1221,15 @@ A marker that can be used to indicate a position on the table.
 
 Name | Type | Description |
 --- | --- | --- | 
-rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left) |
+rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left. See the `rotation` attribute for exceptions.) |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1274,15 +1274,15 @@ A marker that can be used to indicate a position on the table. It can be turned 
 Name | Type | Description |
 --- | --- | --- | 
 side | `boolean` | Side on which the token is flipped. (`FALSE` for front, `TRUE` for back) |
-rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left) |
+rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left. See the `rotation` attribute for exceptions.) |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1337,15 +1337,15 @@ A token in the shape of a little man that can be placed standing or lying down.
 Name | Type | Description |
 --- | --- | --- | 
 side | `boolean` | Side on which the token is flipped. (`FALSE` for front, `TRUE` for back) |
-rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left) |
+rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left. See the `rotation` attribute for exceptions.) |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1393,15 +1393,15 @@ A marker that can be used to indicate a position on the table. It can be turned 
 Name | Type | Description |
 --- | --- | --- | 
 side | `boolean` | Side on which the token is flipped. (`FALSE` for front, `TRUE` for back) |
-rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left) |
+rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, `2` for upside-down, `3` for left. See the `rotation` attribute for exceptions.) |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1439,6 +1439,10 @@ isRotating | `boolean` | If `TRUE`, the token can be rotated. |
 isFlippable | `boolean` | If `TRUE`, the element can be turned on the other side. |
 isSpinnable | `boolean` | If `TRUE`, the element can be rotated to a random direction. |
 isCut | `boolean` | If `TRUE`, the token is a scissors-generated cutout. |
+contentRotations |  | Sets the available rotations. If specified, the element will not change size when rotated and the `rotation` attribute will refer to the element in this list. |
+&nbsp;&nbsp;&nbsp;contentRotations[].label | [Text](#text-structure) | Rotation label text. |
+&nbsp;&nbsp;&nbsp;contentRotations[].icon | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-structure) or [SVG Resource](#svg-structure) | Icon to show in the selection menu. |
+&nbsp;&nbsp;&nbsp;contentRotations[].angle | `float` (in radians) | Rotation angle. |
 
 ### Standard tray
 
@@ -1466,8 +1470,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1510,8 +1514,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1558,8 +1562,8 @@ tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be i
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
-&nbsp;&nbsp;&nbsp;snapTo.tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
-&nbsp;&nbsp;&nbsp;snapTo.grid | [Grid](#grid-structure) | Align the element to a grid. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
 doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
 onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
 onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
@@ -1639,6 +1643,8 @@ x | `float` | Horizontal position of the grid origin. |
 y | `float` | Vertical position of the grid origin. |
 width | `float` | Grid cell width. |
 height | `float` | Grid cell height. |
+tiltColumns | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Columns offset of the matching row. It allows the alignment of some non-rectangular shapes such as hexagons. |
+tiltRows | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Rows offset of the matching column. It allows the alignment of some non-rectangular shapes such as hexagons. |
 
 ### Macro structure
 
