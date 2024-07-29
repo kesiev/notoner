@@ -731,14 +731,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -794,14 +796,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -857,14 +861,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -920,14 +926,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -983,14 +991,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1046,14 +1056,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1109,14 +1121,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1220,14 +1234,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1283,14 +1299,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1346,14 +1364,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1409,14 +1429,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1472,14 +1494,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1535,14 +1559,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1598,14 +1624,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"onDropMacro": {
 					"forEach": {
@@ -1645,14 +1673,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"mode": 0
 			}
@@ -1686,14 +1716,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 0,
-						"y": 0,
-						"width": 50,
-						"height": 50
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 0,
+							"width": 50,
+							"height": 50
+						}
 					}
-				},
+				],
 				"onShakeMacro": false,
 				"mode": 0
 			}
@@ -1711,11 +1743,13 @@
 					"b": 100,
 					"a": 1
 				},
-				"snapTo": {
-					"tags": [
-						"tile"
-					]
-				},
+				"snapTo": [
+					{
+						"tags": [
+							"tile"
+						]
+					}
+				],
 				"mode": 2,
 				"isTransparent": true
 			}

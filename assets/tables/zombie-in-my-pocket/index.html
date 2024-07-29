@@ -416,14 +416,16 @@ function process() {
                             }
                         }
                     },
-                    snapTo:{
-                        grid:{
-                            x:0,
-                            y:0,
-                            width:TABLE_TILE_WIDTH,
-                            height:TABLE_TILE_HEIGHT
+                    snapTo:[
+                        {
+                            grid:{
+                                x:0,
+                                y:0,
+                                width:TABLE_TILE_WIDTH,
+                                height:TABLE_TILE_HEIGHT
+                            }
                         }
-                    },
+                    ],
                     onShakeMacro:false,
                     onDropMacro:{
                         forEach: { setSide:true }
@@ -464,14 +466,16 @@ function process() {
                     }
                 }
             },
-            snapTo:{
-                grid:{
-                    x:0,
-                    y:0,
-                    width:TABLE_TILE_WIDTH,
-                    height:TABLE_TILE_HEIGHT
+            snapTo:[
+                {
+                    grid:{
+                        x:0,
+                        y:0,
+                        width:TABLE_TILE_WIDTH,
+                        height:TABLE_TILE_HEIGHT
+                    }
                 }
-            },
+            ],
             onShakeMacro:false,
             mode: 0
         }
@@ -505,14 +509,16 @@ function process() {
                     }
                 }
             },
-            snapTo:{
-                grid:{
-                    x:0,
-                    y:0,
-                    width:TABLE_TILE_WIDTH,
-                    height:TABLE_TILE_HEIGHT
+            snapTo:[
+                {
+                    grid:{
+                        x:0,
+                        y:0,
+                        width:TABLE_TILE_WIDTH,
+                        height:TABLE_TILE_HEIGHT
+                    }
                 }
-            },
+            ],
             onShakeMacro:false,
             mode: 0
         }
@@ -533,9 +539,11 @@ function process() {
                 b: 100,
                 a: 1
             },
-            snapTo:{
-                tags:[ "tile" ]
-            },
+            snapTo:[
+                {
+                    tags:[ "tile" ]
+                }
+            ],
             mode: 2,
             isTransparent: true
         }

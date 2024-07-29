@@ -139,22 +139,22 @@ function process() {
     // Prepare play area
 
     table.data.push({
-            type:"tray-custom",
-            data:{
-                x: 0,
-                y: 0,
-                width: TOWERS_COUNT*(TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE),
-                height: TABLE_TOWERS_Y+(TABLE_CARD_SPACING*28)+TABLE_CARD_HEIGHT,
-                frame: false,
-                mode: -1,
-                isDraggable:false,
-                backgroundColor:{ r:0, g:0, b:0, a:0 },
-                icon:false,
-                messages:{
-                    shake:false
-                }
+        type:"tray-custom",
+        data:{
+            x: 0,
+            y: 0,
+            width: TOWERS_COUNT*(TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE),
+            height: TABLE_TOWERS_Y+(TABLE_CARD_SPACING*28)+TABLE_CARD_HEIGHT,
+            frame: false,
+            mode: -1,
+            isDraggable:false,
+            backgroundColor:{ r:0, g:0, b:0, a:0 },
+            icon:false,
+            messages:{
+                shake:false
             }
-        });
+        }
+    });
 
     // Prepare trays
 
@@ -371,14 +371,14 @@ function process() {
                             }
                         }
                     },
-                    snapTo: {
+                    snapTo: [ {
                         grid:{
                             x: TABLE_COLUMN_DISTANCE,
                             y: TABLE_CARD_GAP,
                             width: TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE,
                             height: TABLE_CARD_GAP
                         }
-                    },
+                    } ],
                     onClickMacro: [
                         {
                             if:[

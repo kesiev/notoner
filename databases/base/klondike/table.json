@@ -599,14 +599,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -903,14 +905,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -1247,14 +1251,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -1591,14 +1597,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -1935,14 +1943,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -2279,14 +2289,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -2623,14 +2635,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -2967,14 +2981,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -3311,14 +3327,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -3655,14 +3673,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -3999,14 +4019,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -4343,14 +4365,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -4687,14 +4711,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -5031,14 +5057,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -5335,14 +5363,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -5679,14 +5709,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -6023,14 +6055,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -6367,14 +6401,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -6711,14 +6747,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -7055,14 +7093,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -7399,14 +7439,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -7743,14 +7785,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -8087,14 +8131,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -8431,14 +8477,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -8775,14 +8823,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -9119,14 +9169,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -9463,14 +9515,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -9767,14 +9821,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -10111,14 +10167,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -10455,14 +10513,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -10799,14 +10859,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -11143,14 +11205,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -11487,14 +11551,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -11831,14 +11897,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -12175,14 +12243,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -12519,14 +12589,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -12863,14 +12935,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -13207,14 +13281,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -13551,14 +13627,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -13895,14 +13973,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -14199,14 +14279,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -14543,14 +14625,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -14887,14 +14971,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -15231,14 +15317,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -15575,14 +15663,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -15919,14 +16009,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -16263,14 +16355,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -16607,14 +16701,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -16951,14 +17047,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -17295,14 +17393,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -17639,14 +17739,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
@@ -17983,14 +18085,16 @@
 						}
 					}
 				},
-				"snapTo": {
-					"grid": {
-						"x": 25,
-						"y": 24,
-						"width": 83,
-						"height": 24
+				"snapTo": [
+					{
+						"grid": {
+							"x": 25,
+							"y": 24,
+							"width": 83,
+							"height": 24
+						}
 					}
-				},
+				],
 				"onClickMacro": [
 					{
 						"if": [
