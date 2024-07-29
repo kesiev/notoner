@@ -135,11 +135,21 @@
 						"label": {
 							"EN": "0&deg; (3)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (4)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -147,11 +157,21 @@
 						"label": {
 							"EN": "120&deg; (5)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (6)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -159,11 +179,21 @@
 						"label": {
 							"EN": "240&deg; (1)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (2)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
@@ -211,11 +241,21 @@
 						"label": {
 							"EN": "0&deg; (4)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (6)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -223,11 +263,21 @@
 						"label": {
 							"EN": "120&deg; (1)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (3)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -235,11 +285,21 @@
 						"label": {
 							"EN": "240&deg; (5)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (2)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
@@ -287,11 +347,21 @@
 						"label": {
 							"EN": "0&deg; (4)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (3)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -299,11 +369,21 @@
 						"label": {
 							"EN": "120&deg; (2)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (1)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -311,11 +391,21 @@
 						"label": {
 							"EN": "240&deg; (6)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (5)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
@@ -363,11 +453,21 @@
 						"label": {
 							"EN": "0&deg; (4)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (1)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -375,11 +475,21 @@
 						"label": {
 							"EN": "120&deg; (2)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (5)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -387,11 +497,21 @@
 						"label": {
 							"EN": "240&deg; (6)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (3)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
@@ -439,11 +559,21 @@
 						"label": {
 							"EN": "0&deg; (3)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (5)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -451,11 +581,21 @@
 						"label": {
 							"EN": "120&deg; (4)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (2)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -463,11 +603,21 @@
 						"label": {
 							"EN": "240&deg; (6)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (1)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
@@ -515,11 +665,21 @@
 						"label": {
 							"EN": "0&deg; (5)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (3)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -527,11 +687,21 @@
 						"label": {
 							"EN": "120&deg; (2)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (6)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -539,11 +709,21 @@
 						"label": {
 							"EN": "240&deg; (4)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (1)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
@@ -591,11 +771,21 @@
 						"label": {
 							"EN": "0&deg; (6)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 0
 					},
 					{
 						"label": {
 							"EN": "60&deg; (1)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 1.0471975511965976
 					},
@@ -603,11 +793,21 @@
 						"label": {
 							"EN": "120&deg; (4)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 2.0943951023931953
 					},
 					{
 						"label": {
 							"EN": "180&deg; (2)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 3.141592653589793
 					},
@@ -615,11 +815,21 @@
 						"label": {
 							"EN": "240&deg; (3)"
 						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
+						},
 						"angle": 4.1887902047863905
 					},
 					{
 						"label": {
 							"EN": "300&deg; (5)"
+						},
+						"icon": {
+							"isResource": true,
+							"type": "url",
+							"url": "/images/icon-hexagon-side.svg"
 						},
 						"angle": 5.235987755982988
 					}
