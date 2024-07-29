@@ -1,0 +1,631 @@
+{
+	"meta": {
+		"title": {
+			"EN": "Hexagon Puzzle",
+			"IT": "Puzzle ad esagoni"
+		},
+		"description": {
+			"EN": "Place and rotate a central hexagon and 6 other hexagons adjacent to it so that the numbers on all touching faces are identical.",
+			"IT": "Posiziona e ruota un esagono centrale ed altri 6 esagoni adiacenti ad esso in modo tale che i numeri su tutte le facce a contatto tra loro siano identici."
+		},
+		"players": {
+			"EN": "1"
+		},
+		"categories": [
+			"puzzle"
+		]
+	},
+	"data": [
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 304.9304353138208,
+				"height": 195.72174125528312,
+				"frame": false,
+				"mode": -1,
+				"isDraggable": false,
+				"backgroundColor": {
+					"r": 0,
+					"g": 0,
+					"b": 0,
+					"a": 0
+				},
+				"icon": false,
+				"messages": {
+					"shake": false
+				}
+			}
+		},
+		{
+			"type": "tray-custom",
+			"data": {
+				"x": 0,
+				"y": 0,
+				"width": 68.93043531382078,
+				"height": 118.93043531382078,
+				"frame": true,
+				"mode": -1,
+				"backgroundColor": {
+					"r": 100,
+					"g": 100,
+					"b": 100,
+					"a": 1
+				},
+				"labelText": {
+					"EN": "Shake this tray to collect and shuffle the pieces!",
+					"IT": "Agita questo vassoio per raccogliere e mescolare i pezzi!"
+				},
+				"label": {
+					"right": 5,
+					"bottom": 5,
+					"x": 5,
+					"textAlign": "center",
+					"fontSize": 5,
+					"lineHeight": 7
+				},
+				"onShakeMacro": {
+					"getElementsByTag": [
+						"piece"
+					],
+					"forEach": {
+						"shuffleZIndex": true,
+						"spin": true,
+						"moveTo": {
+							"x": 10,
+							"y": 10,
+							"gapY": 3
+						}
+					}
+				},
+				"onResetMacro": {
+					"getElementsByTag": [
+						"piece"
+					],
+					"forEach": {
+						"shuffleZIndex": true,
+						"spin": true,
+						"moveTo": {
+							"x": 10,
+							"y": 10,
+							"gapY": 3
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-A.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (3)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (4)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (5)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (6)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (1)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (2)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-B.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (4)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (6)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (1)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (3)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (5)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (2)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-C.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (4)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (3)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (2)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (1)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (6)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (5)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-D.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (4)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (1)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (2)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (5)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (6)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (3)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-E.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (3)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (5)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (4)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (2)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (6)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (1)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-F.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (5)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (3)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (2)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (6)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (4)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (1)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		},
+		{
+			"type": "token-custom",
+			"data": {
+				"x": 10,
+				"y": 10,
+				"width": 48.93043531382078,
+				"height": 48.93043531382078,
+				"tags": [
+					"piece"
+				],
+				"isRotating": true,
+				"isSpinnable": true,
+				"image": {
+					"width": 56.5,
+					"height": 48.93043531382078,
+					"image": {
+						"isResource": true,
+						"type": "url",
+						"url": "piece-G.png"
+					}
+				},
+				"snapTo": [
+					{
+						"grid": {
+							"x": 0,
+							"y": 24.46521765691039,
+							"width": 84,
+							"height": 24,
+							"tiltColumns": [
+								0,
+								42
+							]
+						}
+					}
+				],
+				"contentRotations": [
+					{
+						"label": {
+							"EN": "0&deg; (6)"
+						},
+						"angle": 0
+					},
+					{
+						"label": {
+							"EN": "60&deg; (1)"
+						},
+						"angle": 1.0471975511965976
+					},
+					{
+						"label": {
+							"EN": "120&deg; (4)"
+						},
+						"angle": 2.0943951023931953
+					},
+					{
+						"label": {
+							"EN": "180&deg; (2)"
+						},
+						"angle": 3.141592653589793
+					},
+					{
+						"label": {
+							"EN": "240&deg; (3)"
+						},
+						"angle": 4.1887902047863905
+					},
+					{
+						"label": {
+							"EN": "300&deg; (5)"
+						},
+						"angle": 5.235987755982988
+					}
+				],
+				"mode": 0
+			}
+		}
+	]
+}

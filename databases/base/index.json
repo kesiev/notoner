@@ -315,6 +315,25 @@
 			}
 		},
 		{
+			"path": "hexagon-puzzle",
+			"meta": {
+				"title": {
+					"EN": "Hexagon Puzzle",
+					"IT": "Puzzle ad esagoni"
+				},
+				"description": {
+					"EN": "Place and rotate a central hexagon and 6 other hexagons adjacent to it so that the numbers on all touching faces are identical.",
+					"IT": "Posiziona e ruota un esagono centrale ed altri 6 esagoni adiacenti ad esso in modo tale che i numeri su tutte le facce a contatto tra loro siano identici."
+				},
+				"players": {
+					"EN": "1"
+				},
+				"categories": [
+					"puzzle"
+				]
+			}
+		},
+		{
 			"path": "jigsaw",
 			"meta": {
 				"title": {

@@ -1,0 +1,328 @@
+<html>
+    <body onload="onl()"></body>
+<script>
+
+function process() {
+
+    let
+        table = {
+            meta: {
+                title: {
+                    EN: "Hexagon Puzzle",
+                    IT: "Puzzle ad esagoni"
+                },
+                description: {
+                    EN: "Place and rotate a central hexagon and 6 other hexagons adjacent to it so that the numbers on all touching faces are identical.",
+                    IT: "Posiziona e ruota un esagono centrale ed altri 6 esagoni adiacenti ad esso in modo tale che i numeri su tutte le facce a contatto tra loro siano identici."
+                },
+                players: {
+                    EN: "1"
+                },
+                categories: [
+                    "puzzle"
+                ]
+            },
+            data: []
+        };
+
+    let
+        area = document.createElement("textarea");
+
+    document.body.appendChild(area);
+
+
+    const
+        FONT_SIZE = 20,
+        FONT_SIZE_LABEL = 30,
+        OUTLINE_SCALE = 0.95,
+        BORDER_COLOR = "#000",
+        HEXAGON_ANGLE = Math.PI * 2 / 6,
+        HEXAGON_SIZE = 100,
+        HEXAGON_BORDER = 9,
+        HEXRATIO_DIAGONAL_WIDTH = Math.cos(HEXAGON_ANGLE),
+        HEXRATIO_DIAGONAL_HEIGHT = Math.sin(HEXAGON_ANGLE),
+        HEXAGON_DIAGONALWIDTH = HEXAGON_SIZE * HEXRATIO_DIAGONAL_WIDTH,
+        HEXAGON_DIAGONALHEIGHT = HEXAGON_SIZE * HEXRATIO_DIAGONAL_HEIGHT,
+        HEXAGON_RIGHTCORNER = HEXAGON_DIAGONALWIDTH + HEXAGON_SIZE,
+        HEXAGON_WIDTH = HEXAGON_RIGHTCORNER + HEXAGON_DIAGONALWIDTH,
+        HEXAGON_HEIGHT = HEXAGON_DIAGONALHEIGHT * 2,
+        HEXAGON_TABLE_WIDTH = 56.5,
+        HEXAGON_TABLE_HEIGHT = (HEXAGON_TABLE_WIDTH/HEXAGON_WIDTH)*HEXAGON_HEIGHT,
+        HEXAGON_TABLE_SIZE = Math.min(HEXAGON_TABLE_WIDTH,HEXAGON_TABLE_HEIGHT),
+        TRAY_AREA_X = 10,
+        TRAY_AREA_Y = 10,
+        TRAY_WIDTH = HEXAGON_TABLE_SIZE+TRAY_AREA_X*2,
+        TRAY_HEIGHT= HEXAGON_TABLE_SIZE+TRAY_AREA_Y*2+50,
+        TRAY_GAPY = 3;
+
+    // Prepare play area
+
+    table.data.push({
+        type:"tray-custom",
+        data:{
+            x: 0,
+            y: 0,
+            width: TRAY_WIDTH+10+HEXAGON_TABLE_WIDTH*4,
+            height: HEXAGON_TABLE_HEIGHT*4,
+            frame: false,
+            mode: -1,
+            isDraggable:false,
+            backgroundColor:{ r:0, g:0, b:0, a:0 },
+            icon:false,
+            messages:{
+                shake:false
+            }
+        }
+    });
+
+    // Prepare the tray
+
+    table.data.push({
+        type: "tray-custom",
+        data: {
+            x: 0,
+            y: 0,
+            width: TRAY_WIDTH,
+            height: TRAY_HEIGHT,
+            frame: true,
+            mode: -1,
+            backgroundColor: {
+                r: 100,
+                g: 100,
+                b: 100,
+                a: 1
+            },
+            labelText: {
+                EN: "Shake this tray to collect and shuffle the pieces!",
+                IT: "Agita questo vassoio per raccogliere e mescolare i pezzi!"
+            },
+            label: {
+                right: 5,
+                bottom: 5,
+                x: 5,
+                textAlign: "center",
+                fontSize: 5,
+                lineHeight: 7
+            },
+            onShakeMacro:{
+                getElementsByTag:[
+                    "piece"
+                ],
+                forEach:{
+                    shuffleZIndex:true,
+                    spin:true,
+                    moveTo:{
+                        x:TRAY_AREA_X,
+                        y:TRAY_AREA_Y,
+                        gapY:TRAY_GAPY
+                    }
+                }
+            },
+            onResetMacro:{
+                getElementsByTag:[
+                    "piece"
+                ],
+                forEach:{
+                    shuffleZIndex:true,
+                    spin:true,
+                    moveTo:{
+                        x:TRAY_AREA_X,
+                        y:TRAY_AREA_Y,
+                        gapY:TRAY_GAPY
+                    }
+                }
+            }
+        }
+    });
+    
+    // Prepare the preview
+
+    function drawHexagon(hctx) {
+        hctx.beginPath();
+        hctx.moveTo( HEXAGON_DIAGONALWIDTH, 0 );
+        hctx.lineTo( HEXAGON_RIGHTCORNER, 0 );
+        hctx.lineTo( HEXAGON_WIDTH, HEXAGON_DIAGONALHEIGHT );
+        hctx.lineTo( HEXAGON_RIGHTCORNER, HEXAGON_HEIGHT );
+        hctx.lineTo( HEXAGON_DIAGONALWIDTH, HEXAGON_HEIGHT );
+        hctx.lineTo( 0, HEXAGON_DIAGONALHEIGHT );
+        hctx.lineTo( HEXAGON_DIAGONALWIDTH, 0 );
+        hctx.closePath();
+    }
+
+    console.log(HEXRATIO_DIAGONAL_WIDTH, HEXRATIO_DIAGONAL_HEIGHT);
+    [
+        { id:"A", label:"A", sides:[ "3","2","1","6","5","4" ], backgroundColor:"#ec111a", labelColor:"#fff", color:"#000" },
+        { id:"B", label:"B", sides:[ "4","2","5","3","1","6" ], backgroundColor:"#fb6330", labelColor:"#fff", color:"#000" },
+        { id:"C", label:"C", sides:[ "4","5","6","1","2","3" ], backgroundColor:"#ffd42f", labelColor:"#fff", color:"#000" },
+        { id:"D", label:"D", sides:[ "4","3","6","5","2","1" ], backgroundColor:"#138468", labelColor:"#fff", color:"#000" },
+        { id:"E", label:"E", sides:[ "3","1","6","2","4","5" ], backgroundColor:"#009dd6", labelColor:"#fff", color:"#000" },
+        { id:"F", label:"F", sides:[ "5","1","4","6","2","3" ], backgroundColor:"#7849b8", labelColor:"#fff", color:"#000" },
+        { id:"G", label:"G", sides:[ "6","5","3","2","4","1" ], backgroundColor:"#f2609e", labelColor:"#fff", color:"#000" }
+    ].forEach(data=>{
+        let
+            hexagon = document.createElement("canvas"),
+            hctx = hexagon.getContext("2d");
+
+        hexagon.width = HEXAGON_WIDTH,
+        hexagon.height = HEXAGON_HEIGHT,
+        drawHexagon(hctx);
+        hctx.fillStyle = BORDER_COLOR;
+        hctx.fill();
+        hctx.save();
+        hctx.scale(OUTLINE_SCALE,OUTLINE_SCALE);
+        hctx.translate((HEXAGON_WIDTH-(HEXAGON_WIDTH*OUTLINE_SCALE))/2/OUTLINE_SCALE,(HEXAGON_HEIGHT-(HEXAGON_HEIGHT*OUTLINE_SCALE))/2/OUTLINE_SCALE);
+        drawHexagon(hctx);
+        hctx.fillStyle = data.backgroundColor;
+        hctx.fill();
+        hctx.restore();
+
+        hctx.fillStyle = data.color;
+        hctx.font = FONT_SIZE+"px Noto Sans";
+        hctx.textBaseline = "bottom";
+        hctx.textAlign = "center";
+
+        hctx.save();
+        hctx.translate(
+            HEXAGON_DIAGONALWIDTH+(HEXAGON_SIZE/2),
+            HEXAGON_BORDER
+        );
+        hctx.rotate(Math.PI);
+        hctx.fillText(data.sides[0],0,0);
+        hctx.restore();
+
+        hctx.save();
+        hctx.translate(
+            HEXAGON_RIGHTCORNER+(HEXAGON_DIAGONALWIDTH/2)-HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
+            HEXAGON_DIAGONALHEIGHT*0.5+HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
+        );
+        hctx.rotate(Math.PI+HEXAGON_ANGLE);
+        hctx.fillText(data.sides[1],0,0);
+        hctx.restore();
+
+        hctx.save();
+        hctx.translate(
+            HEXAGON_RIGHTCORNER+(HEXAGON_DIAGONALWIDTH/2)-HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
+            HEXAGON_DIAGONALHEIGHT*1.5-HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
+        );
+        hctx.rotate(-HEXAGON_ANGLE);
+        hctx.fillText(data.sides[2],0,0);
+        hctx.restore();
+
+        hctx.save();
+        hctx.translate(
+            HEXAGON_DIAGONALWIDTH+(HEXAGON_SIZE/2),
+            HEXAGON_HEIGHT-HEXAGON_BORDER
+        );
+        hctx.fillText(data.sides[3],0,0);
+        hctx.restore();
+
+        hctx.save();
+        hctx.translate(
+            (HEXAGON_DIAGONALWIDTH/2)+HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
+            HEXAGON_DIAGONALHEIGHT*1.5-HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
+        );
+        hctx.rotate(HEXAGON_ANGLE);
+        hctx.fillText(data.sides[4],0,0);
+        hctx.restore();
+
+        hctx.save();
+        hctx.translate(
+            (HEXAGON_DIAGONALWIDTH/2)+HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
+            HEXAGON_DIAGONALHEIGHT*0.5+HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
+        );
+        hctx.rotate(Math.PI-HEXAGON_ANGLE);
+        hctx.fillText(data.sides[5],0,0);
+        hctx.restore();
+
+        hctx.textBaseline = "middle";
+        hctx.textAlign = "center";
+        hctx.fillStyle = data.labelColor;
+        hctx.save();
+        hctx.translate(
+            HEXAGON_WIDTH/2,
+            HEXAGON_HEIGHT/2
+        );
+        hctx.rotate(0);
+        hctx.strokeStyle = BORDER_COLOR;
+        hctx.lineWidth = 4;
+        hctx.font = FONT_SIZE_LABEL+"px Noto Sans";
+        hctx.strokeText(data.label, 0, 0);
+        hctx.fillStyle = data.labelColor;
+        hctx.fillText(data.label,0,0);
+        hctx.restore();
+
+        document.body.appendChild(hexagon);
+
+        table.data.push({
+            type: "token-custom",
+            data: {
+                x: TRAY_AREA_X,
+                y: TRAY_AREA_Y,
+                width: HEXAGON_TABLE_SIZE,
+                height: HEXAGON_TABLE_SIZE,
+                tags:[ "piece" ],
+                isRotating:true,
+                isSpinnable:true,
+                image: {
+                    width: HEXAGON_TABLE_WIDTH,
+                    height: HEXAGON_TABLE_HEIGHT,
+                    image: {
+                        isResource: true,
+                        type: "url",
+                        url: "piece-"+data.id+".png"
+                    }
+                },
+                snapTo:[
+                    {
+                       grid:{
+                            x:0,
+                            y:HEXAGON_TABLE_HEIGHT/2,
+                            width:Math.floor(HEXAGON_TABLE_WIDTH*1.5),
+                            height:Math.floor(HEXAGON_TABLE_HEIGHT/2),
+                            tiltColumns:[0,Math.floor(HEXAGON_TABLE_WIDTH*0.75)]
+                        }
+                    }
+                ],
+                contentRotations:[
+                    {
+                        label:{ EN:"0&deg; ("+data.sides[0]+")"},
+                        angle:0
+                    },{
+                        label:{ EN:"60&deg; ("+data.sides[5]+")"},
+                        angle:HEXAGON_ANGLE
+                    },{
+                        label:{ EN:"120&deg; ("+data.sides[4]+")"},
+                        angle:HEXAGON_ANGLE*2
+                    },{
+                        label:{ EN:"180&deg; ("+data.sides[3]+")"},
+                        angle:HEXAGON_ANGLE*3
+                    },{
+                        label:{ EN:"240&deg; ("+data.sides[2]+")"},
+                        angle:HEXAGON_ANGLE*4
+                    },{
+                        label:{ EN:"300&deg; ("+data.sides[1]+")"},
+                        angle:HEXAGON_ANGLE*5
+                    }
+                ],
+                mode: 0
+            }
+        });
+
+    });
+
+
+
+    // Prepare table data
+
+    area.innerText = JSON.stringify(table);
+    
+}
+
+function onl() {
+
+    process();
+
+}
+
+</script>
+</html>
