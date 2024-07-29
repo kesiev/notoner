@@ -505,39 +505,72 @@ let Stencil=(function() {
         onDropDefault:(surface)=>{
             let
                 onDropMacro = surface.onDropMacro || (surface.static ? surface.static.onDropMacro : 0);
+
             if (surface.snapTo) {
+
                 let
-                    snap = true,
-                    ox, oy,
-                    dx = surface.x,
-                    dy = surface.y;
-                if (snap && surface.snapTo.tags) {
+                    fdestx, fdesty, mindist;
+
+                surface.snapTo.forEach(rule=>{
+
                     let
-                        target,
-                        destinations = surface.getSurfacesByTag(surface.snapTo.tags);
-                    destinations.forEach(destination=>{
-                        if (destination.isCollidingWithSurface(surface))
-                            target = destination;
-                    });
-                    if (target) {
-                        dx = target.x + (target.width - surface.width)/2;
-                        dy = target.y + (target.height - surface.height)/2;
-                        ox = target.x;
-                        oy = target.y;
-                    } else
-                        snap = false;
-                    
-                }
-                if (snap && surface.snapTo.grid) {
-                    if (ox === undefined) ox = 0;
-                    if (oy === undefined) oy = 0;
-                    ox +=surface.snapTo.grid.x;
-                    oy +=surface.snapTo.grid.y;
-                    dx = ox+(Math.round((surface.x-ox)/surface.snapTo.grid.width))*surface.snapTo.grid.width;
-                    dy = oy+(Math.round((surface.y-oy)/surface.snapTo.grid.height))*surface.snapTo.grid.height;
-                }
-                if ((dx != surface.x) || (dy != surface.y))
-                    surface.animateToPosition(dx,dy);
+                        col, row,
+                        dx, dy, dist,
+                        originx, originy, destx, desty;
+
+                    if (rule.tags) {
+                        let
+                            target,
+                            destinations = surface.getSurfacesByTag(rule.tags);
+                        destinations.forEach(destination=>{
+                            if (destination.isCollidingWithSurface(surface))
+                                target = destination;
+                        });
+                        if (target) {
+                            destx = target.x + (target.width - surface.width)/2;
+                            desty = target.y + (target.height - surface.height)/2;
+                            originx = target.x;
+                            originy = target.y;
+                        }
+                    }
+
+                    if (rule.grid) {
+                        if (originx === undefined) originx = 0;
+                        if (originy === undefined) originy = 0;
+                        originx += rule.grid.x;
+                        originy += rule.grid.y;
+                        col = Math.round((surface.x-originx)/rule.grid.width);
+                        row = Math.round((surface.y-originy)/rule.grid.height);
+                        if (rule.grid.tiltColumns) {
+                            let
+                                gap = rule.grid.tiltColumns[Math.abs(row%rule.grid.tiltColumns.length)];
+                            col = Math.round((surface.x-originx-gap)/rule.grid.width);
+                            originx += gap;
+                        }
+                        if (rule.grid.tiltRows) {
+                            let
+                                gap = rule.grid.tiltRows[Math.abs(col%rule.grid.tiltRows.length)];
+                            row = Math.round((surface.y-originy-gap)/rule.grid.height);
+                            originy += gap;
+                        }
+                        destx = originx+col*rule.grid.width;
+                        desty = originy+row*rule.grid.height;
+                    }
+
+                    dx = destx - surface.x;
+                    dy = desty - surface.y;
+                    dist = Math.sqrt(dx*dx+dy*dy);
+                    if ((mindist === undefined) || (dist < mindist)) {
+                        mindist = dist;
+                        fdestx = destx;
+                        fdesty = desty;
+                    }
+
+                });
+
+                if (mindist)
+                    surface.animateToPosition(fdestx,fdesty);
+
             }
             if (onDropMacro) {
                 Macro.run(onDropMacro,surface);
