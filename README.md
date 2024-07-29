@@ -57,6 +57,10 @@ Then, I wanted to use it to play [Pulse](https://rpggeek.com/rpg/23464/pulse), a
 
 ### FAQ
 
+**Q: What happens to the PDFs uploaded/printed by Notoner?**
+
+A: Notoner converts the PDF pages to images locally in your browser using a [JavaScript library](https://github.com/mozilla/pdf.js). In general, there is no server-side part in Notoner.
+
 **Q: The Notoner guide says _I can use the Notoner elements instead of their physical counterparts_. What does it mean?**
 
 A: It's a key _design guideline_ of Notoner! It hasn't been taught to _play board games digitally_, even if possible on some games. It's more of a _companion app_ that may help you _replace_ some game components - what to replace is up to you. Do you want to scribble your character sheet using Notoner and roll your physical dice? Go for it! Do you want to play an RPG that uses a tarot deck but Notoner doesn't support it? Use Notoner to keep the character sheet and use a physical tarot deck.
