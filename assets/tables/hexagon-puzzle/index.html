@@ -38,7 +38,7 @@ function process() {
         BORDER_COLOR = "#000",
         HEXAGON_ANGLE = Math.PI * 2 / 6,
         HEXAGON_SIZE = 100,
-        HEXAGON_BORDER = 9,
+        HEXAGON_RADIUS = 75,
         HEXRATIO_DIAGONAL_WIDTH = Math.cos(HEXAGON_ANGLE),
         HEXRATIO_DIAGONAL_HEIGHT = Math.sin(HEXAGON_ANGLE),
         HEXAGON_DIAGONALWIDTH = HEXAGON_SIZE * HEXRATIO_DIAGONAL_WIDTH,
@@ -181,58 +181,20 @@ function process() {
         hctx.textBaseline = "bottom";
         hctx.textAlign = "center";
 
-        hctx.save();
-        hctx.translate(
-            HEXAGON_DIAGONALWIDTH+(HEXAGON_SIZE/2),
-            HEXAGON_BORDER
-        );
-        hctx.rotate(Math.PI);
-        hctx.fillText(data.sides[0],0,0);
-        hctx.restore();
+        data.sides.forEach((side,id)=>{
+            let
+                angle = HEXAGON_ANGLE*id-(HEXAGON_ANGLE*1.5);
+            hctx.save();
+            hctx.translate(
+                HEXAGON_WIDTH/2+Math.cos(angle)*HEXAGON_RADIUS,
+                HEXAGON_HEIGHT/2+Math.sin(angle)*HEXAGON_RADIUS
+            );
+            hctx.rotate(angle-Math.PI/2);
+            hctx.fillText(side,0,0);
+            hctx.restore();
 
-        hctx.save();
-        hctx.translate(
-            HEXAGON_RIGHTCORNER+(HEXAGON_DIAGONALWIDTH/2)-HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
-            HEXAGON_DIAGONALHEIGHT*0.5+HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
-        );
-        hctx.rotate(Math.PI+HEXAGON_ANGLE);
-        hctx.fillText(data.sides[1],0,0);
-        hctx.restore();
+        })
 
-        hctx.save();
-        hctx.translate(
-            HEXAGON_RIGHTCORNER+(HEXAGON_DIAGONALWIDTH/2)-HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
-            HEXAGON_DIAGONALHEIGHT*1.5-HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
-        );
-        hctx.rotate(-HEXAGON_ANGLE);
-        hctx.fillText(data.sides[2],0,0);
-        hctx.restore();
-
-        hctx.save();
-        hctx.translate(
-            HEXAGON_DIAGONALWIDTH+(HEXAGON_SIZE/2),
-            HEXAGON_HEIGHT-HEXAGON_BORDER
-        );
-        hctx.fillText(data.sides[3],0,0);
-        hctx.restore();
-
-        hctx.save();
-        hctx.translate(
-            (HEXAGON_DIAGONALWIDTH/2)+HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
-            HEXAGON_DIAGONALHEIGHT*1.5-HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
-        );
-        hctx.rotate(HEXAGON_ANGLE);
-        hctx.fillText(data.sides[4],0,0);
-        hctx.restore();
-
-        hctx.save();
-        hctx.translate(
-            (HEXAGON_DIAGONALWIDTH/2)+HEXAGON_BORDER*HEXRATIO_DIAGONAL_WIDTH,
-            HEXAGON_DIAGONALHEIGHT*0.5+HEXAGON_BORDER*HEXRATIO_DIAGONAL_HEIGHT
-        );
-        hctx.rotate(Math.PI-HEXAGON_ANGLE);
-        hctx.fillText(data.sides[5],0,0);
-        hctx.restore();
 
         hctx.textBaseline = "middle";
         hctx.textAlign = "center";
@@ -286,21 +248,51 @@ function process() {
                 contentRotations:[
                     {
                         label:{ EN:"0&deg; ("+data.sides[0]+")"},
+                        icon: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/icon-hexagon-side.svg"
+                        },
                         angle:0
                     },{
                         label:{ EN:"60&deg; ("+data.sides[5]+")"},
+                        icon: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/icon-hexagon-side.svg"
+                        },
                         angle:HEXAGON_ANGLE
                     },{
                         label:{ EN:"120&deg; ("+data.sides[4]+")"},
+                        icon: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/icon-hexagon-side.svg"
+                        },
                         angle:HEXAGON_ANGLE*2
                     },{
                         label:{ EN:"180&deg; ("+data.sides[3]+")"},
+                        icon: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/icon-hexagon-side.svg"
+                        },
                         angle:HEXAGON_ANGLE*3
                     },{
                         label:{ EN:"240&deg; ("+data.sides[2]+")"},
+                        icon: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/icon-hexagon-side.svg"
+                        },
                         angle:HEXAGON_ANGLE*4
                     },{
                         label:{ EN:"300&deg; ("+data.sides[1]+")"},
+                        icon: {
+                            isResource: true,
+                            type: "url",
+                            url: "/images/icon-hexagon-side.svg"
+                        },
                         angle:HEXAGON_ANGLE*5
                     }
                 ],
