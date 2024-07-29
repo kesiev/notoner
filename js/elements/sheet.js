@@ -1,6 +1,7 @@
 let Sheet=function(settings) {
 
     const
+        HEXAGON_ANGLE = Math.PI * 2 / 6,
         EVENT_PAINTED = { type:"painted" },
         SHADOW = 1,
         DEFAULT_MODEL_OPACITY = 0.6,
@@ -137,11 +138,11 @@ let Sheet=function(settings) {
                 break;
             }
             case 3:{
-                // Hexagons
+                // Vertical hexagons
                 let
                     row = false,
-                    hexDiagonalHeight = patternWidth * 0.375,
-                    hexDiagonalWidth = patternWidth * 0.75,
+                    hexDiagonalHeight = patternWidth * Math.cos(HEXAGON_ANGLE),
+                    hexDiagonalWidth = patternWidth * Math.sin(HEXAGON_ANGLE),
                     x,
                     y=patternTopMargin;
                 while (y<patternAreaBottom) {
@@ -150,13 +151,30 @@ let Sheet=function(settings) {
                         svg+=svgLine(x,y+hexDiagonalHeight,x+hexDiagonalWidth,y,patternColor);
                         svg+=svgLine(x+hexDiagonalWidth,y,x+hexDiagonalWidth*2,y+hexDiagonalHeight,patternColor);
                         svg+=svgLine(x+hexDiagonalWidth*2,y+hexDiagonalHeight,x+hexDiagonalWidth*2,y+hexDiagonalHeight+patternWidth,patternColor);
-                        svg+=svgLine(x,y+hexDiagonalHeight+patternHeight,x+hexDiagonalWidth,y+hexDiagonalHeight*2+patternHeight,patternColor);
-                        svg+=svgLine(x+hexDiagonalWidth,y+hexDiagonalHeight*2+patternHeight,x+hexDiagonalWidth*2,y+hexDiagonalHeight+patternHeight,patternColor);
-                        if (y==patternTopMargin)
-                            svg+=svgLine(x,y+hexDiagonalHeight,x,y+hexDiagonalHeight+patternHeight,patternColor);
                         x+=hexDiagonalWidth*2;
                     }
                     y+=patternHeight+hexDiagonalHeight;
+                    row = !row;
+                }
+                break;
+            }
+            case 4:{
+                // Horizontal hexagons
+                let
+                    row = false,
+                    hexDiagonalHeight = patternWidth * Math.sin(HEXAGON_ANGLE),
+                    hexDiagonalWidth = patternWidth * Math.cos(HEXAGON_ANGLE),
+                    x,
+                    y=patternTopMargin;
+                while (y<patternAreaBottom) {
+                    x=patternLeftMargin-(row ? patternWidth+hexDiagonalWidth : 0);
+                    while (x<patternAreaRight) {
+                        svg+=svgLine(x,y+hexDiagonalHeight,x+hexDiagonalWidth,y,patternColor);
+                        svg+=svgLine(x+hexDiagonalWidth,y,x+hexDiagonalWidth+patternWidth,y,patternColor);
+                        svg+=svgLine(x+hexDiagonalWidth+patternWidth,y,x+patternWidth+hexDiagonalWidth*2,y+hexDiagonalHeight,patternColor);
+                        x+=(patternWidth+hexDiagonalWidth)*2;
+                    }
+                    y+=hexDiagonalHeight;
                     row = !row;
                 }
                 break;
