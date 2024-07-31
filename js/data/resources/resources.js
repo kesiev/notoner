@@ -624,7 +624,8 @@ RESOURCES={
                         image:data.image,
                         isReadOnly:data.isReadOnly,
                         pattern:data.pattern,
-                        frame:data.frame
+                        frame:data.frame,
+                        fields:data.fields
                     })),
                     default:{
                         x:data.x,
@@ -642,7 +643,8 @@ RESOURCES={
                     image:surface.getImage(),
                     isReadOnly:surface.isReadOnly,
                     pattern:surface.pattern,
-                    frame:surface.frame
+                    frame:surface.frame,
+                    fields:surface.fields
                 })
             },
             onReset:(surface,data)=>{

@@ -5,12 +5,20 @@ let Sheet=function(settings) {
         EVENT_PAINTED = { type:"painted" },
         SHADOW = 1,
         DEFAULT_MODEL_OPACITY = 0.6,
-        DEFAULT_COLOR = { r:255, g:255, b:255, a:1 };
+        DEFAULT_COLOR = { r:255, g:255, b:255, a:1 },
+        TEXT_CANVAS_GAP = 0.19,
+        INPUTBOX_COLOR = "rgba(0,0,0,0.3)",
+        INPUTBOX_FONTLIMIT = 3,
+        INPUTBOX_FONTGAP = 3,
+        INPUTBOX_AREAFONTSIZE = 4,
+        INPUTBOX_AREALINESPACING = 1,
+        INPUTBOX_CHECKSPACING = 0.5;
 
     let
         imageFile,
         canvas,
         context,
+        textareaAlignmentData,
         canvasScale = Global.SCALE/settings.resolution,
         isWritable = !settings.isReadOnly && !settings.isDraggable,
         modelOpacity = settings.modelOpacity === undefined ? (settings.model && isWritable ? DEFAULT_MODEL_OPACITY : 1) : settings.modelOpacity,
@@ -62,6 +70,89 @@ let Sheet=function(settings) {
         context.lineCap = "round";
         context.lineJoin = "round";
         
+    }
+
+    function printText(context,line,x,y,maxWidth,align) {
+        switch (align) {
+            case "center":{
+                let
+                    metrics = context.measureText(line);
+                context.fillText(line, x+((maxWidth-metrics.width)/2), y);
+                break;
+            }
+            case "right":{
+                let
+                    metrics = context.measureText(line);
+                context.fillText(line, x+maxWidth-metrics.width, y);
+                break;
+            }
+            default:{
+                context.fillText(line, x, y);
+            }
+        }
+    }
+
+    function blitText(context, text, x, y, maxWidth, maxHeight, lineHeight, align, multiline) {
+
+        if (multiline) {
+                
+            let
+                wordCount = 0,
+                words = text.split(/([ \n])/);
+                line = "";
+
+            for (let n = 0; n < words.length; n+=2) {
+                var
+                    testLine = (wordCount ? line + " " : "") + words[n],
+                    metrics = context.measureText(testLine),
+                    testWidth = metrics.width,
+                    doWrap = testWidth > maxWidth,
+                    endLine = words[n+1] == "\n";
+
+                wordCount++;
+
+                if (doWrap) {
+                    if (wordCount == 1) {
+                        let
+                            cut;
+
+                        do {
+                            for (cut=testLine.length-1;cut>1;cut--) {
+                                metrics = context.measureText(testLine.substr(0,cut)),
+                                testWidth = metrics.width;
+                                if (testWidth <= maxWidth)
+                                    break;
+                            }
+                            printText(context, testLine.substr(0,cut), x, y, maxWidth, align);
+                            testLine = testLine.substr(cut);
+                            metrics = context.measureText(testLine);
+                            testWidth = metrics.width;
+                            y += lineHeight;
+                        } while (testWidth > maxWidth);
+                        line = testLine;
+                        wordCount = 1;
+                    } else {
+                        printText(context, line, x, y, maxWidth, align);
+                        line = "";
+                        wordCount = 0;
+                        n -= 2;
+                        y += lineHeight;
+                        endLine = false;
+                    }
+                }  else
+                    line = testLine;
+
+                if (endLine) {
+                    printText(context, line, x, y, maxWidth, align);
+                    line = "";
+                    wordCount = 0;
+                    y += lineHeight;
+                }
+            }
+            printText(context, line, x, y, maxWidth, align);
+
+        } else
+            printText(context, text, x, y+((maxHeight-lineHeight)/2), maxWidth, align);
     }
 
     // --- Prepare element
@@ -120,6 +211,10 @@ let Sheet=function(settings) {
                     svg +=svgLine(patternLeftMargin,y,patternLeftMargin+patternAreaWidth,y,patternColor);
                     y+=patternHeight;
                 }
+                textareaAlignmentData = {
+                    y:patternTopMargin,
+                    height:patternHeight
+                };
                 break;
             }
             case 2:{
@@ -135,6 +230,12 @@ let Sheet=function(settings) {
                     svg +=svgLine(x,patternTopMargin,x,patternTopMargin+patternAreaHeight,patternColor);
                     x+=patternWidth;
                 } 
+                textareaAlignmentData = {
+                    x:patternLeftMargin,
+                    y:patternTopMargin,
+                    width:patternWidth,
+                    height:patternHeight,
+                };
                 break;
             }
             case 3:{
@@ -254,6 +355,7 @@ let Sheet=function(settings) {
     sheet.pattern = settings.pattern;
     sheet.modelOpacity = settings.modelOpacity;
     sheet.frame = settings.frame;
+    sheet.fields = settings.fields;
 
     // --- Element properties (setters)
 
@@ -321,6 +423,110 @@ let Sheet=function(settings) {
 
         sheet.onEndInteraction=()=>{
             sheet.broadcastEvent(EVENT_PAINTED);
+        }
+
+        sheet.onTextInputRequest=(area,tool)=>{
+            let
+                managed = false;
+
+            if (sheet.fields) {
+                let
+                    fields = sheet.translator.translateObject(sheet.fields),
+                    field;
+                for (let i=0;i<fields.length;i++) {
+                    field = fields[i];
+                    if (!(
+                        (area.x<field.x)||(area.x>field.x+field.width)||
+                        (area.y<field.y)||(area.y>field.y+field.height)
+                    )) {
+                        switch (field.type) {
+                            case "text":{
+                                area.x = field.x;
+                                area.y = field.y;
+                                area.width = field.width;
+                                area.height = field.height;
+                                area.backgroundColor = INPUTBOX_COLOR;
+                                if (field.multiline !== undefined) area.multiline = field.multiline;
+                                if (field.align !== undefined) area.align = field.align;
+                                if (area.multiline) {
+                                    area.lineHeight = INPUTBOX_AREAFONTSIZE + INPUTBOX_AREALINESPACING;
+                                    area.fontSize = INPUTBOX_AREAFONTSIZE;
+                                } else {
+                                    area.lineHeight = area.height;
+                                    area.fontSize = Math.max(INPUTBOX_FONTLIMIT,area.height - INPUTBOX_FONTGAP);
+                                }
+                                break;
+                            }
+                            case "checkbox":{
+                                let
+                                    spacing = INPUTBOX_CHECKSPACING * settings.resolution,
+                                    crossX=field.x * settings.resolution,
+                                    crossY=field.y * settings.resolution,
+                                    crossWidth = field.width * settings.resolution,
+                                    crossHeight = field.height * settings.resolution,
+                                    crossX2 = crossX+crossWidth,
+                                    crossY2 = crossY+crossHeight,
+                                    status = context.getImageData(crossX+(crossWidth/2), crossY+(crossHeight/2), 1, 1).data; 
+
+                                if (status[3]) {
+                                    context.clearRect(crossX, crossY, crossWidth, crossHeight);
+                                } else {
+                                    context.beginPath();
+                                    setTool(tool);
+                                    context.moveTo(crossX+spacing,crossY+spacing);
+                                    context.lineTo(crossX2-spacing,crossY2-spacing);
+                                    context.moveTo(crossX2-spacing,crossY+spacing);
+                                    context.lineTo(crossX+spacing,crossY2-spacing);
+                                    context.stroke();
+                                    context.closePath();
+                                }
+                                area = 0;
+                                break;
+                            }
+                        }
+                        managed = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!managed && area && textareaAlignmentData) {
+                if (textareaAlignmentData.width) {
+                    area.x = textareaAlignmentData.x+(Math.floor((area.x-textareaAlignmentData.x)/textareaAlignmentData.width)*textareaAlignmentData.width);
+                    area.width = sheet.width-area.x;
+                }
+                if (textareaAlignmentData.height) {
+                    area.y = textareaAlignmentData.y+(Math.floor((area.y-textareaAlignmentData.y)/textareaAlignmentData.height)*textareaAlignmentData.height);
+                    area.lineHeight = textareaAlignmentData.height;
+                    area.height = sheet.height-area.y;
+                    area.fontSize = textareaAlignmentData.height;
+                }
+            }
+
+            return area;
+        }
+
+        sheet.onTextInput=(area,tool)=>{
+
+            if (area.text) {
+                setTool(tool);
+                context.font = (area.fontSize * settings.resolution)+"px "+area.fontFamily;
+                context.lineHeight = (area.lineHeight * settings.resolution)+"px";
+                context.textBaseline = "top";
+                blitText(
+                    context,
+                    area.text,
+                    area.x * settings.resolution,
+                    (area.lineHeight * settings.resolution * TEXT_CANVAS_GAP)+(area.y * settings.resolution),
+                    area.width * settings.resolution,
+                    area.height * settings.resolution,
+                    area.lineHeight*settings.resolution,
+                    area.align,
+                    area.multiline
+                );
+            }
+
+
         }
 
     } else
