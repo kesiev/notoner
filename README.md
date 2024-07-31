@@ -59,7 +59,7 @@ Then, I wanted to use it to play [Pulse](https://rpggeek.com/rpg/23464/pulse), a
 
 **Q: What happens to the PDFs uploaded/printed by Notoner?**
 
-A: Notoner converts the PDF pages to images locally in your browser using a [JavaScript library](https://github.com/mozilla/pdf.js). In general, there is no server-side part in Notoner.
+A: Notoner converts the PDF pages to images and extracts form elements locally in your browser using a [JavaScript library](https://github.com/mozilla/pdf.js). In general, there is no server-side part in Notoner.
 
 **Q: The Notoner guide says _I can use the Notoner elements instead of their physical counterparts_. What does it mean?**
 
