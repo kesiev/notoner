@@ -914,6 +914,7 @@ pattern |  | Pattern to print on the sheet. |
 &nbsp;&nbsp;&nbsp;pattern.leftMargin | `float` (in mm) | Left margin from which to start drawing the pattern. |
 &nbsp;&nbsp;&nbsp;pattern.color | [Color](#color-structure) | Pattern color. |
 frame | `FALSE` to hide it, `TRUE` to use default values, or [Frame](#frame-structure) | Background block. |
+fields | [Translated fields](#translated-fields-structure) | Interactive fields on the sheet. (Experimental feature) |
 
 ### Default stamp
 
@@ -1906,6 +1907,15 @@ Name | Type | Description |
 EN | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-structure) or [SVG Resource](#svg-structure) | English resource. (Used as default if the user-selected language translation is missing) |
 IT | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-structure) or [SVG Resource](#svg-structure) | Italian resource. |
 
+### Translated fields structure
+
+#### Attributes
+
+Name | Type | Description |
+--- | --- | --- | 
+EN | [Fields](#fields-structure) | English fields. (Used as default if the user-selected language translation is missing) |
+IT | [Fields](#fields-structure) | Italian fields. |
+
 ### Macro condition structure
 
 A macro condition is described by an array of objects. Each object describes one or multiple sub-conditions.
@@ -1983,6 +1993,20 @@ crop |  | Defines the image crop to use. |
 &nbsp;&nbsp;&nbsp;crop.imageHeight | `integer` | Height of the entire image. Mandatory for images in SVG format. |
 svg |  | Defines the SVG special attributes. |
 &nbsp;&nbsp;&nbsp;svg.baseColor | `string` | String to be replaced by the `baseColor` attribute when created by [Image](#image-structure). |
+
+### Fields structure
+
+#### Attributes
+
+Name | Type | Description |
+--- | --- | --- | 
+type | `string` | Field type. (`"text"` or `"checkbox`") |
+x | `float` (in mm) | Horizontal coordinate. |
+y | `float` (in mm) | Vertical coordinate. |
+width | `float` (in mm) | Width. |
+height | `float` (in mm) | Height. |
+multiline | `boolean` | If `TRUE`, the field allows you to enter multiple text lines. |
+align | `string` | Text alignment. (`"left"`, `"center"`, or `"right`") |
 
 ### Macro getter structure
 

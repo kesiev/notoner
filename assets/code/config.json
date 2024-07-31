@@ -1448,6 +1448,78 @@
                     ]
                 }
             },
+            "translatedFields":{
+                "section":{
+                    "id":"translatedFields",
+                    "shortTitle":{
+                        "EN":"Translated fields",
+                        "IT":"Campi tradotti"
+                    },
+                    "title":{
+                        "EN":"Translated fields structure",
+                        "IT":"Struttura campi tradotti"
+                    },
+                    "attributes":[
+                        {
+                            "name":"EN",
+                            "type":"fields",
+                            "title":{
+                                "EN":"English fields. (Used as default if the user-selected language translation is missing)",
+                                "IT":"Campi in inglese. (Utilizzata come impostazione predefinita se manca la risorsa tradotta nella lingua selezionata dall'utente)"
+                            }
+                        },{
+                            "name":"IT",
+                            "type":"fields",
+                            "title":{
+                                "EN":"Italian fields.",
+                                "IT":"Campi in italiano."
+                            }
+                        }
+                    ]
+                }
+            },
+            "fields":{
+                "section":{
+                    "id":"fields",
+                    "shortTitle":{
+                        "EN":"Fields",
+                        "IT":"Campi"
+                    },
+                    "title":{
+                        "EN":"Fields structure",
+                        "IT":"Struttura campi"
+                    },
+                    "attributes":[
+                        {
+                            "name":"type",
+                            "type":"string",
+                            "title":{
+                                "EN":"Field type. (`\"text\"` or `\"checkbox`\")",
+                                "IT":"Tipologia del campo. (`\"text\"` o `\"checkbox`\")"
+                            }
+                        },
+                        { "name":"x"},
+                        { "name":"y" },
+                        { "name":"width" },
+                        { "name":"height" },
+                        {
+                            "name":"multiline",
+                            "type":"boolean",
+                            "title":{
+                                "EN":"If `TRUE`, the field allows you to enter multiple text lines.",
+                                "IT":"Se `TRUE`, il campo permette di inserire più righe di testo."
+                            }
+                        },{
+                            "name":"align",
+                            "type":"string",
+                            "title":{
+                                "EN":"Text alignment. (`\"left\"`, `\"center\"`, or `\"right`\")",
+                                "IT":"Allineamento del testo. (`\"left\"`, `\"center\"` o `\"right`\")"
+                            }
+                        }
+                    ]
+                }
+            },
             "grid":{
                 "section":{
                     "id":"grid",
@@ -2590,6 +2662,13 @@
                             }
                         ]
                     }
+                },
+                "fields":{
+                    "title":{
+                        "EN":"Interactive fields on the sheet. (Experimental feature)",
+                        "IT":"Campi interattivi presenti sul foglio. (Funzione sperimentale)"
+                    },
+                    "type":"translatedFields"
                 }
             },
             "timer":{

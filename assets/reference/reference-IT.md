@@ -914,6 +914,7 @@ pattern |  | Pattern da stampare sul foglio. |
 &nbsp;&nbsp;&nbsp;pattern.leftMargin | `float` (in mm) | Margine sinistro dal quale partire a disegnare il pattern. |
 &nbsp;&nbsp;&nbsp;pattern.color | [Colore](#struttura-colore) | Colore del pattern. |
 frame | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Cornice](#struttura-cornice) | Blocco di sfondo. |
+fields | [Campi tradotti](#struttura-campi-tradotti) | Campi interattivi presenti sul foglio. (Funzione sperimentale) |
 
 ### Timbro standard
 
@@ -1908,6 +1909,15 @@ Nome | Tipo | Descrizione |
 EN | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canvas) o [Risorsa SVG](#struttura-svg) | Risorsa in inglese. (Utilizzata come impostazione predefinita se manca la risorsa tradotta nella lingua selezionata dall'utente) |
 IT | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canvas) o [Risorsa SVG](#struttura-svg) | Risorsa in italiano. |
 
+### Struttura campi tradotti
+
+#### Attributi
+
+Nome | Tipo | Descrizione |
+--- | --- | --- | 
+EN | [Campi](#struttura-campi) | Campi in inglese. (Utilizzata come impostazione predefinita se manca la risorsa tradotta nella lingua selezionata dall'utente) |
+IT | [Campi](#struttura-campi) | Campi in italiano. |
+
 ### Struttura condizione macro
 
 Una condizione macro è descritta da un array di oggetti, dove ogni oggetto descrive una o più sotto-condizioni. La condizione macro risulterà vera se tutte le condizioni e sotto-condizioni sono verificate.
@@ -1985,6 +1995,20 @@ crop |  | Definisce il ritaglio dell'immagine da utilizzare. |
 &nbsp;&nbsp;&nbsp;crop.imageHeight | `integer` | Altezza dell'immagine intera. Obbligatorio per le immagini in formato SVG. |
 svg |  | Definisce gli attributi speciali per i file SVG. |
 &nbsp;&nbsp;&nbsp;svg.baseColor | `string` | Stringa da sostituire con l'attributo `baseColor` quando la risorsa viene generata da una [Immagine](#struttura-immagine). |
+
+### Struttura campi
+
+#### Attributi
+
+Nome | Tipo | Descrizione |
+--- | --- | --- | 
+type | `string` | Tipologia del campo. (`"text"` o `"checkbox`") |
+x | `float` (in mm) | Posizione orizzontale. |
+y | `float` (in mm) | Posizione verticale. |
+width | `float` (in mm) | Larghezza. |
+height | `float` (in mm) | Altezza. |
+multiline | `boolean` | Se `TRUE`, il campo permette di inserire più righe di testo. |
+align | `string` | Allineamento del testo. (`"left"`, `"center"` o `"right`") |
 
 ### Struttura getter macro
 
