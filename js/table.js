@@ -13,6 +13,20 @@ let Table=function() {
         SURFACE_SELECT_SIZE = 3,
         SURFACE_SCALED_SELECT_SIZE = SURFACE_SELECT_SIZE * Global.SCALE,
         SURFACE_SCALED_SELECT_PADDING = SURFACE_SELECT_PADDING * Global.SCALE,
+        KEYBOARD_INPUT_DATA = {
+            align:"left",
+            multiline:true,
+            x:0,
+            y:0,
+            width:100,
+            height:100,
+            fontFamily:"Noto Sans Regular",
+            fontSize:6,
+            lineHeight:7,
+            backgroundColor:"transparent"
+        },
+        KEYBOARD_INPUT_MIN_WIDTH = 2,
+        KEYBOARD_INPUT_MIN_HEIGHT = 2,
         MOUSEBUTTON_LEFT = 0,
         MOUSEBUTTON_MIDDLE = 1,
         MOUSEBUTTON_RIGHT = 2,
@@ -77,7 +91,8 @@ let Table=function() {
         MODE_PINCH_SURFACE = 22,
         MODE_PINCH_WAITNEXTPINCH = 30,
         MODE_WAIT_NOTOUCH = 31,
-        MODE_PICKER = 40;
+        MODE_PICKER = 40,
+        MODE_KEYBOARD_INPUT = 50;
 
     let
         table,
@@ -103,6 +118,12 @@ let Table=function() {
         isUnlocked = true,
         isContextMenuClosed = true,
         isPalmTricks = false,
+        isKeyboardWriting = false,
+        isKeyboardWritingClosed = true,
+        keyboardWidget,
+        keyboardTextArea,
+        keyboardInput,
+        keyboardAreaData,
         contextMenuNode = 0,
         menuAction = 0,
         holdtimerDistance = HOLDTIMER_DISTANCE,
@@ -118,6 +139,7 @@ let Table=function() {
         node = document.createElement("div"),
         notificationsNode = document.createElement("div"),
         viewportNode = document.createElement("div"),
+        root,
         debugNode,
         toolBox = document.createElement("div"),
         penPreview = document.createElement("div"),
@@ -175,6 +197,21 @@ let Table=function() {
         menuShade.style.position = notificationsNode.style.position = toolBox.style.position = menuButton.style.position = "fixed";
     menuShade.style.height = "80px";
     menuShade.style.backgroundImage = "linear-gradient(180deg, rgba(100,100,100,0.5), rgba(100,100,100,0))";
+
+    keyboardTextArea = document.createElement("textarea");
+    keyboardInput = document.createElement("input");
+    keyboardTextArea.style.resize = "none";
+    keyboardInput.style.position = keyboardTextArea.style.position = "absolute";
+    keyboardInput.style.padding = keyboardInput.style.margin = keyboardInput.style.border = keyboardTextArea.style.padding = keyboardTextArea.style.margin = keyboardTextArea.style.border = 0;
+    keyboardInput.style.outline = keyboardTextArea.style.outline = "none";
+    keyboardInput.style.overflow = keyboardTextArea.style.overflow = "hidden";
+    keyboardTextArea.setAttribute("spellcheck",false);
+    keyboardInput.setAttribute("spellcheck",false);
+    keyboardInput.oncontextmenu=(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    }
 
     toolBox.appendChild(toolPaletteIcon);
     toolBox.appendChild(penPreview);
@@ -444,7 +481,7 @@ let Table=function() {
             let
                 toSurface = node._surface;
 
-            if ((to.indexOf(toSurface) == -1) && surface.isCollidingWithSurface(toSurface))
+            if (toSurface && (to.indexOf(toSurface) == -1) && surface.isCollidingWithSurface(toSurface))
                 to.push(toSurface);
 
         }
@@ -566,26 +603,15 @@ let Table=function() {
             toolPalette.parentNode.removeChild(toolPalette);
     }
 
-    function toolboxChanged() {
+    function toolboxChanged(initialize) {
         toolPaletteIcon.style.backgroundImage="url("+tool.toolData.icon+")";
         toolPaletteIcon.style.zIndex=tool.toolData.iconZindex;
         applyToolOptionStyle(penPreview,tool.optionData);
-        broadcastEvent(table,EVENT_TOOLCHANGED);
+        if (!initialize)
+            broadcastEvent(table,EVENT_TOOLCHANGED);
     }
 
-    function sendToolEvent() {
-        if (eventListener)
-            eventListener(0,{
-                type:"toolChanged",
-                data:{
-                    id:tool.id,
-                    option:tool.option,
-                    defaultOptions:tool.defaultOptions
-                }
-            },table);
-    }
-    
-    function setTool(id) {
+    function setTool(id, initialize) {
 
         let
             doBroadcast = id != tool.id,
@@ -598,10 +624,8 @@ let Table=function() {
         tool.option = option;
         tool.optionData = optionData;
 
-        if (doBroadcast)
-            sendToolEvent();
-
-        toolboxChanged();
+        if (doBroadcast || initialize)
+            toolboxChanged(initialize);
 
     }
 
@@ -615,9 +639,7 @@ let Table=function() {
         tool.defaultOptions[tool.id] = id;
 
         if (doBroadcast)
-            sendToolEvent();
-
-        toolboxChanged();
+            toolboxChanged();
 
     }
 
@@ -946,6 +968,66 @@ let Table=function() {
         setDirty();
     }
 
+    // --- Keyboard input
+
+    function startKeyboardInput(point) {
+        let
+            surfaces = getSurfaceAtPoint([],viewportPoint(point),false,false,true,Global.SCALE,0);
+
+        for (let i=0;i<surfaces.length;i++) {
+            if (surfaces[i].onTextInputRequest) {
+                let
+                    surface = surfaces[i],
+                    data = Global.clone(KEYBOARD_INPUT_DATA),
+                    surfacePoint = viewportSurfacePoint(point, surfaces[i], 0, 0);
+                data.surface = surface;
+                data.x = surfacePoint.x;
+                data.y = surfacePoint.y;
+                data.width = surface.width-surfacePoint.x;
+                data.height = surface.height-surfacePoint.y;
+                data.color = tool.optionData.hexColor || "#000";
+                data = surface.onTextInputRequest(data,tool,surfacePoint,modifiers);
+                if (data && (data.width > KEYBOARD_INPUT_MIN_WIDTH) && (data.height > KEYBOARD_INPUT_MIN_HEIGHT)) {
+                    if (!isKeyboardWritingClosed) endKeyboardInput();
+                    keyboardWidget = data.multiline ? keyboardTextArea : keyboardInput;
+                    isKeyboardWritingClosed = false;
+                    keyboardWidget.value = "";
+                    keyboardWidget.style.left = ((surface.x + data.x)*Global.SCALE)+"px";
+                    keyboardWidget.style.top = ((surface.y + data.y)*Global.SCALE)+"px";
+                    keyboardWidget.style.width = (data.width*Global.SCALE)+"px";
+                    keyboardWidget.style.height = (data.height*Global.SCALE)+"px";
+                    keyboardWidget.style.fontFamily = data.fontFamily;
+                    keyboardWidget.style.fontSize = (data.fontSize*Global.SCALE)+"px";
+                    keyboardWidget.style.lineHeight = (data.lineHeight*Global.SCALE)+"px";
+                    keyboardWidget.style.textAlign = data.align;
+                    keyboardWidget.style.color = data.color;
+                    keyboardWidget.style.backgroundColor = data.backgroundColor;
+                    viewportNode.appendChild(keyboardWidget);
+                    keyboardWidget.focus();
+                    keyboardAreaData = data;
+                    return true;
+                }
+                break;
+            }
+        }
+
+    }
+
+    function endKeyboardInput() {
+        if (keyboardAreaData.surface && keyboardAreaData.surface.onTextInput) {
+            keyboardAreaData.text = keyboardWidget.value;
+            keyboardAreaData.surface.onTextInput(keyboardAreaData,tool);
+        }
+        if (keyboardWidget.parentNode)
+            keyboardWidget.parentNode.removeChild(keyboardWidget);
+        isKeyboardWritingClosed = true;
+        keyboardAreaData = false;
+        root.removeChild(node);
+        root.clientWidth; // Force view measure
+        root.appendChild(node);
+        setInteractionMode(MODE_NONE);
+    }
+
     // --- Virtual events
     
     function startSurfaceInteraction(p1) {
@@ -1102,10 +1184,14 @@ let Table=function() {
         }
     }
 
+    function isInteractionClick() {
+        return !interaction.cancelClick && (Date.now() - interaction.startTimestamp < CLICKTIMER_TIME);
+    }
+
     function checkClick(c) {
-        let
-            surface = interaction.surfaces[0];
-        if (!interaction.cancelClick && (Date.now() - interaction.startTimestamp < CLICKTIMER_TIME)) {
+        if (isInteractionClick()) {
+            let
+                surface = interaction.surfaces[0];
             if (modifiers.ctrl && surface.specialAction)
                 surface.onMenuOption(surface.specialAction,modifiers);
             else if (surface.onClick)
@@ -1177,6 +1263,13 @@ let Table=function() {
                     },1)
                 break;
             }
+            case MODE_DRAG_VIEWPORT:{
+                if (isKeyboardWriting && (interaction.from[0].button == MOUSEBUTTON_RIGHT) && isInteractionClick() && startKeyboardInput(interaction.from[0])) {
+                    resetInput();
+                    newmode = MODE_KEYBOARD_INPUT;
+                }
+                break;
+            }
             case MODE_PICKER:{
                 if (interaction.pickerStarted) {
                     onCoordinatePickerEnd();
@@ -1221,7 +1314,6 @@ let Table=function() {
 
 
     function pointerDown(e,pointerId) {
-        
         if (!touchesById[pointerId]) {
             touchesById[pointerId] = {
                 x: e.clientX, y:e.clientY, timeStamp:e.timeStamp, pointerId:pointerId, button:e.button,
@@ -1307,7 +1399,6 @@ let Table=function() {
                 break;
             }
         }
-        
         
     }
 
@@ -1640,6 +1731,8 @@ let Table=function() {
 
     function onWheel(e) {
         if (isUnlocked && isContextMenuClosed) {
+            if (!isKeyboardWritingClosed)
+                endKeyboardInput();
             pointerWheel(e);
             if (!Global.IS_FIREFOX) e.preventDefault();
         }
@@ -1647,25 +1740,35 @@ let Table=function() {
 
     function onPointerDown(e) {
         if (isUnlocked) {
-            if (isContextMenuClosed)
-                pointerDown(e,e.pointerId);
-            else
-                if ((interaction.mode == MODE_NONE) && (e.target !== contextMenuNode) && (e.target.parentNode !== contextMenuNode))
-                    closeContextMenu();
+            let
+                run = true;
+
+            if (!isKeyboardWritingClosed) {
+                endKeyboardInput();
+                if (e.button != MOUSEBUTTON_RIGHT)
+                    run = false;
+            }
+
+            if (run)
+                if (isContextMenuClosed)
+                    pointerDown(e,e.pointerId);
+                else
+                    if ((interaction.mode == MODE_NONE) && (e.target !== contextMenuNode) && (e.target.parentNode !== contextMenuNode))
+                        closeContextMenu();
 
             if (!Global.IS_FIREFOX) e.preventDefault();
         }
     }
 
     function onPointerUp(e) {
-        if (isUnlocked) {
+        if (isUnlocked && isKeyboardWritingClosed) {
             pointerUp(e,e.pointerId);
             if (!Global.IS_FIREFOX) e.preventDefault();
         }
     }
 
     function onPointerMove(e) {
-        if (isUnlocked) {
+        if (isUnlocked && isKeyboardWritingClosed) {
             if (touches.length < 2)
                 pointerHover(e);
             else
@@ -1678,87 +1781,97 @@ let Table=function() {
 
     function onKeyDown(e) {
         if (isUnlocked) {
-            let
-                key = e.keyCode;
+            if (isKeyboardWritingClosed) {
+                let
+                    key = e.keyCode;
 
-            if (!keyboard[key]) {
+                if (!keyboard[key]) {
 
-                keyboard[key] = 1;
+                    keyboard[key] = 1;
 
-                switch (key) {
-                    // +
-                    case 187:
-                    case 107:{
-                        if ((interaction.mode == MODE_NONE) && hovering) {
-                            viewportTransform(
-                                viewport,
-                                hovering,
-                                0,
-                                1 + MOUSE_WHEELDELTA,
-                                0,0
-                            );
-                            setDirty();
-                        }
-                        break;
-                    }
-                    // -
-                    case 189:
-                    case 109:{
-                        if ((interaction.mode == MODE_NONE) && hovering) {
-                            viewportTransform(
-                                viewport,
-                                hovering,
-                                0,
-                                1 - MOUSE_WHEELDELTA,
-                                0,0
-                            );
-                            setDirty();
-                        }
-                        break;
-                    }
-                    // Left
-                    case 37:{
-                        rotateSelection(-1);
-                        break;
-                    }
-                    // Right
-                    case 39:{
-                        rotateSelection(1);
-                        break;
-                    }
-                    // C
-                    case 67:{
-                        if (interaction.mode == MODE_NONE)
-                            frameTable();
-                        break;
-                    }
-                    // Spacebar
-                    case 32:{
-                        switch (interaction.mode) {
-                            case MODE_NONE:{
-                                if (!modifiers.shift)
-                                    setNextTool();
-                                break;
+                    switch (key) {
+                        // +
+                        case 187:
+                        case 107:{
+                            if ((interaction.mode == MODE_NONE) && hovering) {
+                                viewportTransform(
+                                    viewport,
+                                    hovering,
+                                    0,
+                                    1 + MOUSE_WHEELDELTA,
+                                    0,0
+                                );
+                                setDirty();
                             }
+                            break;
                         }
-                        break;
+                        // -
+                        case 189:
+                        case 109:{
+                            if ((interaction.mode == MODE_NONE) && hovering) {
+                                viewportTransform(
+                                    viewport,
+                                    hovering,
+                                    0,
+                                    1 - MOUSE_WHEELDELTA,
+                                    0,0
+                                );
+                                setDirty();
+                            }
+                            break;
+                        }
+                        // Left
+                        case 37:{
+                            rotateSelection(-1);
+                            break;
+                        }
+                        // Right
+                        case 39:{
+                            rotateSelection(1);
+                            break;
+                        }
+                        // C
+                        case 67:{
+                            if (interaction.mode == MODE_NONE)
+                                frameTable();
+                            break;
+                        }
+                        // Spacebar
+                        case 32:{
+                            switch (interaction.mode) {
+                                case MODE_NONE:{
+                                    if (!modifiers.shift)
+                                        setNextTool();
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                        // Shift
+                        case 16:{
+                            modifiers.shift = true;
+                            modifiers.shiftOriginalToolId = tool.id;
+                            setTool(TOOL_SHIFTED);
+                            break;
+                        }
+                        // Ctrl
+                        case 17:{
+                            modifiers.ctrl = true;
+                            break;
+                        }
+                        // Esc
+                        case 27:{
+                            if (!isContextMenuClosed)
+                                closeContextMenu();
+                            break;
+                        }
                     }
-                    // Shift
-                    case 16:{
-                        modifiers.shift = true;
-                        modifiers.shiftOriginalToolId = tool.id;
-                        setTool(TOOL_SHIFTED);
-                        break;
-                    }
-                    // Ctrl
-                    case 17:{
-                        modifiers.ctrl = true;
-                        break;
-                    }
-                    // Esc
+                }
+            } else {
+                switch(e.keyCode) {
+                    // ESC
                     case 27:{
-                        if (!isContextMenuClosed)
-                            closeContextMenu();
+                        endKeyboardInput();
                         break;
                     }
                 }
@@ -1767,7 +1880,7 @@ let Table=function() {
     }
 
     function onKeyUp(e) {
-        if (isUnlocked) {
+        if (isUnlocked && isKeyboardWritingClosed) {
                 
             let
                 key = e.keyCode;
@@ -1921,6 +2034,13 @@ let Table=function() {
         getTool:()=>{
             return tool;
         },
+        getToolData:()=>{
+            return {
+                id:tool.id,
+                option:tool.option,
+                defaultOptions:tool.defaultOptions
+            }
+        },
 
         // --- Interface: refresh
 
@@ -1941,6 +2061,12 @@ let Table=function() {
         },
         broadcastEvent:(from,e)=>{
             return broadcastEvent(from,e);
+        },
+
+        // --- Interface: keyboard
+
+        setKeyboardWriting:(k)=>{
+            isKeyboardWriting = k;
         },
         
         // --- Interface: locking
@@ -2073,10 +2199,11 @@ let Table=function() {
         
         addTo:(parent)=>{
             if (parent.node) parent=parent.node;
+            root = parent;
             parent.appendChild(node);
             addEvents();
             setDirty();
-            setTool(0);
+            setTool(0, true);
         }
 
     }
