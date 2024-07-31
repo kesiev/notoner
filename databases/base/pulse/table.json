@@ -61,6 +61,100 @@
 						"type": "url",
 						"url": "sheet-2.svg"
 					}
+				},
+				"fields": {
+					"EN": [
+						{
+							"type": "text",
+							"x": 24.805,
+							"y": 4.809,
+							"width": 45.654,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 24.805,
+							"y": 13.268,
+							"width": 45.654,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 24.805,
+							"y": 21.727,
+							"width": 45.654,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 24.805,
+							"y": 30.186,
+							"width": 45.654,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 24.805,
+							"y": 38.646,
+							"width": 45.654,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 85.606,
+							"y": 4.809,
+							"width": 115.418,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 85.606,
+							"y": 13.268,
+							"width": 115.418,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 85.606,
+							"y": 21.727,
+							"width": 115.418,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 85.606,
+							"y": 30.186,
+							"width": 115.418,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						},
+						{
+							"type": "text",
+							"x": 85.606,
+							"y": 38.646,
+							"width": 115.418,
+							"height": 6.912,
+							"multiline": false,
+							"align": "left"
+						}
+					]
 				}
 			}
 		},

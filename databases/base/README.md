@@ -4,7 +4,7 @@ These table templates feature most of the Notoner key features. They should be _
 
  - **[Cairn](cairn/)** - [table.json](cairn/table.json)
    - Advanced licensing metadata
-   - SVG multi-language printed sheet
+   - SVG multi-language printed sheet and input/checkbox fields (Experimental feature)
    - Default dice
    - Tray
  - **[Poker Dice](poker-dice/)** - [table.json](poker-dice/table.json)
@@ -74,6 +74,7 @@ These table templates feature most of the Notoner key features. They should be _
    - Custom compass targeting a single sheet
    - SVG printed sheet with multiple sizes
    - Blank sheet with overlay (squared paper)
+   - Custom sheet with input fields (Experimental feature)
    - Default stamp
  - **[Conquer the Kingdom](conquer-the-kingdom/)** - [table.json](conquer-the-kingdom/table.json)
    - SVG printed sheet
