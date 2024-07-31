@@ -152,6 +152,9 @@ LANGUAGE = {
                 },{ 
                     EN:"<b>Hold down the Shift key</b> to use the eraser.",
                     IT:"<b>Tieni premuto il tasto Shift</b> per utilizzare la gomma.",
+                },{ 
+                    EN:"If you are using a computer, you can try the experimental <b>Keyboard writing</b> feature by enabling it in the Settings menu. Then <b>right-click</b> to bring up a cursor and start typing. Press <b>Esc</b> or <b>click anywhere</b> to end typing.",
+                    IT:"Se stai usando un computer puoi provare la funzionalit&agrave; sperimentale di <b>Scrittura con tastiera</b> attivandola dal men&ugrave; Impostazioni. Poi <b>fai click con il tasto destro</b> per far comparire un cursore e inizia a digitare con la tastiera. Premi <b>Esc</b> o <b>fai click ovunque</b> per terminare la scrittura.",
                 }
             ]
         },{
@@ -1804,6 +1807,12 @@ LANGUAGE = {
                     IT:"Penna"
                 }
             },
+            keyboard:{
+                title:{
+                    EN:"Keyboard",
+                    IT:"Tastiera"
+                }
+            },
             touch:{
                 title:{
                     EN:"Touch",
@@ -1880,6 +1889,22 @@ LANGUAGE = {
                 description:{
                     EN:"Prevents the device stand-by when using {{APP_NAME}}.",
                     IT:"Impedisce al dispositivo di andare in stand-by quando usi {{APP_NAME}}."
+                }
+            }
+        },
+        keyboard:{
+            title:{
+                EN:"Keyboard",
+                IT:"Tastiera"
+            },
+            keyboardWriting:{
+                title:{
+                    EN:"Keyboard writing",
+                    IT:"Scrittura con tastiera"
+                },
+                description:{
+                    EN:"Experimental feature. Allows you to right-click on sheet elements to type text using the keyboard or fill in preset fields, if supported.",
+                    IT:"Funzione sperimentale. Permette di premere il tasto destro del mouse sugli elementi foglio per scrivere del testo usando la tastiera o riempirne i campi preimpostati, se supportati."
                 }
             }
         },

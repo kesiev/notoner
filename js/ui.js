@@ -20,6 +20,7 @@ let UI = function(LANGUAGE) {
         PDF_SIZE = 0.3531,
         PDF_RESOLUTION = 3,
         PDF_PAGES = 4,
+        PDF_TEXTALIGNMENTS = [ "left", "center", "right" ],
         SEPARATOR_DOT = " &#x2022; ",
         COLORS_PALETTE = [
             { r:95, g:211, b:95, a:1 },
@@ -409,6 +410,13 @@ let UI = function(LANGUAGE) {
                             menu:"touchSelector"
                         }
                     },{
+                        title:LANGUAGE.options.settings.keyboard.title,
+                        arrow:true,
+                        action:{
+                            type:"gotoMenu",
+                            menu:"keyboardSelector"
+                        }
+                    },{
                         title:LANGUAGE.options.settings.shake.title,
                         arrow:true,
                         action:{
@@ -675,6 +683,26 @@ let UI = function(LANGUAGE) {
                         },
                         getValue:()=>{
                             return settings.disableRotation;
+                        }
+                    }
+                ]
+            },
+            keyboardSelector:{
+                title:LANGUAGE.options.keyboard.title,
+                options:[
+                    {
+                        title:LANGUAGE.options.keyboard.keyboardWriting.title,
+                        description:LANGUAGE.options.keyboard.keyboardWriting.description,
+                        inputType:"checkbox",
+                        inputId:"isKeyboardWriting",
+                        onSelect:(value)=>{
+                            settings.isKeyboardWriting = !settings.isKeyboardWriting;
+                            setTableSettings();
+                            saveSettings();
+                            return true;
+                        },
+                        getValue:()=>{
+                            return settings.isKeyboardWriting;
                         }
                     }
                 ]
@@ -1260,6 +1288,7 @@ let UI = function(LANGUAGE) {
             touchDrag:false,
             palmTricks:false,
             isShakePreview:true,
+            isKeyboardWriting:false,
             measure:0,
             tableTheme:0
         },
@@ -1568,7 +1597,7 @@ let UI = function(LANGUAGE) {
     function onEvent(from,e) {
         switch (e.type) {
             case "toolChanged":{
-                settings.tool = e.data;
+                settings.tool = table.getToolData();
                 saveSettings();
                 break;
             }
@@ -1622,44 +1651,83 @@ let UI = function(LANGUAGE) {
             cb(data,cursor);
         else {
             pdf.getPage(pageNumber).then((page)=>{
-                let
-                    viewport = page.getViewport({scale:PDF_RESOLUTION}),
-                    canvas = document.createElement("canvas"),
-                    context = canvas.getContext("2d");
-                
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
-                page.render({canvasContext: context, viewport: viewport}).promise.then(()=>{
+                page.getAnnotations().then(annotations=>{
                     let
-                        pageHeight = Math.floor(canvas.height / PDF_RESOLUTION * PDF_SIZE),
-                        pageWidth = Math.floor(canvas.width / PDF_RESOLUTION * PDF_SIZE);
-                    data.data.push({
-                        type:"sheet",
-                        data:{
-                            x:cursor.x,
-                            y:cursor.y,
-                            width:pageWidth,
-                            height:pageHeight,
-                            frame:true,
-                            model:{
-                                EN:{
-                                    isResource:true,
-                                    type:"canvas",
-                                    file:"page-"+pageNumber+".png",
-                                    canvas:canvas
+                        viewport = page.getViewport({scale:PDF_RESOLUTION}),
+                        canvas = document.createElement("canvas"),
+                        context = canvas.getContext("2d");
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    page.render({canvasContext: context, viewport: viewport}).promise.then(()=>{
+                        let
+                            pageRatio = PDF_SIZE / PDF_RESOLUTION,
+                            pageHeight = Math.floor(canvas.height * pageRatio),
+                            pageWidth = Math.floor(canvas.width * pageRatio),
+                            pageData = {
+                                type:"sheet",
+                                data:{
+                                    x:cursor.x,
+                                    y:cursor.y,
+                                    width:pageWidth,
+                                    height:pageHeight,
+                                    frame:true,
+                                    model:{
+                                        EN:{
+                                            isResource:true,
+                                            type:"canvas",
+                                            file:"page-"+pageNumber+".png",
+                                            canvas:canvas
+                                        }
+                                    }
                                 }
-                            }
+                            };
+                        if (annotations) {
+                            let
+                                pageFields = [];
+                            annotations.forEach(annotation=>{
+                                if (!annotation.readOnly && !annotation.hidden) {
+                                    let
+                                        aheight = (annotation.rect[3]-annotation.rect[1]) * PDF_SIZE,
+                                        awidth = (annotation.rect[2]-annotation.rect[0]) * PDF_SIZE,
+                                        ax = annotation.rect[0] * PDF_SIZE,
+                                        ay = pageHeight - aheight - (annotation.rect[1] * PDF_SIZE);
+
+                                    if (annotation.fieldType == "Tx")
+                                        pageFields.push({
+                                            type:"text",
+                                            x:ax,
+                                            y:ay,
+                                            width:awidth,
+                                            height:aheight,
+                                            multiline:annotation.multiLine,
+                                            align:PDF_TEXTALIGNMENTS[annotation.textAlignment]
+                                        });
+                                    else if ((annotation.fieldType == "Ch") || annotation.checkBox)
+                                        pageFields.push({
+                                            type:"checkbox",
+                                            x:ax,
+                                            y:ay,
+                                            width:awidth,
+                                            height:aheight
+                                        });
+                                    else if (DEBUG)
+                                        console.log("Unsupported",annotation.fieldType,annotation);
+                                }
+                            });
+                            if (pageFields.length)
+                                pageData.data.fields= { EN: pageFields };
                         }
+                        data.data.push(pageData);
+                        if (pageNumber%2) {
+                            cursor.x += pageWidth+PDF_SPACING;
+                            cursor.colHeight = pageHeight;
+                        } else {
+                            cursor.x = 0;
+                            cursor.y += Math.max(pageHeight,cursor.colHeight)+PDF_SPACING;
+                            cursor.colHeight = 0;
+                        }
+                        addSheet(pdf,pageNumber+1,cursor,data,cb);
                     });
-                    if (pageNumber%2) {
-                        cursor.x += pageWidth+PDF_SPACING;
-                        cursor.colHeight = pageHeight;
-                    } else {
-                        cursor.x = 0;
-                        cursor.y += Math.max(pageHeight,cursor.colHeight)+PDF_SPACING;
-                        cursor.colHeight = 0;
-                    }
-                    addSheet(pdf,pageNumber+1,cursor,data,cb);
                 });
             });
         }
@@ -1826,6 +1894,7 @@ let UI = function(LANGUAGE) {
         table.setMeasure(MEASURE_STANDARDS[settings.measure].data);
         table.setForceRedraw(settings.forceRedraw);
         table.setShakePreview(settings.isShakePreview);
+        table.setKeyboardWriting(settings.isKeyboardWriting);
         table.updateSurfaces();
         setWakelock(settings.wakeLock);
     }
@@ -1861,7 +1930,7 @@ let UI = function(LANGUAGE) {
             if (flag) {
                 if (refresh || !wakeLock) {
                     if (DEBUG)
-                        console.warn("Wakelock requested",refresh);
+                        console.log("Wakelock requested",refresh);
                     try {
                         wakeLock = await navigator.wakeLock.request('screen');
                         if (DEBUG)
@@ -2936,7 +3005,7 @@ let UI = function(LANGUAGE) {
             table.addTo(root);
             table.setLock(true);
             setupDevice();
-            
+
             if (settings.tool)
                 table.setTool(settings.tool);
 
