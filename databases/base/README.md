@@ -8,7 +8,7 @@ These table templates feature most of the Notoner key features. They should be _
    - Default dice
    - Tray
  - **[Poker Dice](poker-dice/)** - [table.json](poker-dice/table.json)
-   - SVG multi-language printed sheet
+   - SVG multi-language printed sheet with input fields (Experimental feature)
    - Custom dice
    - Tray
  - **[Royal Game of Ur](royal-game-of-ur/)** - [table.json](royal-game-of-ur/table.json)
@@ -38,6 +38,7 @@ These table templates feature most of the Notoner key features. They should be _
      - Simple clock
      - Sub-templates with different layouts
  - **[Reiner Knizia's Decathlon](decathlon/)** - [table.json](decathlon/table.json)
+   - SVG printed sheet with input/checkbox fields (Experimental feature)
    - Sum/Subtract tray
  - **[Racetrack](racetrack/)** - [table.json](racetrack/table.json)
    - SVG printed sheet with pattern overlay (squared paper)
