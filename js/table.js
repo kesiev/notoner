@@ -202,6 +202,7 @@ let Table=function() {
     keyboardInput = document.createElement("input");
     keyboardTextArea.style.resize = "none";
     keyboardInput.style.position = keyboardTextArea.style.position = "absolute";
+    keyboardInput.style.left = keyboardInput.style.top = keyboardTextArea.style.left = keyboardTextArea.top = 0;
     keyboardInput.style.padding = keyboardInput.style.margin = keyboardInput.style.border = keyboardTextArea.style.padding = keyboardTextArea.style.margin = keyboardTextArea.style.border = 0;
     keyboardInput.style.outline = keyboardTextArea.style.outline = "none";
     keyboardInput.style.overflow = keyboardTextArea.style.overflow = "hidden";
@@ -992,8 +993,7 @@ let Table=function() {
                     keyboardWidget = data.multiline ? keyboardTextArea : keyboardInput;
                     isKeyboardWritingClosed = false;
                     keyboardWidget.value = "";
-                    keyboardWidget.style.left = ((surface.x + data.x)*Global.SCALE)+"px";
-                    keyboardWidget.style.top = ((surface.y + data.y)*Global.SCALE)+"px";
+                    keyboardWidget.style.transform = "translate("+((surface.x + data.x)*Global.SCALE)+"px,"+((surface.y + data.y)*Global.SCALE)+"px)";
                     keyboardWidget.style.width = (data.width*Global.SCALE)+"px";
                     keyboardWidget.style.height = (data.height*Global.SCALE)+"px";
                     keyboardWidget.style.fontFamily = data.fontFamily;
