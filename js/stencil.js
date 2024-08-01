@@ -195,7 +195,8 @@ let Stencil=(function() {
             borderSize = node._borderSize ? ( node._borderSize * 2 ) : 0,
             fontSize = getValue(def,resource,"fontSize")*Global.SCALE,
             textColor = Global.colorToRGBA(getValue(def,resource,"textColor"),true),
-            fontFamily = getValue(def,resource,"fontFamily");
+            fontFamily = getValue(def,resource,"fontFamily"),
+            fontStyle = getValue(def,resource,"fontStyle");
 
         node.style.position = "absolute";
         node._textColor = textColor;
@@ -211,6 +212,9 @@ let Stencil=(function() {
 
         if (fontFamily)
             node.style.fontFamily = fontFamily;
+
+        if (fontStyle)
+            node.style.fontStyle = fontStyle;
 
         if (lineHeight == "auto")
             node.style.lineHeight = ((node._height - borderSize) * Global.SCALE)+"px";
