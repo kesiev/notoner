@@ -21,6 +21,8 @@ let Table=function() {
             width:100,
             height:100,
             fontFamily:"Noto Sans Regular",
+            fontWeight:"normal",
+            fontStyle:"normal",
             fontSize:6,
             lineHeight:7,
             backgroundColor:"transparent"
@@ -1000,6 +1002,8 @@ let Table=function() {
                     keyboardWidget.style.fontSize = (data.fontSize*Global.SCALE)+"px";
                     keyboardWidget.style.lineHeight = (data.lineHeight*Global.SCALE)+"px";
                     keyboardWidget.style.textAlign = data.align;
+                    keyboardWidget.style.fontWeight = data.fontWeight;
+                    keyboardWidget.style.fontStyle = data.fontStyle;
                     keyboardWidget.style.color = data.color;
                     keyboardWidget.style.backgroundColor = data.backgroundColor;
                     viewportNode.appendChild(keyboardWidget);
@@ -1872,6 +1876,12 @@ let Table=function() {
                     // ESC
                     case 27:{
                         endKeyboardInput();
+                        break;
+                    }
+                    // Enter
+                    case 13:{
+                        if (!keyboardAreaData.multiline)
+                            endKeyboardInput();
                         break;
                     }
                 }
