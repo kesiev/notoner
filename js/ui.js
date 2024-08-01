@@ -19,6 +19,7 @@ let UI = function(LANGUAGE) {
         PDF_SPACING = 10,
         PDF_SIZE = 0.3531,
         PDF_RESOLUTION = 3,
+        PDF_PAGERATIO = PDF_SIZE / PDF_RESOLUTION,
         PDF_PAGES = 4,
         PDF_TEXTALIGNMENTS = [ "left", "center", "right" ],
         SEPARATOR_DOT = " &#x2022; ",
@@ -410,13 +411,6 @@ let UI = function(LANGUAGE) {
                             menu:"touchSelector"
                         }
                     },{
-                        title:LANGUAGE.options.settings.keyboard.title,
-                        arrow:true,
-                        action:{
-                            type:"gotoMenu",
-                            menu:"keyboardSelector"
-                        }
-                    },{
                         title:LANGUAGE.options.settings.shake.title,
                         arrow:true,
                         action:{
@@ -429,6 +423,13 @@ let UI = function(LANGUAGE) {
                         action:{
                             type:"gotoMenu",
                             menu:"themeSelector"
+                        }
+                    },{
+                        title:LANGUAGE.options.settings.experimental.title,
+                        arrow:true,
+                        action:{
+                            type:"gotoMenu",
+                            menu:"experimentalSelector"
                         }
                     }
                 ]
@@ -687,12 +688,12 @@ let UI = function(LANGUAGE) {
                     }
                 ]
             },
-            keyboardSelector:{
-                title:LANGUAGE.options.keyboard.title,
+            experimentalSelector:{
+                title:LANGUAGE.options.experimental.title,
                 options:[
                     {
-                        title:LANGUAGE.options.keyboard.keyboardWriting.title,
-                        description:LANGUAGE.options.keyboard.keyboardWriting.description,
+                        title:LANGUAGE.options.experimental.keyboardWriting.title,
+                        description:LANGUAGE.options.experimental.keyboardWriting.description,
                         inputType:"checkbox",
                         inputId:"isKeyboardWriting",
                         onSelect:(value)=>{
@@ -1660,9 +1661,8 @@ let UI = function(LANGUAGE) {
                     canvas.height = viewport.height;
                     page.render({canvasContext: context, viewport: viewport}).promise.then(()=>{
                         let
-                            pageRatio = PDF_SIZE / PDF_RESOLUTION,
-                            pageHeight = Math.floor(canvas.height * pageRatio),
-                            pageWidth = Math.floor(canvas.width * pageRatio),
+                            pageHeight = Math.floor(canvas.height * PDF_PAGERATIO),
+                            pageWidth = Math.floor(canvas.width * PDF_PAGERATIO),
                             pageData = {
                                 type:"sheet",
                                 data:{
@@ -1687,10 +1687,12 @@ let UI = function(LANGUAGE) {
                             annotations.forEach(annotation=>{
                                 if (!annotation.readOnly && !annotation.hidden) {
                                     let
-                                        aheight = (annotation.rect[3]-annotation.rect[1]) * PDF_SIZE,
-                                        awidth = (annotation.rect[2]-annotation.rect[0]) * PDF_SIZE,
-                                        ax = annotation.rect[0] * PDF_SIZE,
-                                        ay = pageHeight - aheight - (annotation.rect[1] * PDF_SIZE);
+                                        p1 = viewport.convertToViewportPoint(annotation.rect[0], annotation.rect[1]),
+                                        p2 = viewport.convertToViewportPoint(annotation.rect[2], annotation.rect[3]),
+                                        aheight = (p1[1]-p2[1]) * PDF_PAGERATIO,
+                                        awidth = (p2[0]-p1[0]) * PDF_PAGERATIO,
+                                        ax = p1[0] * PDF_PAGERATIO,
+                                        ay = (p1[1] * PDF_PAGERATIO) - aheight;
 
                                     if (annotation.fieldType == "Tx")
                                         pageFields.push({
@@ -2944,10 +2946,14 @@ let UI = function(LANGUAGE) {
             let
                 doubleTouchStartTimestamp = 0;
             document.addEventListener("touchstart", (e)=>{
-                var now = +(new Date());
+                
+                let
+                    now = +(new Date());
+
                 if (doubleTouchStartTimestamp + 500 > now)
                     e.preventDefault();
                 doubleTouchStartTimestamp = now;
+
             }, { passive:false });
 
         }

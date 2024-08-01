@@ -1807,10 +1807,10 @@ LANGUAGE = {
                     IT:"Penna"
                 }
             },
-            keyboard:{
+            experimental:{
                 title:{
-                    EN:"Keyboard",
-                    IT:"Tastiera"
+                    EN:"Experiments",
+                    IT:"Esperimenti"
                 }
             },
             touch:{
@@ -1892,10 +1892,10 @@ LANGUAGE = {
                 }
             }
         },
-        keyboard:{
+        experimental:{
             title:{
-                EN:"Keyboard",
-                IT:"Tastiera"
+                EN:"Experimental feature",
+                IT:"Funzioni sperimentali"
             },
             keyboardWriting:{
                 title:{
@@ -1903,8 +1903,8 @@ LANGUAGE = {
                     IT:"Scrittura con tastiera"
                 },
                 description:{
-                    EN:"Experimental feature. Allows you to right-click on sheet elements to type text using the keyboard or fill in preset fields, if supported.",
-                    IT:"Funzione sperimentale. Permette di premere il tasto destro del mouse sugli elementi foglio per scrivere del testo usando la tastiera o riempirne i campi preimpostati, se supportati."
+                    EN:"Allows you to right-click on sheet elements to type text using the keyboard or fill in preset fields, if supported.",
+                    IT:"Permette di premere il tasto destro del mouse sugli elementi foglio per scrivere del testo usando la tastiera o riempirne i campi preimpostati, se supportati."
                 }
             }
         },
