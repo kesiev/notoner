@@ -22,6 +22,20 @@ let UI = function(LANGUAGE) {
         PDF_PAGERATIO = PDF_SIZE / PDF_RESOLUTION,
         PDF_PAGES = 4,
         PDF_TEXTALIGNMENTS = [ "left", "center", "right" ],
+        PDF_FONTMAP = {
+            Times: { fontFamily:"Serif" },
+            TimesB: { fontFamily:"Serif", fontWeight:"bold" },
+            TimesI: { fontFamily:"Serif", fontStyle:"italic" },
+            TimesBI: { fontFamily:"Serif", fontStyle:"italic", fontWeight:"bold" },
+            Helv: { },
+            HelvB: { fontWeight:"bold" },
+            HelvI: { fontStyle:"italic" },
+            HelvBI: { fontStyle:"italic", fontWeight:"bold" },
+            Cour: { fontFamily: "monospace" },
+            CourB: { fontFamily: "monospace", fontWeight:"bold" },
+            CourI: { fontFamily: "monospace", fontStyle:"italic" },
+            CourBI: { fontFamily: "monospace", fontStyle:"italic", fontWeight:"bold" }
+        },
         SEPARATOR_DOT = " &#x2022; ",
         COLORS_PALETTE = [
             { r:95, g:211, b:95, a:1 },
@@ -1694,17 +1708,34 @@ let UI = function(LANGUAGE) {
                                         ax = p1[0] * PDF_PAGERATIO,
                                         ay = (p1[1] * PDF_PAGERATIO) - aheight;
 
-                                    if (annotation.fieldType == "Tx")
-                                        pageFields.push({
-                                            type:"text",
-                                            x:ax,
-                                            y:ay,
-                                            width:awidth,
-                                            height:aheight,
-                                            multiline:annotation.multiLine,
-                                            align:PDF_TEXTALIGNMENTS[annotation.textAlignment]
-                                        });
-                                    else if ((annotation.fieldType == "Ch") || annotation.checkBox)
+                                    if (annotation.fieldType == "Tx") {
+                                        let
+                                            field = {
+                                                type:"text",
+                                                x:ax,
+                                                y:ay,
+                                                width:awidth,
+                                                height:aheight,
+                                                multiline:annotation.multiLine,
+                                                align:PDF_TEXTALIGNMENTS[annotation.textAlignment]
+                                            };
+
+                                        if (annotation.defaultAppearanceData) {
+                                            if (annotation.defaultAppearanceData.fontSize)
+                                                field.fontSize = annotation.defaultAppearanceData.fontSize * 0.4;
+                                            if (annotation.defaultAppearanceData.fontName) {
+                                                let
+                                                    font = PDF_FONTMAP[annotation.defaultAppearanceData.fontName];
+                                                if (font)
+                                                    for (let k in font)
+                                                        field[k] = font[k];
+                                                else if (DEBUG)
+                                                    console.log("Unmapped font",annotation.defaultAppearanceData.fontName)
+                                            }
+                                        }
+
+                                        pageFields.push(field);
+                                    } else if ((annotation.fieldType == "Ch") || annotation.checkBox)
                                         pageFields.push({
                                             type:"checkbox",
                                             x:ax,
