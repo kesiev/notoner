@@ -1808,6 +1808,7 @@ strokeWidth | `float` (in mm) | Text border size. |
 strokeColor | [Color](#color-structure) | Text border color. |
 textColor | [Color](#color-structure) | Text color. |
 fontSize | `float` (in mm) | Text size. |
+fontStyle | `string` | Text style. |
 fontFamily | `string` | Text font. |
 fontWeight | `string` | Text weight. |
 textAlign | `"auto"` or `"left"` or `"right"` or `"center"` | Text alignment. |
@@ -2007,6 +2008,11 @@ width | `float` (in mm) | Width. |
 height | `float` (in mm) | Height. |
 multiline | `boolean` | If `TRUE`, the field allows you to enter multiple text lines. |
 align | `string` | Text alignment. (`"left"`, `"center"`, or `"right`") |
+fontSize | `float` (in mm) | Font size. |
+fontFamily | `string` | Text font. |
+lineHeight | `float` (in mm) | Line height. |
+fontWeight | `string` | Text weight. |
+fontStyle | `string` | Text style. |
 
 ### Macro getter structure
 

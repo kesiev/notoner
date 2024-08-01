@@ -1810,6 +1810,7 @@ strokeWidth | `float` (in mm) | Dimensione del bordo del testo. |
 strokeColor | [Colore](#struttura-colore) | Colore del bordo del testo. |
 textColor | [Colore](#struttura-colore) | Colore del testo. |
 fontSize | `float` (in mm) | Dimensione del testo. |
+fontStyle | `string` | Stile da usare per il testo. |
 fontFamily | `string` | Font da usare per il testo. |
 fontWeight | `string` | Spessore del testo. |
 textAlign | `"auto"` o `"left"` o `"right"` o `"center"` | Allineamento del testo. |
@@ -2009,6 +2010,11 @@ width | `float` (in mm) | Larghezza. |
 height | `float` (in mm) | Altezza. |
 multiline | `boolean` | Se `TRUE`, il campo permette di inserire più righe di testo. |
 align | `string` | Allineamento del testo. (`"left"`, `"center"` o `"right`") |
+fontSize | `float` (in mm) | Grandezza del testo. |
+fontFamily | `string` | Font da usare per il testo. |
+lineHeight | `float` (in mm) | Altezza della linea. |
+fontWeight | `string` | Spessore del testo. |
+fontStyle | `string` | Stile da usare per il testo. |
 
 ### Struttura getter macro
 

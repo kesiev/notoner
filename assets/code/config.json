@@ -1516,6 +1516,41 @@
                                 "EN":"Text alignment. (`\"left\"`, `\"center\"`, or `\"right`\")",
                                 "IT":"Allineamento del testo. (`\"left\"`, `\"center\"` o `\"right`\")"
                             }
+                        },{
+                            "name":"fontSize",
+                            "type":"measure",
+                            "title":{
+                                "EN":"Font size.",
+                                "IT":"Grandezza del testo."
+                            }
+                        },{
+                            "name":"fontFamily",
+                            "type":"string",
+                            "title":{
+                                "EN":"Text font.",
+                                "IT":"Font da usare per il testo."
+                            }
+                        },{
+                            "name":"lineHeight",
+                            "type":"measure",
+                            "title":{
+                                "EN":"Line height.",
+                                "IT":"Altezza della linea."
+                            }
+                        },{
+                            "name":"fontWeight",
+                            "type":"string",
+                            "title":{
+                                "EN":"Text weight.",
+                                "IT":"Spessore del testo."
+                            }
+                        },{
+                            "name":"fontStyle",
+                            "type":"string",
+                            "title":{
+                                "EN":"Text style.",
+                                "IT":"Stile da usare per il testo."
+                            }
                         }
                     ]
                 }
@@ -2150,6 +2185,13 @@
                             "title":{
                                 "EN":"Text size.",
                                 "IT":"Dimensione del testo."
+                            }
+                        },{
+                            "name":"fontStyle",
+                            "type":"string",
+                            "title":{
+                                "EN":"Text style.",
+                                "IT":"Stile da usare per il testo."
                             }
                         },{
                             "name":"fontFamily",
