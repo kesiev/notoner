@@ -205,7 +205,7 @@ GENERATOR=(function(){
     }
 
     // generate and render a Sudoku
-    function printSudoku(context,ox,oy,blanks) {
+    function printSudoku(context,fields,scale,ox,oy,blanks) {
         const
             CELLSIZE = 80;
 
@@ -273,6 +273,16 @@ GENERATOR=(function(){
                 context.stroke();
                 if (sudoku[pos])
                     context.fillText(sudoku[pos], px+(CELLSIZE/2), py+(CELLSIZE/2));
+                else
+                    fields.push({
+                        type:"text",
+                        x:px*scale,
+                        y:py*scale,
+                        width:CELLSIZE*scale,
+                        height:CELLSIZE*scale,
+                        multiline:false,
+                        align:"center"
+                    });
                 
             }
 
@@ -291,22 +301,27 @@ GENERATOR=(function(){
         run:(self,json,sub,cb)=>{
                             
             let
+                fields = [],
+                sheetWidth = 420,
+                sheetHeight = 297,
+                canvasWidth = 2525,
+                canvasHeight = 1785,
                 canvas = document.createElement("canvas"),
                 context = canvas.getContext("2d");
 
-            canvas.width = 2525;
-            canvas.height = 1785;
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;
 
             for (let i=0;i<6;i++)
-                printSudoku(context,95+(800*(i%3)),110+(840*Math.floor(i/3)),20+((i*4)+(sub.settings.difficulty*8)));
+                printSudoku(context,fields,sheetWidth/canvasWidth,95+(800*(i%3)),110+(840*Math.floor(i/3)),20+((i*4)+(sub.settings.difficulty*8)));
 
             json.data.push({
                 type:"sheet",
                 data:{
                     x:0,
                     y:0,
-                    width:420,
-                    height:297,
+                    width:sheetWidth,
+                    height:sheetHeight,
                     frame:true,
                     model:{
                         EN:{
@@ -314,6 +329,9 @@ GENERATOR=(function(){
                             type:"canvas",
                             canvas:canvas
                         }
+                    },
+                    fields:{
+                        EN:fields
                     }
                 }
             })

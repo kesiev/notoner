@@ -23,7 +23,7 @@ These table templates feature most of the Notoner key features. They should be _
    - Custom tokens with grid snapping
  - **[Sudoku](sudoku/)** - [table.json](sudoku/table.json)
    - JavaScript-generated table
-     - Raster printed sheet
+     - Raster printed sheet with input fields (Experimental feature)
      - Sub-templates with different difficulties
  - **[Chronicles of Stampadia](stampadia-chronicles/)** - [table.json](stampadia-chronicles/table.json)
    - Advanced JavaScript-generated table
@@ -77,12 +77,13 @@ These table templates feature most of the Notoner key features. They should be _
    - Custom sheet with input fields (Experimental feature)
    - Default stamp
  - **[Conquer the Kingdom](conquer-the-kingdom/)** - [table.json](conquer-the-kingdom/table.json)
-   - SVG printed sheet
+   - Read-only SVG printed sheet
+   - SVG printed sheet with input/checkbox fields (Experimental feature)
    - Default tray
    - Default dice
    - Custom stamp with SVG images, no shake, and no rotation
  - **[Zombie in My Pocket](zombie-in-my-pocket/)** - [table.json](zombie-in-my-pocket/table.json)
-   - SVG printed sheet
+   - SVG printed sheet with checkbox fields (Experimental feature)
    - Custom tray
      - Shuffling and discarding at startup macro
      - Deck-shuffling macro

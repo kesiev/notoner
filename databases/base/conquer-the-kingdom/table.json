@@ -58,6 +58,198 @@
 						"type": "url",
 						"url": "sheet-2-EN.svg"
 					}
+				},
+				"fields": {
+					"EN": [
+						{
+							"type": "checkbox",
+							"x": 40.739,
+							"y": 174.827,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 34.569,
+							"y": 181.94,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 36.922,
+							"y": 189.054,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 29.277,
+							"y": 196.167,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 33.992,
+							"y": 196.167,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 38.707,
+							"y": 196.167,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 31.347,
+							"y": 203.281,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 36.061,
+							"y": 203.281,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 40.776,
+							"y": 203.281,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 29.044,
+							"y": 210.394,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 33.759,
+							"y": 210.394,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 38.474,
+							"y": 210.394,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 25.176,
+							"y": 223.711,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 29.891,
+							"y": 223.711,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 31.662,
+							"y": 230.825,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 36.377,
+							"y": 230.825,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 33.344,
+							"y": 237.9381,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 38.059,
+							"y": 237.938,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 44.679,
+							"y": 251.255,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "checkbox",
+							"x": 41.514,
+							"y": 258.369,
+							"width": 3.836,
+							"height": 3.836
+						},
+						{
+							"type": "text",
+							"x": 27.977,
+							"y": 13.363,
+							"width": 40.757,
+							"height": 6.947,
+							"multiline": false
+						},
+						{
+							"type": "text",
+							"x": 27.977,
+							"y": 21.221,
+							"width": 40.757,
+							"height": 6.947,
+							"multiline": false
+						},
+						{
+							"type": "text",
+							"x": 27.977,
+							"y": 29.079,
+							"width": 40.757,
+							"height": 6.947,
+							"multiline": false
+						},
+						{
+							"type": "text",
+							"x": 20.724,
+							"y": 36.937,
+							"width": 40.757,
+							"height": 6.947,
+							"multiline": false
+						},
+						{
+							"type": "text",
+							"x": 20.724,
+							"y": 44.796,
+							"width": 40.757,
+							"height": 6.947,
+							"multiline": false
+						},
+						{
+							"type": "text",
+							"x": 20.724,
+							"y": 52.654,
+							"width": 40.757,
+							"height": 6.947,
+							"multiline": false
+						}
+					]
 				}
 			}
 		},

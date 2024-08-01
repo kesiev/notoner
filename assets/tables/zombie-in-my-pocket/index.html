@@ -64,23 +64,218 @@ function process() {
 
     // Prepare sheet
 
-    table.data.push({
-        type:"sheet",
-        data:{
-            x: -158,
-            y: 0,
-            width: 148,
-            height: 210,
-            frame:true,
-            model:{
-                EN:{
-                    isResource:true,
-                    type:"url",
-                    url:"sheet-1-EN.svg"
+    let
+        sheet = {
+            type:"sheet",
+            data:{
+                x: -158,
+                y: 0,
+                width: 148,
+                height: 210,
+                frame:true,
+                model:{
+                    EN:{
+                        isResource:true,
+                        type:"url",
+                        url:"sheet-1-EN.svg"
+                    }
+                },
+                fields:{
+                    EN:[
+                        {
+                            type:"checkbox",
+                            x:52.846,
+                            y:5.227,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:85.455,
+                            y:5.227,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:22.658,
+                            y:16.227,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:52.846,
+                            y:16.027,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:58.838,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:58.838,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:88.224,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:88.224,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:117.292,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:117.292,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:127.642,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:127.642,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:137.993,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:137.993,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:148.343,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:148.343,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:158.693,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:158.693,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:173.126,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:173.126,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:5.152,
+                            y:197.427,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:17.896,
+                            y:197.427,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:52.773,
+                            y:77.874,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:52.773,
+                            y:106.942,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:52.773,
+                            y:187.077,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:62.869,
+                            y:187.077,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:72.965,
+                            y:187.077,
+                            width:7.423,
+                            height:7.423
+                        },{
+                            type:"checkbox",
+                            x:83.062,
+                            y:187.077,
+                            width:7.423,
+                            height:7.423
+                        }
+                    ]
                 }
             }
-        }
-    });
+        };
+
+    for (let i=0;i<10;i++) {
+        sheet.data.fields.EN.push({
+            type:"checkbox",
+            x:22.658+(i*9.186),
+            y:26.827,
+            width:7.423,
+            height:7.423
+        });
+        sheet.data.fields.EN.push({
+            type:"checkbox",
+            x:22.658+(i*9.186),
+            y:37.677,
+            width:7.423,
+            height:7.423
+        });
+    }
+
+    table.data.push(sheet);
+
+
 
     // Prepare trays
 
