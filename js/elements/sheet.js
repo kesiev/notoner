@@ -459,13 +459,21 @@ let Sheet=function(settings) {
                                 area.backgroundColor = INPUTBOX_COLOR;
                                 if (field.multiline !== undefined) area.multiline = field.multiline;
                                 if (field.align !== undefined) area.align = field.align;
-                                if (area.multiline) {
-                                    area.lineHeight = INPUTBOX_AREAFONTSIZE + INPUTBOX_AREALINESPACING;
-                                    area.fontSize = INPUTBOX_AREAFONTSIZE;
+                                if (field.fontFamily !== undefined) area.fontFamily = field.fontFamily;
+                                if (field.fontStyle !== undefined) area.fontStyle = field.fontStyle;
+                                if (field.fontWeight !== undefined) area.fontWeight = field.fontWeight;
+                                if (field.fontSize === undefined) {
+                                    if (area.multiline) area.fontSize = INPUTBOX_AREAFONTSIZE;
+                                    else area.fontSize = Math.max(INPUTBOX_FONTLIMIT,area.height - INPUTBOX_FONTGAP);
                                 } else {
-                                    area.lineHeight = area.height;
-                                    area.fontSize = Math.max(INPUTBOX_FONTLIMIT,area.height - INPUTBOX_FONTGAP);
+                                    area.fontSize = field.fontSize;
+                                    area.lineHeight = area.fontSize + INPUTBOX_FONTGAP;
                                 }
+                                if (field.lineHeight === undefined)
+                                    if (area.multiline) area.lineHeight = area.fontSize + INPUTBOX_AREALINESPACING;
+                                    else area.lineHeight = area.height;
+                                else
+                                    area.lineHeight = field.height; 
                                 break;
                             }
                             case "checkbox":{
@@ -521,7 +529,7 @@ let Sheet=function(settings) {
 
             if (area.text) {
                 setTool(tool);
-                context.font = (area.fontSize * settings.resolution)+"px "+area.fontFamily;
+                context.font = area.fontStyle+" "+area.fontWeight+" "+(area.fontSize * settings.resolution)+"px "+area.fontFamily;
                 context.lineHeight = (area.lineHeight * settings.resolution)+"px";
                 context.textBaseline = "top";
                 blitText(
