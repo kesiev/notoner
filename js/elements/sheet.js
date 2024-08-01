@@ -6,7 +6,6 @@ let Sheet=function(settings) {
         SHADOW = 1,
         DEFAULT_MODEL_OPACITY = 0.6,
         DEFAULT_COLOR = { r:255, g:255, b:255, a:1 },
-        TEXT_CANVAS_GAP = 0.19,
         INPUTBOX_COLOR = "rgba(0,0,0,0.3)",
         INPUTBOX_FONTLIMIT = 3,
         INPUTBOX_FONTGAP = 3,
@@ -97,18 +96,24 @@ let Sheet=function(settings) {
         if (multiline) {
                 
             let
+                first = true,
                 wordCount = 0,
                 words = text.split(/([ \n])/);
                 line = "";
 
             for (let n = 0; n < words.length; n+=2) {
-                var
+                let
                     testLine = (wordCount ? line + " " : "") + words[n],
                     metrics = context.measureText(testLine),
                     testWidth = metrics.width,
                     doWrap = testWidth > maxWidth,
                     endLine = words[n+1] == "\n";
 
+                if (first) {
+                    y+= (lineHeight-metrics.fontBoundingBoxAscent-metrics.fontBoundingBoxDescent)/2+metrics.fontBoundingBoxAscent;
+                    first = false;
+                }
+                
                 wordCount++;
 
                 if (doWrap) {
@@ -151,8 +156,14 @@ let Sheet=function(settings) {
             }
             printText(context, line, x, y, maxWidth, align);
 
-        } else
-            printText(context, text, x, y+((maxHeight-lineHeight)/2), maxWidth, align);
+        } else {
+
+            let
+                metrics = context.measureText(text);
+
+            printText(context, text, x, y+(maxHeight-metrics.fontBoundingBoxAscent-metrics.fontBoundingBoxDescent)/2+metrics.fontBoundingBoxAscent, maxWidth, align);
+
+        }
     }
 
     // --- Prepare element
@@ -517,7 +528,7 @@ let Sheet=function(settings) {
                     context,
                     area.text,
                     area.x * settings.resolution,
-                    (area.lineHeight * settings.resolution * TEXT_CANVAS_GAP)+(area.y * settings.resolution),
+                    area.y * settings.resolution,
                     area.width * settings.resolution,
                     area.height * settings.resolution,
                     area.lineHeight*settings.resolution,
