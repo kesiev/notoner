@@ -53,6 +53,334 @@
 						"type": "url",
 						"url": "sheet-1-IT.svg"
 					}
+				},
+				"fields": {
+					"EN": [
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 66.861,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 66.861,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 66.861,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 82.066,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 82.066,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 82.066,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 97.271,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 97.271,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 97.271,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 112.476,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 112.476,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 112.476,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 147.166,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 147.166,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 147.166,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 162.371,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 162.371,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 162.371,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 177.57600000000002,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 177.57600000000002,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 177.57600000000002,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 192.78100000000003,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 192.78100000000003,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 192.78100000000003,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 227.472,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 227.472,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 227.472,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 242.676,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 242.676,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 242.676,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 257.88,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 257.88,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 257.88,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 133.63,
+							"y": 273.08399999999995,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 155.586,
+							"y": 273.08399999999995,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						},
+						{
+							"type": "text",
+							"x": 177.54200000000003,
+							"y": 273.08399999999995,
+							"width": 22.229,
+							"height": 15.477,
+							"multiline": false,
+							"align": "center"
+						}
+					]
 				}
 			}
 		},
