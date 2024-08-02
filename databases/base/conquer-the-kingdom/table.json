@@ -49,8 +49,8 @@
 			"data": {
 				"x": 289,
 				"y": 0,
-				"width": 216,
-				"height": 279,
+				"width": 215.89,
+				"height": 279.39,
 				"frame": true,
 				"model": {
 					"EN": {
@@ -63,191 +63,191 @@
 					"EN": [
 						{
 							"type": "checkbox",
-							"x": 40.739,
-							"y": 174.827,
-							"width": 3.836,
-							"height": 3.836
+							"x": 40.7,
+							"y": 174.81,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 34.569,
-							"y": 181.94,
-							"width": 3.836,
-							"height": 3.836
+							"x": 34.53,
+							"y": 181.91,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 36.922,
-							"y": 189.054,
-							"width": 3.836,
-							"height": 3.836
+							"x": 36.89,
+							"y": 189.02,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 29.277,
-							"y": 196.167,
-							"width": 3.836,
-							"height": 3.836
+							"x": 29.24,
+							"y": 196.14,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 33.992,
-							"y": 196.167,
-							"width": 3.836,
-							"height": 3.836
+							"x": 33.96,
+							"y": 196.14,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 38.707,
-							"y": 196.167,
-							"width": 3.836,
-							"height": 3.836
+							"x": 38.67,
+							"y": 196.14,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 31.347,
-							"y": 203.281,
-							"width": 3.836,
-							"height": 3.836
+							"x": 40.74,
+							"y": 203.25,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 36.061,
-							"y": 203.281,
-							"width": 3.836,
-							"height": 3.836
+							"x": 36.03,
+							"y": 203.25,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 40.776,
-							"y": 203.281,
-							"width": 3.836,
-							"height": 3.836
+							"x": 31.31,
+							"y": 203.25,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 29.044,
-							"y": 210.394,
-							"width": 3.836,
-							"height": 3.836
+							"x": 29.01,
+							"y": 210.36,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 33.759,
-							"y": 210.394,
-							"width": 3.836,
-							"height": 3.836
+							"x": 33.72,
+							"y": 210.36,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 38.474,
-							"y": 210.394,
-							"width": 3.836,
-							"height": 3.836
+							"x": 38.44,
+							"y": 210.36,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 25.176,
-							"y": 223.711,
-							"width": 3.836,
-							"height": 3.836
+							"x": 29.86,
+							"y": 223.68,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 29.891,
-							"y": 223.711,
-							"width": 3.836,
-							"height": 3.836
+							"x": 25.14,
+							"y": 223.68,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 31.662,
-							"y": 230.825,
-							"width": 3.836,
-							"height": 3.836
+							"x": 31.63,
+							"y": 230.79,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 36.377,
-							"y": 230.825,
-							"width": 3.836,
-							"height": 3.836
+							"x": 36.34,
+							"y": 230.79,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 33.344,
-							"y": 237.9381,
-							"width": 3.836,
-							"height": 3.836
+							"x": 33.31,
+							"y": 237.91,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 38.059,
-							"y": 237.938,
-							"width": 3.836,
-							"height": 3.836
+							"x": 38.02,
+							"y": 237.91,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 44.679,
-							"y": 251.255,
-							"width": 3.836,
-							"height": 3.836
+							"x": 44.64,
+							"y": 251.22,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "checkbox",
-							"x": 41.514,
-							"y": 258.369,
-							"width": 3.836,
-							"height": 3.836
+							"x": 41.48,
+							"y": 258.34,
+							"width": 3.91,
+							"height": 3.91
 						},
 						{
 							"type": "text",
-							"x": 27.977,
-							"y": 13.363,
-							"width": 40.757,
-							"height": 6.947,
-							"multiline": false
+							"multiline": false,
+							"x": 28.59,
+							"y": 20.73,
+							"width": 48.06,
+							"height": 7.92
 						},
 						{
 							"type": "text",
-							"x": 27.977,
-							"y": 21.221,
-							"width": 40.757,
-							"height": 6.947,
-							"multiline": false
+							"multiline": false,
+							"x": 28.59,
+							"y": 28.58,
+							"width": 48.06,
+							"height": 7.92
 						},
 						{
 							"type": "text",
-							"x": 27.977,
-							"y": 29.079,
-							"width": 40.757,
-							"height": 6.947,
-							"multiline": false
+							"multiline": false,
+							"x": 23.2,
+							"y": 36.5,
+							"width": 48.06,
+							"height": 7.92
 						},
 						{
 							"type": "text",
-							"x": 20.724,
-							"y": 36.937,
-							"width": 40.757,
-							"height": 6.947,
-							"multiline": false
+							"multiline": false,
+							"x": 23.2,
+							"y": 44.43,
+							"width": 48.06,
+							"height": 7.92
 						},
 						{
 							"type": "text",
-							"x": 20.724,
-							"y": 44.796,
-							"width": 40.757,
-							"height": 6.947,
-							"multiline": false
+							"multiline": false,
+							"x": 23.2,
+							"y": 52.35,
+							"width": 48.06,
+							"height": 7.92
 						},
 						{
 							"type": "text",
-							"x": 20.724,
-							"y": 52.654,
-							"width": 40.757,
-							"height": 6.947,
-							"multiline": false
+							"multiline": false,
+							"x": 28.59,
+							"y": 12.81,
+							"width": 48.06,
+							"height": 7.92
 						}
 					]
 				}

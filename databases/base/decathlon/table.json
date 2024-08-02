@@ -39,8 +39,8 @@
 			"data": {
 				"x": 0,
 				"y": 0,
-				"width": 216,
-				"height": 139,
+				"width": 215.8,
+				"height": 139.7,
 				"frame": true,
 				"model": {
 					"EN": {
@@ -54,445 +54,445 @@
 						{
 							"type": "text",
 							"multiline": false,
-							"x": 13.715,
-							"y": 11.057,
-							"width": 80.979,
-							"height": 5.741
-						},
-						{
-							"type": "text",
-							"multiline": false,
 							"align": "center",
-							"x": 94.578,
-							"y": 38.959,
-							"width": 13.401,
-							"height": 19.1,
 							"fontSize": 6,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 94.58,
+							"y": 39.05,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 94.578,
-							"y": 58.235,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 94.58,
+							"y": 58.24,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 94.578,
-							"y": 77.338,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 94.58,
+							"y": 77.43,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 94.578,
-							"y": 96.614,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 94.58,
+							"y": 96.62,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 94.578,
-							"y": 115.803,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 196.523,
-							"y": 38.959,
-							"width": 13.401,
-							"height": 19.1,
-							"fontSize": 6,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 94.58,
+							"y": 115.72,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 196.523,
-							"y": 58.235,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 196.83,
+							"y": 39.05,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 196.523,
-							"y": 77.338,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 196.83,
+							"y": 58.24,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 196.523,
-							"y": 96.614,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 196.83,
+							"y": 77.43,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"fontSize": 6,
-							"x": 196.523,
-							"y": 115.803,
-							"width": 13.401,
-							"height": 19.1,
-							"fontWeight": "bold"
+							"fontWeight": "bold",
+							"x": 196.83,
+							"y": 96.62,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
-							"x": 173.015,
-							"y": 72.601,
-							"width": 7.887,
-							"height": 4.657
+							"fontSize": 6,
+							"fontWeight": "bold",
+							"x": 196.83,
+							"y": 115.72,
+							"width": 13.4,
+							"height": 19.19
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
-							"x": 180.953,
-							"y": 72.601,
-							"width": 7.887,
-							"height": 4.657
+							"x": 70.75,
+							"y": 72.67,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 78.69,
+							"y": 72.67,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 86.63,
+							"y": 72.67,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 70.75,
+							"y": 91.86,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 78.69,
+							"y": 91.86,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 86.63,
+							"y": 91.86,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 173.02,
+							"y": 72.67,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"align": "center",
+							"x": 180.96,
+							"y": 72.67,
+							"width": 7.94,
+							"height": 4.59
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
 							"x": 188.89,
-							"y": 72.601,
-							"width": 7.887,
-							"height": 4.657
+							"y": 72.67,
+							"width": 7.94,
+							"height": 4.59
+						},
+						{
+							"type": "text",
+							"multiline": false,
+							"x": 13,
+							"y": 10.21,
+							"width": 81.72,
+							"height": 6.59
+						},
+						{
+							"type": "checkbox",
+							"x": 39,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 43.02,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 47.05,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 51.07,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 55.09,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 59.12,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 63.14,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 67.17,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 71.19,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 75.22,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 79.24,
+							"y": 112.23,
+							"width": 3.35,
+							"height": 3.35
+						},
+						{
+							"type": "checkbox",
+							"x": 164.31,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 167.35,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 170.39,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 173.43,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 176.46,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 179.5,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 182.54,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 185.58,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 188.62,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 191.65,
+							"y": 91.84,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 164.31,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 167.35,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 170.39,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 173.43,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 176.46,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 179.5,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 182.54,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 185.58,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 188.62,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
+						},
+						{
+							"type": "checkbox",
+							"x": 191.65,
+							"y": 93.97,
+							"width": 1.82,
+							"height": 1.82
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
-							"x": 173.015,
-							"y": 110.581,
-							"width": 7.887,
-							"height": 4.657
+							"x": 172.93,
+							"y": 111.03,
+							"width": 7.94,
+							"height": 4.59
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
-							"x": 180.953,
-							"y": 110.581,
-							"width": 7.887,
-							"height": 4.657
+							"x": 180.87,
+							"y": 111.03,
+							"width": 7.94,
+							"height": 4.59
 						},
 						{
 							"type": "text",
 							"multiline": false,
 							"align": "center",
-							"x": 188.89,
-							"y": 110.581,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 70.758,
-							"y": 72.601,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 78.696,
-							"y": 72.601,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 86.684,
-							"y": 72.601,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 70.758,
-							"y": 91.79,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 78.696,
-							"y": 91.79,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "text",
-							"multiline": false,
-							"align": "center",
-							"x": 86.684,
-							"y": 91.79,
-							"width": 7.887,
-							"height": 4.657
-						},
-						{
-							"type": "checkbox",
-							"x": 39.332,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 43.367,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 47.401999999999994,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 51.43699999999999,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 55.47199999999999,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 59.506999999999984,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 63.54199999999998,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 67.57699999999997,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 71.61199999999997,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 75.64699999999996,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 79.68199999999996,
-							"y": 112.115,
-							"width": 3.233,
-							"height": 3.02
-						},
-						{
-							"type": "checkbox",
-							"x": 163.805,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 166.811,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 169.817,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 172.823,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 175.829,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 178.835,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 181.841,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 184.847,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 187.853,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 190.859,
-							"y": 91.44,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 163.805,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 166.811,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 169.817,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 172.823,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 175.829,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 178.835,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 181.841,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 184.847,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 187.853,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
-						},
-						{
-							"type": "checkbox",
-							"x": 190.859,
-							"y": 93.557,
-							"width": 2.856,
-							"height": 2.134
+							"x": 188.8,
+							"y": 111.03,
+							"width": 7.94,
+							"height": 4.59
 						}
 					]
 				}
