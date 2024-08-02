@@ -60,6 +60,7 @@ These table templates feature most of the Notoner key features. They should be _
    - Custom tokens created by _cutting_ the original page SVG
    - Default dice with higher zIndexGroup, keeping it always over the tokens
  - **[7 Dice Wonders](7-dice-wonders/)** - [table.json](7-dice-wonders/table.json)
+   - Raster printed sheets with input/checkbox fields (Experimental feature)
    - Custom dice with raster faces
    - Raster printed sheet
    - Raster drag-drop read-only sheet simulating a card
@@ -95,7 +96,7 @@ These table templates feature most of the Notoner key features. They should be _
    - Default token
  - **[Goldscrolls](goldscrolls/)** - [table.json](goldscrolls/table.json)
    - Sub-templates with different characters
-     - SVG printed sheet that can be changed by selecting a sub-template
+     - SVG printed sheet with input/checkbox fields (Experimental feature) that can be changed by selecting a sub-template
      - Custom tokens created by _cutting_ the original page SVG
      - Default dice
      - Default tray
