@@ -27,8 +27,9 @@ These table templates feature most of the Notoner key features. They should be _
      - Sub-templates with different difficulties
  - **[Chronicles of Stampadia](stampadia-chronicles/)** - [table.json](stampadia-chronicles/table.json)
    - Advanced JavaScript-generated table
-     - Raster printed sheet, generated from SVG via [Canvg](https://github.com/canvg/canvg)
-     - Dynamically placed tokens
+     - Raster printed sheet, generated from SVG via [Canvg](https://github.com/canvg/canvg) and input/checkbox fields (Experimental feature)
+     - Dynamically placed hero token with grid snapping
+     - Dynamically placed room token with vertical-only grid snapping
      - Default dice
      - Default tray
      - Default calculator
