@@ -485,7 +485,7 @@ let Sheet=function(settings) {
                                     crossHeight = field.height * settings.resolution,
                                     crossX2 = crossX+crossWidth,
                                     crossY2 = crossY+crossHeight,
-                                    status = context.getImageData(crossX+(crossWidth/2), crossY+(crossHeight/2), 1, 1).data; 
+                                    status = context.getImageData(crossX+1, crossY+1, 1, 1).data; 
 
                                 if (status[3]) {
                                     context.clearRect(crossX, crossY, crossWidth, crossHeight);
