@@ -539,26 +539,36 @@ let Stencil=(function() {
                     }
 
                     if (rule.grid) {
+
                         if (originx === undefined) originx = 0;
                         if (originy === undefined) originy = 0;
-                        originx += rule.grid.x;
-                        originy += rule.grid.y;
-                        col = Math.round((surface.x-originx)/rule.grid.width);
-                        row = Math.round((surface.y-originy)/rule.grid.height);
-                        if (rule.grid.tiltColumns) {
-                            let
-                                gap = rule.grid.tiltColumns[Math.abs(row%rule.grid.tiltColumns.length)];
-                            col = Math.round((surface.x-originx-gap)/rule.grid.width);
-                            originx += gap;
+
+                        if (rule.grid.x !== undefined) originx += rule.grid.x;
+                        if (rule.grid.y !== undefined) originy += rule.grid.y;
+
+                        if (rule.grid.width !== undefined)
+                            col = Math.round((surface.x-originx)/rule.grid.width);
+
+                        if (rule.grid.height !== undefined)
+                            row = Math.round((surface.y-originy)/rule.grid.height);
+
+                        if ((rule.grid.width !== undefined) && (rule.grid.height !== undefined)) {
+                            if (rule.grid.tiltColumns) {
+                                let
+                                    gap = rule.grid.tiltColumns[Math.abs(row%rule.grid.tiltColumns.length)];
+                                col = Math.round((surface.x-originx-gap)/rule.grid.width);
+                                originx += gap;
+                            }
+                            if (rule.grid.tiltRows) {
+                                let
+                                    gap = rule.grid.tiltRows[Math.abs(col%rule.grid.tiltRows.length)];
+                                row = Math.round((surface.y-originy-gap)/rule.grid.height);
+                                originy += gap;
+                            }
                         }
-                        if (rule.grid.tiltRows) {
-                            let
-                                gap = rule.grid.tiltRows[Math.abs(col%rule.grid.tiltRows.length)];
-                            row = Math.round((surface.y-originy-gap)/rule.grid.height);
-                            originy += gap;
-                        }
-                        destx = originx+col*rule.grid.width;
-                        desty = originy+row*rule.grid.height;
+
+                        destx = col === undefined ? surface.x : originx+col*rule.grid.width;
+                        desty = row === undefined ? surface.y : originy+row*rule.grid.height;
                     }
 
                     dx = destx - surface.x;
