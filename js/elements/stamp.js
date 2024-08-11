@@ -333,6 +333,7 @@ let Stamp=function(settings) {
     stamp.setDraggable(!!settings.isDraggable);
     stamp.setFence(settings.fence);
     stamp.setSimpleDrag(true);
+    stamp.setStackId(settings.stackId);
 
     // --- Element menu
     
@@ -369,6 +370,7 @@ let Stamp=function(settings) {
 
     // --- Element interactions
 
+    stamp.onMoved=()=>{ Stencil.onMovedDefault(stamp) }
     stamp.onDrop=()=>{ Stencil.onDropDefault(stamp) }
     stamp.onSelect=()=>{ Stencil.onSelectDefault(stamp) }
     stamp.onShake=()=>{ if (!Stencil.onShakeDefault(stamp) && stamp.onShakeShuffle) stamp.shuffle(); }

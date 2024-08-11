@@ -468,16 +468,26 @@ LANGUAGE = {
                 }
             ]
         },{
-            id:"advancedInteractions",
-            icon:"images/icon-star.svg",
+            id:"stacks",
+            icon:"images/icon-stack.svg",
             title:{
-                EN:"Advanced interactions",
-                IT:"Interazioni avanzate"
+                EN:"Element stacks",
+                IT:"Pile di elementi"
+            },
+            description:{
+                EN:"Similar overlapping elements form a stack that can be manipulated in special ways.",
+                IT:"Pi&ugrave; elementi simili sovrapposti formano una pila e possono essere manipolati in modo particolare."
             },
             instructions:[
                 {
-                    EN:"<b>Drag a stack of objects:</b> hold the object at the top of the stack between two fingers for a while or select it by holding down the SHIFT key to move it with all the other objects below.",
-                    IT:"<b>Trascinare una pila di oggetti:</b> tieni l'oggetto in cima alla pila tra due dita per un attimo o selezionalo tenendo premuto il tasto SHIFT per poterlo poi muovere insieme a tutti gli altri oggetti sottostanti."
+                    EN:"<b>Hold the element at the top of a stack between two fingers for a while or select it by holding down the SHIFT key</b> to select its stack and move it around.",
+                    IT:"<b>Tieni l'oggetto in cima ad una pila tra due dita per un attimo o selezionalo tenendo premuto il tasto SHIFT</b> per selezionare la sua pila di elementi e poterla spostare."
+                },{
+                    EN:"<b>Keep a stack selected for a while</b> to select the last stack element.",
+                    IT:"<b>Mantieni selezionata una pila per un attimo</b> per selezionare l'ultimo elemento della pila."
+                },{
+                    EN:"To select an item in a stack of elements dragging each other, such as the middle card of a deck or of a fan of cards, <b>select its stack</b> using that element as a reference and then <b>keep it selected</b>.",
+                    IT:"Per selezionare un elemento in mezzo a una pila di elementi che si trascinano a vicenda, come ad esempio la carta centrale di un mazzo o di un ventaglio di carte, <b>seleziona la sua pila</b> usando quell'elemento come riferimento e poi <b>manienila selezionata</b>."
                 }
             ]
         },{

@@ -199,6 +199,7 @@ let Tray=function(settings) {
     tray.setZIndexGroup(settings.zIndexGroup);
     tray.setFence(settings.fence);
     tray.setSimpleDrag(true);
+    tray.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -231,6 +232,7 @@ let Tray=function(settings) {
 
     // --- Element interactions
 
+    tray.onMoved=()=>{ Stencil.onMovedDefault(tray) }
     tray.onDrop=()=>{ Stencil.onDropDefault(tray) }
     tray.onSelect=()=>{ Stencil.onSelectDefault(tray) }
     tray.onClick=()=>{ Stencil.onClickDefault(tray) }

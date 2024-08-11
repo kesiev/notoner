@@ -202,6 +202,7 @@ let Timer=function(settings) {
     timer.setZIndexGroup(settings.zIndexGroup);
     timer.setFence(settings.fence);
     timer.setSimpleDrag(true);
+    timer.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -275,6 +276,7 @@ let Timer=function(settings) {
 
     // --- Element interactions
 
+    timer.onMoved=()=>{ Stencil.onMovedDefault(timer) }
     timer.onDrop=()=>{ Stencil.onDropDefault(timer) }
     timer.onSelect=()=>{ Stencil.onSelectDefault(timer) }
     timer.onShake=()=>{ if (!Stencil.onShakeDefault(timer)) timer.shuffle(); }

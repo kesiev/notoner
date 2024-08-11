@@ -379,6 +379,7 @@ let Sheet=function(settings) {
     sheet.setDragTopSurfaces(!!settings.isDragTopSurfaces);
     sheet.setZIndexGroup(settings.zIndexGroup);
     sheet.setFence(settings.fence);
+    sheet.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -403,6 +404,7 @@ let Sheet=function(settings) {
 
     // --- Element interactions
 
+    sheet.onMoved=()=>{ Stencil.onMovedDefault(sheet) }
     sheet.onDrop=()=>{ Stencil.onDropDefault(sheet) }
     sheet.onShake=()=>{ Stencil.onShakeDefault(sheet) }
 

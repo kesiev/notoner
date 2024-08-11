@@ -290,6 +290,7 @@ let Token=function(settings) {
     token.setZIndexGroup(settings.zIndexGroup);
     token.setFence(settings.fence);
     token.setSimpleDrag(true);
+    token.setStackId(settings.stackId);
     token.setSide(settings.side);
 
     // --- Element menu
@@ -438,6 +439,7 @@ let Token=function(settings) {
 
     // --- Element interactions
 
+    token.onMoved=()=>{ Stencil.onMovedDefault(token) }
     token.onDrop=()=>{ Stencil.onDropDefault(token) }
     token.onSelect=()=>{ Stencil.onSelectDefault(token) } 
     token.onShake=()=>{ if (!Stencil.onShakeDefault(token) && isTossable() && token.toss) token.toss() }

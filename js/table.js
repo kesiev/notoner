@@ -9,6 +9,7 @@ let Table=function() {
         MENUBUTTON_ICONSIZE = 40,
         MENUBUTTON_BULLETSIZE = 15,
         MENUBUTTON_BULLETBORDER = 4,
+        STACK_SIZE_LIMIT = 5,
         SURFACE_SELECT_PADDING = 2,
         SURFACE_SELECT_SIZE = 3,
         SURFACE_SCALED_SELECT_SIZE = SURFACE_SELECT_SIZE * Global.SCALE,
@@ -36,6 +37,9 @@ let Table=function() {
         NOTIFICATION_MARGIN = 10,
         NOTIFICATION_CLASSNAME = "notification",
         BACKGROUND_SCALE = 0.2,
+        GETSURFACE_ALL = 1,
+        GETSURFACE_FIRST = 2,
+        GETSURFACE_STACK = 3,
         LIMIT_SCALE_HIGH = 8 / Global.SCALE,
         LIMIT_SCALE_LOW = 0.7 / Global.SCALE,
         LIMIT_X_HIGH = 3000,
@@ -74,7 +78,7 @@ let Table=function() {
         CONTEXTMENU_SPACING = 20,
         CONTEXTMENU_BORDER = 10,
         TOOL_SHIFTED = 1,
-        POINTERMODE_FINGER = 1,
+        POINTERMODE_NONE = 1,
         POINTERMODE_PEN = 2,
         POINTERMODE_DIGITALPEN = 3,
         POINTERMODE_TOUCHDIGITALPEN = 4,
@@ -101,7 +105,7 @@ let Table=function() {
         holdTimer,
         eventListener,
         measureUnit = { ratio:1, label:"mm" },
-        pointerMode = POINTERMODE_FINGER,
+        pointerMode = POINTERMODE_NONE,
         interaction = { mode:MODE_NONE },
         viewport = { x:0, y:0, scale:3, angle:0 },
         shakeDetector = { timeStamp:0, ready:true },
@@ -441,34 +445,66 @@ let Table=function() {
         
     }
 
-    function getSurfaceAtPoint(list,p1,draggableOnly,simpleDragOnly,all,scale,margin) {
+    function isSurfaceSameStack(surface1,surface2) {
+        if (!surface1.stackId && !surface2.stackId)
+            return (surface1.type == surface2.type) &&
+                (Math.abs(surface1.width-surface2.width) < STACK_SIZE_LIMIT) &&
+                (Math.abs(surface1.height-surface2.height) < STACK_SIZE_LIMIT) &&
+                (Math.abs(surface1.x-surface2.x)<(surface1.width/2)) &&
+                (Math.abs(surface1.y-surface2.y)<(surface1.height/2));
+        else
+            return surface1.stackId == surface2.stackId;
+    }
+
+    function getSurfaceAtPoint(list,p1,draggableOnly,simpleDragOnly,mode,scale,margin) {
 
         let
+            endSearch,
             x = p1.x / scale,
             y = p1.y / scale,
             childNodes = viewportNode.childNodes,
             foundSurface = 0,
             scaledMargin = margin / viewport.scale / scale;
 
-        for (let i=0;i<childNodes.length;i++) {
+        for (let i=childNodes.length-1;i>=0;i--) {
 
             let
                 surface = childNodes[i]._surface;
 
-            if (surface) {
-
-                if ((!draggableOnly || surface.isDraggable) && (!simpleDragOnly || surface.isSimpleDrag) && surface.isPointInside(x,y,scaledMargin))
-                    if (all)
-                        list.push(surface);
-                    else
-                        foundSurface = surface;
-
+            if (surface && (!draggableOnly || surface.isDraggable) && (!simpleDragOnly || surface.isSimpleDrag)) {
+                switch (mode) {
+                    case GETSURFACE_ALL:{
+                        if (surface.isPointInside(x,y,scaledMargin))
+                            list.unshift(surface);
+                        break;
+                    }
+                    case GETSURFACE_FIRST:{
+                        if (surface.isPointInside(x,y,scaledMargin)) {
+                            list.unshift(surface);
+                            endSearch = true;
+                        }
+                        break;
+                    }
+                    case GETSURFACE_STACK:{
+                        if (foundSurface) {
+                            if (foundSurface.isCollidingWithSurface(surface))
+                                if (isSurfaceSameStack(foundSurface,surface)) {
+                                    list.unshift(surface);
+                                    foundSurface = surface;
+                                } else
+                                    endSearch = true;
+                        } else if (surface.isPointInside(x,y,scaledMargin)) {
+                            list.unshift(surface);
+                            foundSurface = surface;
+                        }
+                        break;
+                    }
+                }
+                if (endSearch)
+                    break;
             }
 
         }
-
-        if (foundSurface)
-            list.push(foundSurface);
 
         return list;
         
@@ -705,12 +741,13 @@ let Table=function() {
         holdTimer = 0;
     }
 
-    function startHoldTimer() {
+    function startHoldTimer(times) {
+        if (times === undefined) times = 1;
         stopHoldTimer();
         holdTimer = setTimeout(()=>{
-            pointerHolding();
             stopHoldTimer();
-        },HOLDTIMER_TIME)
+            pointerHolding();
+        },HOLDTIMER_TIME * times)
     }
 
     // --- Shake detector
@@ -794,13 +831,15 @@ let Table=function() {
 
     // --- Surface selection
 
-    function selectInteractionSurface(surfaces,c,movetotop) {
-        for (let i=0;i<surfaces.length;i++) {
-            let
-                surface = surfaces[i];
-            if (surface.isDragTopSurfaces)
-                addIntersectingSurfaces(surfaces,surface);
-        }
+    function selectInteractionSurface(surfaces,addintersecting,c,movetotop,frombottom) {
+
+        if (addintersecting)
+            for (let i=0;i<surfaces.length;i++) {
+                let
+                    surface = surfaces[i];
+                if (frombottom ? surface.isBottomDragTopSurfaces : surface.isDragTopSurfaces)
+                    addIntersectingSurfaces(surfaces,surface);
+            }
         
         interaction.surfaces = surfaces;
         interaction.surfacesPosition=surfaces.map((surface,id)=>{
@@ -847,33 +886,41 @@ let Table=function() {
             interaction.draggableSurfaces.splice(draggableIndex,1);
     }
 
-    function unselectInteractionSurface(drop) {
+    function unselectInteractionSurface(moved,drop) {
+        
         let
+            surface = interaction.surfaces[0],
+            tilt,
             tiltX = 0,
             tiltY = 0;
 
-        if (drop) {
-            if (interaction.surfaces[0].onDrop) {
-                let
-                    surface = interaction.surfaces[0],
-                    ox = surface.x,
-                    oy = surface.y;
-                    
-                surface.onDrop(table);
-                
-                tiltX = surface.x - ox;
-                tiltY = surface.y - oy;
+        if (moved && surface.onMoved) {
 
-                if (!tiltX && !tiltY) drop = false;
-            } else
-                drop = false;
+            let
+                ox = surface.x,
+                oy = surface.y;
+                
+            surface.onMoved(table);
+            
+            tiltX = surface.x - ox;
+            tiltY = surface.y - oy;
+
+            if (tiltX || tiltY) tilt = true;
+            
         }
+
+        if (drop && surface.onDrop)
+            surface.onDrop(table);
+
         interaction.surfaces.forEach((surface,id)=>{
-            surface._setHighlight(false);
-            if (drop && id)
-                surface.setPosition(surface.x+tiltX,surface.y+tiltY);
-            broadcastEvent(surface,EVENT_ENDINTERACTION);
+            if (surface.isHighlighted) {
+                surface._setHighlight(false);
+                if (tilt && id)
+                    surface.setPosition(surface.x+tiltX,surface.y+tiltY);
+                broadcastEvent(surface,EVENT_ENDINTERACTION);
+            }
         });
+
     }
 
     function moveInteractionSurface(vector) {
@@ -975,7 +1022,7 @@ let Table=function() {
 
     function startKeyboardInput(point) {
         let
-            surfaces = getSurfaceAtPoint([],viewportPoint(point),false,false,true,Global.SCALE,0);
+            surfaces = getSurfaceAtPoint([],viewportPoint(point),false,false,GETSURFACE_ALL,Global.SCALE,0);
 
         for (let i=0;i<surfaces.length;i++) {
             if (surfaces[i].onTextInputRequest) {
@@ -1032,6 +1079,22 @@ let Table=function() {
         setInteractionMode(MODE_NONE);
     }
 
+    // --- Stacks
+
+    function stackHolding() {
+
+        if (interaction.draggableSurfaces[interaction.draggableSurfaces.length-1] === interaction.draggableSurface[0])
+            interaction.draggableSurfaces = [ interaction.draggableSurfaces[0] ];
+        else
+            interaction.draggableSurfaces = interaction.draggableSurface;
+
+        unselectInteractionSurface();
+        interaction.moveToTop = false;
+        interaction.fromBottom = true;
+        interaction.triggerDrop = true;
+        selectInteractionSurface(interaction.draggableSurfaces,true,interaction.from[0],false,interaction.fromBottom);
+    }
+
     // --- Virtual events
     
     function startSurfaceInteraction(p1) {
@@ -1067,10 +1130,10 @@ let Table=function() {
         }
     }
 
-    function startDragSurfaces(mode,c) {
+    function startDragSurfaces(mode,movetotop,frombottom,c) {
         if (interaction.draggableSurfaces[0]) {
             interaction.mode=mode;
-            selectInteractionSurface(interaction.draggableSurfaces,c,true);
+            selectInteractionSurface(interaction.draggableSurfaces,true,c,movetotop,frombottom);
             return true;
         } else
             return false;
@@ -1081,25 +1144,30 @@ let Table=function() {
         delete interaction.data;
         delete interaction.isLastInteraction;
         delete interaction.lastVector;
+        delete interaction.isDragging;
+
+        delete interaction.isShifted;
+        delete interaction.moveToTop;
+        delete interaction.triggerDrop;
+        delete interaction.fromBottom;
+
         interaction.startViewport = Global.clone(viewport);
         switch (interaction.mode) {
             case MODE_DRAG:{
                 interaction.margin = touchesById[touches[0]].isTouch ? SIMPLEDRAG_MARGIN_LARGE : SIMPLEDRAG_MARGIN_SMALL;
                 interaction.from = [copyPoint(touchesById[touches[0]])];
-                interaction.surfaces = getSurfaceAtPoint([],viewportPoint(interaction.from[0]),false,false,false,Global.SCALE,interaction.margin);
-                interaction.draggableSurfaces = getSurfaceAtPoint([],viewportPoint(interaction.from[0]),true,true,modifiers.shift,Global.SCALE,interaction.margin);
+                interaction.surfaces = getSurfaceAtPoint([],viewportPoint(interaction.from[0]),false,false,GETSURFACE_FIRST,Global.SCALE,interaction.margin);
+                interaction.draggableSurface = getSurfaceAtPoint([],viewportPoint(interaction.from[0]),true,true,GETSURFACE_FIRST,Global.SCALE,interaction.margin);
+                interaction.draggableSurfaces = modifiers.shift ? getSurfaceAtPoint([],viewportPoint(interaction.from[0]),true,true,modifiers.shift ? GETSURFACE_STACK : GETSURFACE_FIRST,Global.SCALE,interaction.margin) : interaction.draggableSurface;
                 interaction.startTimestamp = Date.now();
+                interaction.moveToTop = true;
+                interaction.fromBottom = false;
+                interaction.triggerDrop = !modifiers.shift;
+                interaction.isShifted = modifiers.shift ? 1 :0;
                 interaction.cancelClick = false;
                 switch (interaction.from[0].target) {
                     case TARGET_VIEWPORT:{
                         switch (pointerMode) {
-                            case POINTERMODE_FINGER:{
-                                if (interaction.surfaces[0])
-                                    startHoldTimer();
-                                else
-                                    interaction.mode = MODE_DRAG_VIEWPORT;
-                                break;
-                            }
                             case POINTERMODE_TOUCHDIGITALPEN:
                             case POINTERMODE_DIGITALPEN:
                             case POINTERMODE_PEN:{
@@ -1110,11 +1178,15 @@ let Table=function() {
                                 )
                                     if (interaction.surfaces[0] && (interaction.from[0].button === MOUSEBUTTON_LEFT)) {
                                         if (interaction.surfaces[0].isSimpleDrag) {
-                                            if (interaction.surfaces[0].hasContextMenu()) {
+                                            if (!interaction.isShifted && interaction.surfaces[0].hasContextMenu()) {
                                                 interaction.mode = MODE_DRAG_SIMPLE;
                                                 startHoldTimer();
-                                                selectInteractionSurface(interaction.surfaces,interaction.from[0]);
-                                            } else if (!startDragSurfaces(MODE_DRAG_SURFACE,interaction.from[0]))
+                                                selectInteractionSurface(interaction.surfaces,true,interaction.from[0],false,interaction.fromBottom);
+                                            } else if (interaction.draggableSurfaces[0]) {
+                                                interaction.mode = MODE_DRAG_SIMPLE;
+                                                startHoldTimer();
+                                                selectInteractionSurface(interaction.draggableSurfaces,true,interaction.from[0],false,interaction.fromBottom);
+                                            } else
                                                 interaction.mode = MODE_DRAG_VIEWPORT;
                                         } else if ((pointerMode == POINTERMODE_PEN) || interaction.from[0].isPen) {
                                             interaction.mode = MODE_DRAG_PREPAREINTERACT;
@@ -1159,15 +1231,16 @@ let Table=function() {
                 }
                 interaction.data.rotateAngle = interaction.data.fromAngle;
                 switch (pointerMode) {
-                    case POINTERMODE_FINGER:{
-                        interaction.mode = MODE_PINCH_VIEWPORT;
-                        break;
-                    }
                     case POINTERMODE_TOUCHDIGITALPEN:
                     case POINTERMODE_DIGITALPEN:
                     case POINTERMODE_PEN:{
                         if ((pointerMode == POINTERMODE_PEN) || !interaction.from[0].isPen) {
-                            interaction.draggableSurfaces = getSurfaceAtPoint([],viewportPoint(interaction.data.fromCenter),true,true,true,Global.SCALE,interaction.margin);
+                            interaction.draggableSurface = getSurfaceAtPoint([],viewportPoint(interaction.data.fromCenter),true,true,GETSURFACE_FIRST,Global.SCALE,interaction.margin);
+                            interaction.draggableSurfaces = getSurfaceAtPoint([],viewportPoint(interaction.data.fromCenter),true,true,GETSURFACE_STACK,Global.SCALE,interaction.margin);
+                            interaction.moveToTop = true;
+                            interaction.fromBottom = false;
+                            interaction.triggerDrop = false;
+                            interaction.isShifted = 1;
                             if (interaction.draggableSurfaces[0])
                                 startHoldTimer();
                             else
@@ -1204,11 +1277,16 @@ let Table=function() {
 
     }
 
+    function isSwitchToPinch(newmode) {
+        return (newmode == MODE_PINCH) || (newmode == MODE_PINCH_SURFACE);
+    }
+
     function endInteractionMode(newmode) {
         switch (interaction.mode) {
             case MODE_DRAG_SURFACE:{
-                checkClick(interaction.from[0]);
-                unselectInteractionSurface(true);
+                if (!isSwitchToPinch(newmode))
+                    checkClick(interaction.from[0]);
+                unselectInteractionSurface(true,interaction.triggerDrop);
                 if (interaction.isLastInteraction)
                     newmode = MODE_PINCH_WAITNEXTPINCH;
                 break;
@@ -1228,17 +1306,20 @@ let Table=function() {
                 break;
             }
             case MODE_DRAG_SIMPLE:{
-                checkClick(interaction.from[0]);
+                if (!isSwitchToPinch(newmode))
+                    checkClick(interaction.from[0]);
                 unselectInteractionSurface();
                 break;
             }
             case MODE_PINCH_SURFACE:{
-                unselectInteractionSurface(true);
+                unselectInteractionSurface(true,interaction.triggerDrop);
                 newmode = MODE_PINCH_WAITNEXTPINCH;
                 break;
             }
             case MODE_PINCH:
             case MODE_PINCH_VIEWPORT:{
+                if (interaction.isDragging)
+                    unselectInteractionSurface();
                 newmode = MODE_PINCH_WAITNEXTPINCH;
                 break;
             }
@@ -1247,8 +1328,8 @@ let Table=function() {
                 break;
             }
             case MODE_DRAG_PREPAREINTERACT:{
-                checkClick(interaction.from[0]);
-                if ((newmode != MODE_PINCH) && (newmode != MODE_PINCH_SURFACE)) {
+                if (!isSwitchToPinch(newmode)) {
+                    checkClick(interaction.from[0]);
                     doFlushInteractionCache();
                     endSurfaceInteraction();
                 }
@@ -1333,19 +1414,19 @@ let Table=function() {
 
     function pointerHolding() {
         switch (interaction.mode) {
-            case MODE_DRAG:{
-                switch (pointerMode) {
-                    case POINTERMODE_FINGER:{
-                        startDragSurfaces(MODE_DRAG_SURFACE);
-                        break;
-                    }
-                }
-                break;
-            }
             case MODE_DRAG_SIMPLE:{
-                if (interaction.surfaces[0].hasContextMenu() && !openContextMenu(interaction.surfaces[0],interaction.from[0]))
-                    if (interaction.mode == MODE_DRAG_SIMPLE)
-                        startDragSurfaces(MODE_DRAG_SURFACE);
+                if (interaction.isShifted && (interaction.mode == MODE_DRAG_SIMPLE)) {
+                    switch (interaction.isShifted) {
+                        case 1:{
+                            stackHolding();
+                            break;
+                        }
+                    }
+                } else if (interaction.surfaces[0].hasContextMenu()) {
+                    unselectInteractionSurface();
+                    selectInteractionSurface([ interaction.surfaces[0] ]);
+                    openContextMenu(interaction.surfaces[0],interaction.from[0]);
+                }
                 break;
             }
             case MODE_DRAG_TOOLBOX:{
@@ -1358,7 +1439,22 @@ let Table=function() {
                     case POINTERMODE_TOUCHDIGITALPEN:
                     case POINTERMODE_DIGITALPEN:
                     case POINTERMODE_PEN:{
-                        startDragSurfaces(MODE_PINCH_SURFACE);
+                        switch (interaction.isShifted) {
+                            case 1:{
+                                interaction.moveToTop = true;
+                                interaction.fromBottom = false;
+                                interaction.triggerDrop = false;
+                                interaction.isShifted++;
+                                selectInteractionSurface(interaction.draggableSurfaces,true,interaction.from[0],false,interaction.fromBottom);
+                                startHoldTimer(2);
+                                break;
+                            }
+                            case 2:{
+                                stackHolding();
+                                break;
+                            }
+                        }
+                        interaction.isDragging = true;
                         interaction.isLastInteraction = true;
                         break;
                     }
@@ -1420,9 +1516,7 @@ let Table=function() {
         });
 
         switch (interaction.mode) {
-            case MODE_DRAG_VIEWPORT:
-            case MODE_DRAG:{
-
+            case MODE_DRAG_VIEWPORT:{
                 if (interaction.mode == MODE_DRAG) {
 
                     let
@@ -1512,10 +1606,11 @@ let Table=function() {
                 let
                     dist = getDistance(interaction.from[0],to[0]);
 
-                if (dist > holdtimerDistance) {
-                    stopHoldTimer();
-                    startDragSurfaces(MODE_DRAG_SURFACE);
-                }
+                if (dist > holdtimerDistance)
+                    if (interaction.isShifted)
+                        interaction.mode = MODE_DRAG_SURFACE;
+                    else
+                        startDragSurfaces(MODE_DRAG_SURFACE,interaction.moveToTop,interaction.fromBottom);
                 break;
             }
             case MODE_PINCH_VIEWPORT:
@@ -1536,7 +1631,10 @@ let Table=function() {
 
                     if ((dist > holdtimerDistancePinch) || (distAngle > holdtimerDistanceAngle)) {
                         stopHoldTimer();
-                        interaction.mode = MODE_PINCH_VIEWPORT;
+                        if (interaction.isDragging)
+                            startDragSurfaces(MODE_PINCH_SURFACE,interaction.moveToTop,interaction.fromBottom);
+                        else
+                            interaction.mode = MODE_PINCH_VIEWPORT;
                     }
 
                 }
@@ -1725,7 +1823,7 @@ let Table=function() {
             });
         } else if (hovering && hovering.isMouse) {
             let
-                surface = getSurfaceAtPoint([],viewportPoint(hovering),false,false,false,Global.SCALE,0)[0];
+                surface = getSurfaceAtPoint([],viewportPoint(hovering),false,false,GETSURFACE_FIRST,Global.SCALE,0)[0];
             if (surface && surface.onRotate)
                 surface.onRotate(direction,modifiers);
         }
@@ -1930,7 +2028,6 @@ let Table=function() {
     // --- Initialize
 
     table={
-        POINTERMODE_FINGER:POINTERMODE_FINGER,
         POINTERMODE_PEN:POINTERMODE_PEN,
         POINTERMODE_DIGITALPEN:POINTERMODE_DIGITALPEN,
         POINTERMODE_TOUCHDIGITALPEN:POINTERMODE_TOUCHDIGITALPEN,
@@ -2181,7 +2278,7 @@ let Table=function() {
             return addIntersectingSurfaces([],surface);
         },
         getSurfacesAt:(p)=>{
-            return getSurfaceAtPoint([],p,false,false,true,1,0);
+            return getSurfaceAtPoint([],p,false,false,GETSURFACE_ALL,1,0);
         },
         getSurfacesByTag:(tags)=>{
             return getSurfacesByTag(tags);

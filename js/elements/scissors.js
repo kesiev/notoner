@@ -323,6 +323,7 @@ let Scissors=function(settings) {
     scissors.setZIndexGroup(settings.zIndexGroup);
     scissors.setFence(settings.fence);
     scissors.setSimpleDrag(true);
+    scissors.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -366,6 +367,7 @@ let Scissors=function(settings) {
 
     // --- Element interactions
 
+    scissors.onMoved=()=>{ Stencil.onMovedDefault(scissors) }
     scissors.onDrop=()=>{ Stencil.onDropDefault(scissors) }
     scissors.onSelect=()=>{ Stencil.onSelectDefault(scissors) }
     scissors.onShake=()=>{ Stencil.onShakeDefault(scissors) }

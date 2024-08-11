@@ -312,6 +312,7 @@ let Calculator=function(settings) {
     calculator.setZIndexGroup(settings.zIndexGroup);
     calculator.setFence(settings.fence);
     calculator.setSimpleDrag(true);
+    calculator.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -352,6 +353,7 @@ let Calculator=function(settings) {
 
     // --- Element interactions
 
+    calculator.onMoved=()=>{ Stencil.onMovedDefault(calculator) }
     calculator.onDrop=()=>{ Stencil.onDropDefault(calculator) }
     calculator.onSelect=()=>{ Stencil.onSelectDefault(calculator) }
     calculator.onShake=()=>{ if (!Stencil.onShakeDefault(calculator)) calculator.reset(); }

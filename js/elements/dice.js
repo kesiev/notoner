@@ -177,6 +177,7 @@ let Dice=function(settings) {
     dice.setZIndexGroup(settings.zIndexGroup);
     dice.setFence(settings.fence);
     dice.setSimpleDrag(true);
+    dice.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -237,6 +238,7 @@ let Dice=function(settings) {
     
     // --- Element interactions
 
+    dice.onMoved=()=>{ Stencil.onMovedDefault(dice) }
     dice.onDrop=()=>{ Stencil.onDropDefault(dice) }
     dice.onSelect=()=>{ Stencil.onSelectDefault(dice) }
     dice.onShake=()=>{ if (!Stencil.onShakeDefault(dice)) dice.roll(); }

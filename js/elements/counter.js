@@ -303,6 +303,7 @@ let Counter=function(settings) {
     counter.setZIndexGroup(settings.zIndexGroup);
     counter.setFence(settings.fence);
     counter.setSimpleDrag(true);
+    counter.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -325,6 +326,7 @@ let Counter=function(settings) {
 
     // --- Element interactions
 
+    counter.onMoved=()=>{ Stencil.onMovedDefault(counter) }
     counter.onDrop=()=>{ Stencil.onDropDefault(counter) }
     counter.onSelect=()=>{ Stencil.onSelectDefault(counter) }
     counter.onShake=()=>{ if (!Stencil.onShakeDefault(counter)) resetValue(true); }

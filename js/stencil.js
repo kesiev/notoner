@@ -242,7 +242,7 @@ let Stencil=(function() {
 
     // --- Macro menus
 
-    function addMacroMenuOptions(macrooptions,options,iscustom) {
+    function addMacroMenuOptions(surface,macrooptions,options,iscustom) {
         macrooptions.forEach(option=>{
             if ((option.if === undefined) || (Macro.if(option.if,surface)))
                 options.push({
@@ -486,9 +486,11 @@ let Stencil=(function() {
             // Surface setters
             out.isVariableZIndex = data.isVariableZIndex;
             out.isDragTopSurfaces = data.isDragTopSurfaces;
+            out.isBottomDragTopSurfaces = data.isBottomDragTopSurfaces;
             out.isDraggable = data.isDraggable;
             out.zIndexGroup = data.zIndexGroup;
             out.fence = data.fence;
+            out.stackId = data.stackId;
 
             // Global component attributes
             out.snapTo = data.snapTo;
@@ -506,9 +508,7 @@ let Stencil=(function() {
 
         // --- Surface common functions: default events
 
-        onDropDefault:(surface)=>{
-            let
-                onDropMacro = surface.onDropMacro || (surface.static ? surface.static.onDropMacro : 0);
+        onMovedDefault:(surface)=>{
 
             if (surface.snapTo) {
 
@@ -586,6 +586,11 @@ let Stencil=(function() {
                     surface.animateToPosition(fdestx,fdesty);
 
             }
+            
+        },
+        onDropDefault:(surface)=>{
+            let
+                onDropMacro = surface.onDropMacro || (surface.static ? surface.static.onDropMacro : 0);
             if (onDropMacro) {
                 Macro.run(onDropMacro,surface);
                 return true;
@@ -620,10 +625,10 @@ let Stencil=(function() {
         },
         onContextMenuDefault:(surface,options)=>{
             if (surface.static && surface.static.onMenuMacros)
-                addMacroMenuOptions(surface.static.onMenuMacros,options,false);
+                addMacroMenuOptions(surface,surface.static.onMenuMacros,options,false);
 
             if (surface.onMenuMacros)
-                addMacroMenuOptions(surface.onMenuMacros,options,true);
+                addMacroMenuOptions(surface,surface.onMenuMacros,options,true);
         },
         onMenuOptionDefault:(surface,option)=>{
             if (option && option.isMacro) {

@@ -260,6 +260,7 @@ let Catapult=function(settings) {
     catapult.setZIndexGroup(settings.zIndexGroup);
     catapult.setFence(settings.fence);
     catapult.setSimpleDrag(true);
+    catapult.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -291,6 +292,7 @@ let Catapult=function(settings) {
 
     // --- Element interactions
 
+    catapult.onMoved=()=>{ Stencil.onMovedDefault(catapult) }
     catapult.onDrop=()=>{ Stencil.onDropDefault(catapult) }
     catapult.onSelect=()=>{ Stencil.onSelectDefault(catapult) }
     catapult.onShake=()=>{ if (!Stencil.onShakeDefault(catapult) && settings.onShakeLaunch) catapult.launch(); }

@@ -83,6 +83,7 @@ let Surface=function(type,tags,x,y,width,height) {
         defaultTags:defaultTags,
         tags:tags,
         type:type,
+        stackId:0,
         node:node,
         content:content,
         borderRadius:0,
@@ -217,6 +218,12 @@ let Surface=function(type,tags,x,y,width,height) {
 
                 return false;
             }
+        },
+
+        // --- Stack ID
+
+        setStackId:(i)=>{
+            surface.stackId = i;
         },
 
         // --- Style

@@ -486,6 +486,7 @@ let Line=function(settings) {
     line.setFence(settings.fence);
     line.setDraggable(!!settings.isDraggable);
     line.setSimpleDrag(true);
+    line.setStackId(settings.stackId);
 
     // --- Element menu
 
@@ -493,6 +494,7 @@ let Line=function(settings) {
 
     // --- Element interactions
 
+    line.onMoved=()=>{ Stencil.onMovedDefault(line) }
     line.onDrop=()=>{ Stencil.onDropDefault(line) }
     line.onSelect=()=>{ Stencil.onSelectDefault(line) }
     line.onShake=()=>{ if (!Stencil.onShakeDefault(line)) line.shuffle(); }
