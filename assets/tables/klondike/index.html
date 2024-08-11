@@ -139,20 +139,12 @@ function process() {
     // Prepare play area
 
     table.data.push({
-        type:"tray-custom",
+        type:"area",
         data:{
             x: 0,
             y: 0,
             width: TOWERS_COUNT*(TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE),
-            height: TABLE_TOWERS_Y+(TABLE_CARD_SPACING*28)+TABLE_CARD_HEIGHT,
-            frame: false,
-            mode: -1,
-            isDraggable:false,
-            backgroundColor:{ r:0, g:0, b:0, a:0 },
-            icon:false,
-            messages:{
-                shake:false
-            }
+            height: TABLE_TOWERS_Y+(TABLE_CARD_SPACING*28)+TABLE_CARD_HEIGHT
         }
     });
 
@@ -220,7 +212,7 @@ function process() {
     for (let i=0;i<4;i++) {
         columnsX[i]=TABLE_COLUMN_DISTANCE+(TOWERS_COUNT-i-1)*(TABLE_CARD_WIDTH+TABLE_COLUMN_DISTANCE);
         table.data.push({
-            type:"tray-custom",
+            type:"area",
             data:{
                 x: columnsX[i],
                 y: TABLE_CARD_GAP,
@@ -232,13 +224,6 @@ function process() {
                     borderStyle:"dashed",
                     borderSize:2,
                     boxShadow:false
-                },
-                mode: -1,
-                isDraggable:false,
-                backgroundColor:{ r:0, g:0, b:0, a:0 },
-                icon:false,
-                messages:{
-                    shake:false
                 },
                 image: {
                     image: {
@@ -256,7 +241,7 @@ function process() {
                             }
                         }
                     }
-                },
+                }
             }
         });
     }

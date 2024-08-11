@@ -33,25 +33,12 @@
 	},
 	"data": [
 		{
-			"type": "tray-custom",
+			"type": "area",
 			"data": {
 				"x": 0,
 				"y": 0,
 				"width": 581,
-				"height": 536,
-				"frame": false,
-				"mode": -1,
-				"isDraggable": false,
-				"backgroundColor": {
-					"r": 0,
-					"g": 0,
-					"b": 0,
-					"a": 0
-				},
-				"icon": false,
-				"messages": {
-					"shake": false
-				}
+				"height": 536
 			}
 		},
 		{
@@ -328,7 +315,7 @@
 			}
 		},
 		{
-			"type": "tray-custom",
+			"type": "area",
 			"data": {
 				"x": 523,
 				"y": 24,
@@ -351,18 +338,6 @@
 					"borderSize": 2,
 					"boxShadow": false
 				},
-				"mode": -1,
-				"isDraggable": false,
-				"backgroundColor": {
-					"r": 0,
-					"g": 0,
-					"b": 0,
-					"a": 0
-				},
-				"icon": false,
-				"messages": {
-					"shake": false
-				},
 				"image": {
 					"image": {
 						"isResource": true,
@@ -383,7 +358,7 @@
 			}
 		},
 		{
-			"type": "tray-custom",
+			"type": "area",
 			"data": {
 				"x": 440,
 				"y": 24,
@@ -406,18 +381,6 @@
 					"borderSize": 2,
 					"boxShadow": false
 				},
-				"mode": -1,
-				"isDraggable": false,
-				"backgroundColor": {
-					"r": 0,
-					"g": 0,
-					"b": 0,
-					"a": 0
-				},
-				"icon": false,
-				"messages": {
-					"shake": false
-				},
 				"image": {
 					"image": {
 						"isResource": true,
@@ -438,7 +401,7 @@
 			}
 		},
 		{
-			"type": "tray-custom",
+			"type": "area",
 			"data": {
 				"x": 357,
 				"y": 24,
@@ -461,18 +424,6 @@
 					"borderSize": 2,
 					"boxShadow": false
 				},
-				"mode": -1,
-				"isDraggable": false,
-				"backgroundColor": {
-					"r": 0,
-					"g": 0,
-					"b": 0,
-					"a": 0
-				},
-				"icon": false,
-				"messages": {
-					"shake": false
-				},
 				"image": {
 					"image": {
 						"isResource": true,
@@ -493,7 +444,7 @@
 			}
 		},
 		{
-			"type": "tray-custom",
+			"type": "area",
 			"data": {
 				"x": 274,
 				"y": 24,
@@ -515,18 +466,6 @@
 					"borderStyle": "dashed",
 					"borderSize": 2,
 					"boxShadow": false
-				},
-				"mode": -1,
-				"isDraggable": false,
-				"backgroundColor": {
-					"r": 0,
-					"g": 0,
-					"b": 0,
-					"a": 0
-				},
-				"icon": false,
-				"messages": {
-					"shake": false
 				},
 				"image": {
 					"image": {
