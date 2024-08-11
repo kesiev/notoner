@@ -17,25 +17,12 @@
 	},
 	"data": [
 		{
-			"type": "tray-custom",
+			"type": "area",
 			"data": {
 				"x": 0,
 				"y": 0,
 				"width": 304.9304353138208,
-				"height": 195.72174125528312,
-				"frame": false,
-				"mode": -1,
-				"isDraggable": false,
-				"backgroundColor": {
-					"r": 0,
-					"g": 0,
-					"b": 0,
-					"a": 0
-				},
-				"icon": false,
-				"messages": {
-					"shake": false
-				}
+				"height": 195.72174125528312
 			}
 		},
 		{

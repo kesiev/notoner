@@ -58,20 +58,12 @@ function process() {
     // Prepare play area
 
     table.data.push({
-        type:"tray-custom",
+        type:"area",
         data:{
             x: 0,
             y: 0,
             width: TRAY_WIDTH+10+HEXAGON_TABLE_WIDTH*4,
-            height: HEXAGON_TABLE_HEIGHT*4,
-            frame: false,
-            mode: -1,
-            isDraggable:false,
-            backgroundColor:{ r:0, g:0, b:0, a:0 },
-            icon:false,
-            messages:{
-                shake:false
-            }
+            height: HEXAGON_TABLE_HEIGHT*4
         }
     });
 
