@@ -54,6 +54,7 @@
 					"IT": "Scuotimi per iniziare!<br>Trascina l'orologio fuori da quest'area per giocare senza limiti di tempo."
 				},
 				"mode": -1,
+				"isBottomDragTopSurfaces": true,
 				"frame": true,
 				"label": {
 					"right": 5,
