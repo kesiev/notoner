@@ -54,7 +54,9 @@ These table templates feature most of the Notoner key features. They should be _
    - Blank sheet with overlay (ruled paper)
  - **[Coin Conquest](coin-conquest/)** - [table.json](coin-conquest/table.json)
    - SVG read-only printed sheet
-   - Custom double-sided tokens with fixed z-index
+   - Custom double-sided tokens as coins
+     - Fixed z-index
+     - Stack ID to stack them regardless of size
    - Custom element-counting tray
  - **[Escape of The Dead Minigame](escape-of-the-dead/)** - [table.json](escape-of-the-dead/table.json)
    - SVG read-only printed sheet
@@ -109,12 +111,10 @@ These table templates feature most of the Notoner key features. They should be _
      - Macro on drop and click to flip the next face-down card of a row
    - Custom tray used as deck/discard pile manager
      - Not draggable but can trigger discard pile flipping from the menu
-   - Custom tray used as card spaces
-     - Noninteractive area
-   - Custom used as default table camera
-     - Invisible
-     - Noninteractive area
+   - Areas used as card spaces
+   - Area to frame the play area
  - **[Hexagon Puzzle](hexagon-puzzle/)** - [table.json](hexagon-puzzle/table.json)
+   - Area to frame the play area
    - Custom tray with fixed text and elements shuffling macro
    - Custom hexagonal tokens with rotations and grid snapping
  - **[(System splash)](system-splash/)** - [table.json](system-splash/table.json)

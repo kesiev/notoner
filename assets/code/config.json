@@ -3478,6 +3478,22 @@
                     "type":"boolean"
                 }
             },
+            "area":{
+                "label":{
+                    "title":{
+                        "EN":"Area text label.",
+                        "IT":"Etichetta testuale dell'area."
+                    },
+                    "type":"optionalLabel"
+                },
+                "labelText":{
+                    "title":{
+                        "EN":"Text to show on the area.",
+                        "IT":"Testo da mostrare nell'area."
+                    },
+                    "type":"text"
+                }
+            },
             "default":{
                 "onMenuMacros":{
                     "title":{
@@ -3654,6 +3670,20 @@
                     },
                     "type":"boolean"
                 },
+                "isBottomDragTopSurfaces":{
+                    "title":{
+                        "EN":"If `TRUE`, the elements above will be transported when the element is moved from a stack bottom.",
+                        "IT":"Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila."
+                    },
+                    "type":"boolean"
+                },
+                "stackId":{
+                    "title":{
+                        "EN":"Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected.",
+                        "IT":"Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata."
+                    },
+                    "type":"string"
+                },
                 "isFlippable":{
                     "title":{
                         "EN":"If `TRUE`, the element can be turned on the other side.",
@@ -3828,6 +3858,11 @@
             "id":"counter",
             "file":"../../js/elements/counter.js",
             "settingsStoreRegexp":"^counter\\.([^ ]+) = settings\\.([^;]+)"
+        },
+        {
+            "id":"area",
+            "file":"../../js/elements/area.js",
+            "settingsStoreRegexp":"^area\\.([^ ]+) = settings\\.([^;]+)"
         }
     ],
     "elementAllowedLoaders":[
@@ -4267,6 +4302,21 @@
             "match":"id:\"token-\"+id+\"-peeple\",",
             "elementFile":"token",
             "elementModels": [ "token-0-peeple", "token-1-peeple", "token-2-peeple", "token-3-peeple" ]
+        },{
+            "id":"Area",
+            "title":{
+                "EN":"Area",
+                "IT":"Area"
+            },
+            "description":{
+                "EN":"An often invisible area that can be used to assign particular behaviors to rectangular areas on the table.",
+                "IT":"Un'area spesso invisibile che può essere usata per assegnare dei comportamenti particolari a zone rettangolari sul tavolo."
+            },
+            "defaultTags": [ "type:area" ],
+            "match":"id:\"area\",",
+            "elementFile":"area",
+            "elementModels":[ "area" ],
+            "isCustom": true
         }
     ]
 }

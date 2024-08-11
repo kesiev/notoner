@@ -139,6 +139,54 @@ Uno stesso elemento può offrire più identificativi, ognuno rappresentante una 
 
 _A differenza dei file di salvataggio, i template possono specificare un attributo extra `zIndex` oltre a `type` e `data`: gli elementi verranno riordinati in base al loro `zIndex` alla generazione del tavolo, permettendo di non rispettare la sequenza specificata nell'attributo `data` del descrittore JSON. Questa tecnica concede maggior controllo sul posizionamento degli elementi ai sotto-template, permettendogli di mescolarli con altri in posizione fissa._
 
+### Area
+
+Un'area spesso invisibile che può essere usata per assegnare dei comportamenti particolari a zone rettangolari sul tavolo.
+
+#### Identificativi del tipo
+
+ * `"area"`
+
+#### Tag assegnati di default
+
+ * `"type:area"`
+
+#### Eventi disponibili per le macro
+
+
+#### Attributi
+
+Nome | Tipo | Descrizione |
+--- | --- | --- | 
+x | `float` (in mm) | Posizione orizzontale. |
+y | `float` (in mm) | Posizione verticale. |
+tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
+zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
+fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
+snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
+icon | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Immagine](#struttura-immagine) | Icona da mostrare sull'elemento. |
+doNotFrame | `boolean` | Se `TRUE`, esclude l'elemento quando il tavolo viene inquadrato per intero. |
+onResetMacro | [Macro](#struttura-macro) | Macro da eseguire quando il tavolo viene creato o resettato. |
+onDropMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene spostato. |
+onSelectMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene selezionato. |
+onShakeMacro | [Macro](#struttura-macro) | Esegue una macro quando viene agitato. |
+onClickMacro | [Macro](#struttura-macro) | Macro da eseguire quando l'elemento viene cliccato. |
+onMenuMacros | `[` [Opzione macro](#struttura-opzione-macro) `,` [Opzione macro](#struttura-opzione-macro) `,` ... `]` | Se l'elemento supporta il menù contestuale, mostra delle opzioni aggiuntive che permettono di eseguire una macro. |
+isVariableZIndex | `boolean` | Se `TRUE`, viene portato in primo piano quando viene selezionato. |
+isDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato. |
+isDraggable | `boolean` | Se `TRUE`, può essere spostato trascinandolo. |
+width | `float` (in mm) | Larghezza. |
+height | `float` (in mm) | Altezza. |
+label | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Etichetta](#struttura-etichetta-di-testo) | Etichetta testuale dell'area. |
+labelText | [Testo](#struttura-testo) | Testo da mostrare nell'area. |
+frame | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Cornice](#struttura-cornice) | Blocco di sfondo. |
+backgroundColor | [Colore](#struttura-colore) | Colore base dell'elemento. |
+image | `FALSE` per nasconderla, `TRUE` per usare i valori di default o [Immagine](#struttura-immagine) | Immagine di sfondo. |
+
 ### Calcolatrice standard
 
 Un antico dispositivo usato per compiere calcoli matematici.
@@ -164,8 +212,10 @@ state |  | Stato della calcolatrice. (Gestito automaticamente) |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -211,8 +261,10 @@ state |  | Stato della calcolatrice. (Gestito automaticamente) |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -264,8 +316,10 @@ lastPoint | [Punto](#struttura-posizione-di-un-punto) | Coordinate sul tavolo de
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -312,8 +366,10 @@ lastPoint | [Punto](#struttura-posizione-di-un-punto) | Coordinate sul tavolo de
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -372,8 +428,10 @@ value | `integer` | Valore dell'elemento. |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -422,8 +480,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -494,8 +554,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -541,8 +603,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -606,8 +670,10 @@ x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 lastStep | `integer` | Passaggio impostato per la prossima traccia. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -658,8 +724,10 @@ x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 lastStep | `integer` | Passaggio impostato per la prossima traccia. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -724,8 +792,10 @@ lastArea | [Area](#struttura-area) | Area da ritagliare. |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -775,8 +845,10 @@ lastArea | [Area](#struttura-area) | Area da ritagliare. |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -831,8 +903,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -881,8 +955,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -945,8 +1021,10 @@ rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per d
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -996,8 +1074,10 @@ selectedStamp | `integer` | Indice del timbro correntemente selezionato. |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1057,8 +1137,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1110,8 +1192,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1164,8 +1248,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1226,8 +1312,10 @@ rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per d
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1279,8 +1367,10 @@ rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per d
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1342,8 +1432,10 @@ rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per d
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1398,8 +1490,10 @@ rotation | `integer` | Direzione verso la quale l'elemento è girato. (`0` per d
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1468,8 +1562,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1512,8 +1608,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1560,8 +1658,10 @@ Nome | Tipo | Descrizione |
 x | `float` (in mm) | Posizione orizzontale. |
 y | `float` (in mm) | Posizione verticale. |
 tags | `[` `string` `,` `string` `,` ... `]` | Lista di tag con il quale può essere identificato dagli altri elementi. |
+isBottomDragTopSurfaces | `boolean` | Se `TRUE`, anche gli elementi soprastanti verranno spostati quando l'elemento viene spostato dal fondo di una pila. |
 zIndexGroup | `integer` | Gruppo di profondità. L'utente non potrà spostare gli elementi con un valore inferiore sopra quelli con valore superiore. (Default: `0`) |
 fence | [Area](#struttura-area) | Impedisce all'elemento di muoversi al di fuori dell'area specificata. |
+stackId | `string` | Elementi sovrapposti con lo stesso `stackId` fanno parte della stessa pila e vengono mossi insieme quando una pila viene selezionata. |
 snapTo |  | Stabilisce le regole di posizionamento da seguire quando l'elemento viene spostato. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Allinea l'elemento agli elementi con i tag specificati. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Griglia](#struttura-griglia) | Allinea l'elemento a una griglia. |
@@ -1647,6 +1747,22 @@ height | `float` | Altezza delle celle della griglia. |
 tiltColumns | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Scostamento delle colonne in base alla riga corrispondente. Permette di allineare alcune figure non rettangolari come gli esagoni. |
 tiltRows | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Scostamento delle righe in base alla colonna corrispondente. Permette di allineare alcune figure non rettangolari come gli esagoni. |
 
+### Struttura immagine
+
+#### Attributi
+
+Nome | Tipo | Descrizione |
+--- | --- | --- | 
+x | `float` (in mm) | Posizione orizzontale. |
+y | `float` (in mm) | Posizione verticale. |
+width | `float` (in mm) | Larghezza. |
+height | `float` (in mm) | Altezza. |
+opacity | `float` (0-1) | Opacità. (`1` per completamente visibile, `0` per invisibile) |
+padding | `float` (in mm) | Spaziatura tra il contenuto e il bordo. |
+borderRadius | `float` (in mm) | Arrotondamento del bordo. |
+baseColor | [Colore](#struttura-colore) | Colore da usare al posto del `baseColor` specificato nei metadati di `image`. |
+image | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canvas) o [Risorsa SVG](#struttura-svg) | Immagine. |
+
 ### Struttura macro
 
 Una macro è descritta da un array di oggetti, dove ogni oggetto descrive una o più azioni da compiere su un set di elementi.
@@ -1724,7 +1840,7 @@ title | [Testo](#struttura-testo) | Etichetta dell'opzione. |
 icon | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canvas) o [Risorsa SVG](#struttura-svg) | Icona dell'opzione. |
 macro | [Macro](#struttura-macro) | Macro da eseguire alla selezione. |
 
-### Struttura immagine
+### Struttura etichetta di testo
 
 #### Attributi
 
@@ -1737,8 +1853,41 @@ height | `float` (in mm) | Altezza. |
 opacity | `float` (0-1) | Opacità. (`1` per completamente visibile, `0` per invisibile) |
 padding | `float` (in mm) | Spaziatura tra il contenuto e il bordo. |
 borderRadius | `float` (in mm) | Arrotondamento del bordo. |
-baseColor | [Colore](#struttura-colore) | Colore da usare al posto del `baseColor` specificato nei metadati di `image`. |
-image | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canvas) o [Risorsa SVG](#struttura-svg) | Immagine. |
+lineHeight | `float` (in mm) | Altezza della linea. |
+strokeWidth | `float` (in mm) | Dimensione del bordo del testo. |
+strokeColor | [Colore](#struttura-colore) | Colore del bordo del testo. |
+textColor | [Colore](#struttura-colore) | Colore del testo. |
+fontSize | `float` (in mm) | Dimensione del testo. |
+fontStyle | `string` | Stile da usare per il testo. |
+fontFamily | `string` | Font da usare per il testo. |
+fontWeight | `string` | Spessore del testo. |
+textAlign | `"auto"` o `"left"` o `"right"` o `"center"` | Allineamento del testo. |
+whiteSpace | `"normal"` o "`nowrap"` | Controlla come devono essere gestiti gli spazi. |
+overflow | `"visible"` o "`hidden"` | Controlla come deve comportarsi se il contenuto è troppo grande per entrare nell'area. |
+
+### Struttura cornice
+
+#### Attributi
+
+Nome | Tipo | Descrizione |
+--- | --- | --- | 
+x | `float` (in mm) | Posizione orizzontale. |
+y | `float` (in mm) | Posizione verticale. |
+width | `float` (in mm) | Larghezza. |
+height | `float` (in mm) | Altezza. |
+opacity | `float` (0-1) | Opacità. (`1` per completamente visibile, `0` per invisibile) |
+padding | `float` (in mm) | Spaziatura tra il contenuto e il bordo. |
+borderRadius | `float` (in mm) | Arrotondamento del bordo. |
+right | `float` (in mm) | Distanza dal bordo destro. |
+bottom | `float` (in mm) | Distanza dal bordo inferiore. |
+borderSize | `float` (in mm) | Dimensione del bordo. |
+backgroundColor | [Colore](#struttura-colore) | Colore dello sfondo. |
+boxShadow |  | Ombreggiatura. |
+&nbsp;&nbsp;&nbsp;boxShadow.x | `float` (in mm) | Scostamento orizzontale dell'ombra. |
+&nbsp;&nbsp;&nbsp;boxShadow.y | `float` (in mm) | Scostamento verticale dell'ombra. |
+&nbsp;&nbsp;&nbsp;boxShadow.size | `float` (in mm) | Diffusione dell'ombra. |
+&nbsp;&nbsp;&nbsp;boxShadow.color | [Colore](#struttura-colore) | Colore dell'ombra. |
+&nbsp;&nbsp;&nbsp;boxShadow.type | `string` | Tipo di ombra. (`"inset"` o non specificato) |
 
 ### Struttura colore
 
@@ -1767,55 +1916,6 @@ icon | [Risorsa URL](#struttura-risorsa-url) o [Risorsa Canvas](#struttura-canva
 Nome | Tipo | Descrizione |
 --- | --- | --- | 
 title | [Testo](#struttura-testo) | Testo del messaggio. |
-
-### Struttura cornice
-
-#### Attributi
-
-Nome | Tipo | Descrizione |
---- | --- | --- | 
-x | `float` (in mm) | Posizione orizzontale. |
-y | `float` (in mm) | Posizione verticale. |
-width | `float` (in mm) | Larghezza. |
-height | `float` (in mm) | Altezza. |
-opacity | `float` (0-1) | Opacità. (`1` per completamente visibile, `0` per invisibile) |
-padding | `float` (in mm) | Spaziatura tra il contenuto e il bordo. |
-borderRadius | `float` (in mm) | Arrotondamento del bordo. |
-right | `float` (in mm) | Distanza dal bordo destro. |
-bottom | `float` (in mm) | Distanza dal bordo inferiore. |
-borderSize | `float` (in mm) | Dimensione del bordo. |
-backgroundColor | [Colore](#struttura-colore) | Colore dello sfondo. |
-boxShadow |  | Ombreggiatura. |
-&nbsp;&nbsp;&nbsp;boxShadow.x | `float` (in mm) | Scostamento orizzontale dell'ombra. |
-&nbsp;&nbsp;&nbsp;boxShadow.y | `float` (in mm) | Scostamento verticale dell'ombra. |
-&nbsp;&nbsp;&nbsp;boxShadow.size | `float` (in mm) | Diffusione dell'ombra. |
-&nbsp;&nbsp;&nbsp;boxShadow.color | [Colore](#struttura-colore) | Colore dell'ombra. |
-&nbsp;&nbsp;&nbsp;boxShadow.type | `string` | Tipo di ombra. (`"inset"` o non specificato) |
-
-### Struttura etichetta di testo
-
-#### Attributi
-
-Nome | Tipo | Descrizione |
---- | --- | --- | 
-x | `float` (in mm) | Posizione orizzontale. |
-y | `float` (in mm) | Posizione verticale. |
-width | `float` (in mm) | Larghezza. |
-height | `float` (in mm) | Altezza. |
-opacity | `float` (0-1) | Opacità. (`1` per completamente visibile, `0` per invisibile) |
-padding | `float` (in mm) | Spaziatura tra il contenuto e il bordo. |
-borderRadius | `float` (in mm) | Arrotondamento del bordo. |
-lineHeight | `float` (in mm) | Altezza della linea. |
-strokeWidth | `float` (in mm) | Dimensione del bordo del testo. |
-strokeColor | [Colore](#struttura-colore) | Colore del bordo del testo. |
-textColor | [Colore](#struttura-colore) | Colore del testo. |
-fontSize | `float` (in mm) | Dimensione del testo. |
-fontStyle | `string` | Stile da usare per il testo. |
-fontFamily | `string` | Font da usare per il testo. |
-fontWeight | `string` | Spessore del testo. |
-textAlign | `"auto"` o `"left"` o `"right"` o `"center"` | Allineamento del testo. |
-whiteSpace | `"normal"` o "`nowrap"` | Controlla come devono essere gestiti gli spazi. |
-overflow | `"visible"` o "`hidden"` | Controlla come deve comportarsi se il contenuto è troppo grande per entrare nell'area. |
 
 ### Struttura posizione di un punto
 

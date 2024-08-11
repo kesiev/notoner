@@ -139,6 +139,54 @@ The same element can offer multiple identifiers, each representing its variant.
 
 _Unlike save files, templates can specify an extra `zIndex` attribute in addition to `type` and `data`: elements will be reordered based on their `zIndex` when the table is generated, allowing you to break the sequence specified in the JSON descriptor `data` attribute. This technique gives greater control over the elements positioning to the sub-templates, allowing them to be mixed with others in a fixed position._
 
+### Area
+
+An often invisible area that can be used to assign particular behaviors to rectangular areas on the table.
+
+#### Type identifiers
+
+ * `"area"`
+
+#### Tags assigned by default
+
+ * `"type:area"`
+
+#### Supported macro events
+
+
+#### Attributes
+
+Name | Type | Description |
+--- | --- | --- | 
+x | `float` (in mm) | Horizontal coordinate. |
+y | `float` (in mm) | Vertical coordinate. |
+tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
+zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
+fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
+snapTo |  | Establishes the positioning rules to follow when the element is moved. |
+&nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
+&nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
+icon | `FALSE` to hide it, `TRUE` to use default values, or [Image](#image-structure) | Element icon. |
+doNotFrame | `boolean` | If `TRUE`, excludes the element when the table is completely framed. |
+onResetMacro | [Macro](#macro-structure) | Macro to run when the table is created or reset. |
+onDropMacro | [Macro](#macro-structure) | Macro to run when the element is moved. |
+onSelectMacro | [Macro](#macro-structure) | Macro to run when the element is selected. |
+onShakeMacro | [Macro](#macro-structure) | Executes a macro when it is shaken. |
+onClickMacro | [Macro](#macro-structure) | Macro to run when the element is clicked. |
+onMenuMacros | `[` [Macro option](#macro-option-structure) `,` [Macro option](#macro-option-structure) `,` ... `]` | If the element supports the context menu, it shows additional options that allow you to run a macro. |
+isVariableZIndex | `boolean` | If `TRUE`, it is brought to the front when selected. |
+isDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved. |
+isDraggable | `boolean` | If `TRUE`, it can be moved by dragging. |
+width | `float` (in mm) | Width. |
+height | `float` (in mm) | Height. |
+label | `FALSE` to hide it, `TRUE` to use default values, or [Label](#text-label-structure) | Area text label. |
+labelText | [Text](#text-structure) | Text to show on the area. |
+frame | `FALSE` to hide it, `TRUE` to use default values, or [Frame](#frame-structure) | Background block. |
+backgroundColor | [Color](#color-structure) | Base color of the element. |
+image | `FALSE` to hide it, `TRUE` to use default values, or [Image](#image-structure) | Background image. |
+
 ### Standard calculator
 
 An ancient device used to perform mathematical calculations.
@@ -164,8 +212,10 @@ state |  | Calculator state. (Automatically managed) |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -211,8 +261,10 @@ state |  | Calculator state. (Automatically managed) |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -264,8 +316,10 @@ lastPoint | [Point](#point-position-structure) | Coordinates on the target point
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -312,8 +366,10 @@ lastPoint | [Point](#point-position-structure) | Coordinates on the target point
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -372,8 +428,10 @@ value | `integer` | Element value. |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -422,8 +480,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -494,8 +554,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -541,8 +603,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -606,8 +670,10 @@ x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 lastStep | `integer` | Step set for next track. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -658,8 +724,10 @@ x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 lastStep | `integer` | Step set for next track. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -724,8 +792,10 @@ lastArea | [Area](#area-structure) | Area to cut. |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -775,8 +845,10 @@ lastArea | [Area](#area-structure) | Area to cut. |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -831,8 +903,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -881,8 +955,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -945,8 +1021,10 @@ rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, 
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -996,8 +1074,10 @@ selectedStamp | `integer` | Currently selected stamp index. |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1057,8 +1137,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1110,8 +1192,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1164,8 +1248,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1226,8 +1312,10 @@ rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, 
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1279,8 +1367,10 @@ rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, 
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1342,8 +1432,10 @@ rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, 
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1398,8 +1490,10 @@ rotation | `integer` | Element rotation side. (`0` for straight, `1` for right, 
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1468,8 +1562,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1512,8 +1608,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1560,8 +1658,10 @@ Name | Type | Description |
 x | `float` (in mm) | Horizontal coordinate. |
 y | `float` (in mm) | Vertical coordinate. |
 tags | `[` `string` `,` `string` `,` ... `]` | List of tags by which it can be identified by other elements. |
+isBottomDragTopSurfaces | `boolean` | If `TRUE`, the elements above will be transported when the element is moved from a stack bottom. |
 zIndexGroup | `integer` | Depth group. The user will not be able to move elements with a lower value over elements with a higher value. (Default: `0`) |
 fence | [Area](#area-structure) | Prevents the element from moving outside the specified area. |
+stackId | `string` | Overlapping elements with the same `stackId` are part of the same stack and are moved together when a stack is selected. |
 snapTo |  | Establishes the positioning rules to follow when the element is moved. |
 &nbsp;&nbsp;&nbsp;snapTo[].tags | `[` `string` `,` `string` `,` ... `]` | Align the element to the elements with the specified tags. |
 &nbsp;&nbsp;&nbsp;snapTo[].grid | [Grid](#grid-structure) | Align the element to a grid. |
@@ -1647,6 +1747,22 @@ height | `float` | Grid cell height. |
 tiltColumns | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Columns offset of the matching row. It allows the alignment of some non-rectangular shapes such as hexagons. |
 tiltRows | `[` `float` (in mm) `,` `float` (in mm) `,` ... `]` | Rows offset of the matching column. It allows the alignment of some non-rectangular shapes such as hexagons. |
 
+### Image structure
+
+#### Attributes
+
+Name | Type | Description |
+--- | --- | --- | 
+x | `float` (in mm) | Horizontal coordinate. |
+y | `float` (in mm) | Vertical coordinate. |
+width | `float` (in mm) | Width. |
+height | `float` (in mm) | Height. |
+opacity | `float` (0-1) | Opacity. (`1` for fully visible, `0` for invisible) |
+padding | `float` (in mm) | Spacing between the content and the border. |
+borderRadius | `float` (in mm) | Border radius. |
+baseColor | [Color](#color-structure) | Color to be used instead of the `baseColor` defined in the `image` metadata. |
+image | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-structure) or [SVG Resource](#svg-structure) | Image. |
+
 ### Macro structure
 
 A macro is described by an array of objects. Each object describes one or multiple actions to perform on a set of elements.
@@ -1722,7 +1838,7 @@ title | [Text](#text-structure) | Option label. |
 icon | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-structure) or [SVG Resource](#svg-structure) | Option icon. |
 macro | [Macro](#macro-structure) | Macro to execute when selected. |
 
-### Image structure
+### Text label structure
 
 #### Attributes
 
@@ -1735,8 +1851,41 @@ height | `float` (in mm) | Height. |
 opacity | `float` (0-1) | Opacity. (`1` for fully visible, `0` for invisible) |
 padding | `float` (in mm) | Spacing between the content and the border. |
 borderRadius | `float` (in mm) | Border radius. |
-baseColor | [Color](#color-structure) | Color to be used instead of the `baseColor` defined in the `image` metadata. |
-image | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-structure) or [SVG Resource](#svg-structure) | Image. |
+lineHeight | `float` (in mm) | Line height. |
+strokeWidth | `float` (in mm) | Text border size. |
+strokeColor | [Color](#color-structure) | Text border color. |
+textColor | [Color](#color-structure) | Text color. |
+fontSize | `float` (in mm) | Text size. |
+fontStyle | `string` | Text style. |
+fontFamily | `string` | Text font. |
+fontWeight | `string` | Text weight. |
+textAlign | `"auto"` or `"left"` or `"right"` or `"center"` | Text alignment. |
+whiteSpace | `"normal"` or "`nowrap"` | Controls how white space inside is handled. |
+overflow | `"visible"` or "`hidden"` | Controls what happens to content that is too big to fit into an area. |
+
+### Frame structure
+
+#### Attributes
+
+Name | Type | Description |
+--- | --- | --- | 
+x | `float` (in mm) | Horizontal coordinate. |
+y | `float` (in mm) | Vertical coordinate. |
+width | `float` (in mm) | Width. |
+height | `float` (in mm) | Height. |
+opacity | `float` (0-1) | Opacity. (`1` for fully visible, `0` for invisible) |
+padding | `float` (in mm) | Spacing between the content and the border. |
+borderRadius | `float` (in mm) | Border radius. |
+right | `float` (in mm) | Distance from the right edge. |
+bottom | `float` (in mm) | Distance from the bottom edge. |
+borderSize | `float` (in mm) | Border size. |
+backgroundColor | [Color](#color-structure) | Background color. |
+boxShadow |  | Shadow. |
+&nbsp;&nbsp;&nbsp;boxShadow.x | `float` (in mm) | Horizontal offset of the shadow. |
+&nbsp;&nbsp;&nbsp;boxShadow.y | `float` (in mm) | Vertical offset of the shadow. |
+&nbsp;&nbsp;&nbsp;boxShadow.size | `float` (in mm) | Shadow diffusion. |
+&nbsp;&nbsp;&nbsp;boxShadow.color | [Color](#color-structure) | Shadow color. |
+&nbsp;&nbsp;&nbsp;boxShadow.type | `string` | Shadow type. (`"inset"` o not specified) |
 
 ### Color structure
 
@@ -1765,55 +1914,6 @@ icon | [URL Resource](#resource-url-structure) or [Canvas Resource](#canvas-stru
 Name | Type | Description |
 --- | --- | --- | 
 title | [Text](#text-structure) | Message text. |
-
-### Frame structure
-
-#### Attributes
-
-Name | Type | Description |
---- | --- | --- | 
-x | `float` (in mm) | Horizontal coordinate. |
-y | `float` (in mm) | Vertical coordinate. |
-width | `float` (in mm) | Width. |
-height | `float` (in mm) | Height. |
-opacity | `float` (0-1) | Opacity. (`1` for fully visible, `0` for invisible) |
-padding | `float` (in mm) | Spacing between the content and the border. |
-borderRadius | `float` (in mm) | Border radius. |
-right | `float` (in mm) | Distance from the right edge. |
-bottom | `float` (in mm) | Distance from the bottom edge. |
-borderSize | `float` (in mm) | Border size. |
-backgroundColor | [Color](#color-structure) | Background color. |
-boxShadow |  | Shadow. |
-&nbsp;&nbsp;&nbsp;boxShadow.x | `float` (in mm) | Horizontal offset of the shadow. |
-&nbsp;&nbsp;&nbsp;boxShadow.y | `float` (in mm) | Vertical offset of the shadow. |
-&nbsp;&nbsp;&nbsp;boxShadow.size | `float` (in mm) | Shadow diffusion. |
-&nbsp;&nbsp;&nbsp;boxShadow.color | [Color](#color-structure) | Shadow color. |
-&nbsp;&nbsp;&nbsp;boxShadow.type | `string` | Shadow type. (`"inset"` o not specified) |
-
-### Text label structure
-
-#### Attributes
-
-Name | Type | Description |
---- | --- | --- | 
-x | `float` (in mm) | Horizontal coordinate. |
-y | `float` (in mm) | Vertical coordinate. |
-width | `float` (in mm) | Width. |
-height | `float` (in mm) | Height. |
-opacity | `float` (0-1) | Opacity. (`1` for fully visible, `0` for invisible) |
-padding | `float` (in mm) | Spacing between the content and the border. |
-borderRadius | `float` (in mm) | Border radius. |
-lineHeight | `float` (in mm) | Line height. |
-strokeWidth | `float` (in mm) | Text border size. |
-strokeColor | [Color](#color-structure) | Text border color. |
-textColor | [Color](#color-structure) | Text color. |
-fontSize | `float` (in mm) | Text size. |
-fontStyle | `string` | Text style. |
-fontFamily | `string` | Text font. |
-fontWeight | `string` | Text weight. |
-textAlign | `"auto"` or `"left"` or `"right"` or `"center"` | Text alignment. |
-whiteSpace | `"normal"` or "`nowrap"` | Controls how white space inside is handled. |
-overflow | `"visible"` or "`hidden"` | Controls what happens to content that is too big to fit into an area. |
 
 ### Point position structure
 
