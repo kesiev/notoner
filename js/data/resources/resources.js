@@ -2186,5 +2186,42 @@ RESOURCES={
             }
         });
 
+        // --- Area
+
+        toolbox.addElement({
+            id:"area",
+            onLoad:(data)=>{
+                return {
+                    surface:new Area(Stencil.transferGlobalProperties(data,{
+                        width:data.width,
+                        height:data.height,
+                        label:data.label,
+                        labelText:data.labelText,
+                        frame:data.frame,
+                        backgroundColor:data.backgroundColor,
+                        image:data.image
+                    })),
+                    default:{
+                        x:data.x,
+                        y:data.y
+                    }
+                };
+            },
+            onSave:(surface)=>{
+                return Stencil.transferGlobalProperties(surface,{
+                    width:surface.width,
+                    height:surface.height,
+                    label:surface.label,
+                    labelText:surface.labelText,
+                    frame:surface.frame,
+                    backgroundColor:surface.backgroundColor,
+                    image:surface.image
+                })
+            },
+            onReset:(surface,data)=>{
+                surface.setPosition(data.x,data.y,true);
+            }
+        });
+
     }
 }
